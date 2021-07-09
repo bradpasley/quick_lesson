@@ -30,5 +30,8 @@
 
  printHTMLHeader(SITENAME);
  printHTMLBodyStart("Welcome to ".SITENAME, LESSONNAME);
+ printLogin();
+ printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.");
+ printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.");
  printHTMLFooter();
  ?>
