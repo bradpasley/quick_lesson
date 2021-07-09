@@ -27,62 +27,52 @@ function printHTMLHeader(string $HTMLPageTitle) {
     $bootstrapURL        = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css";
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
     $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
-    ?>
-    <!doctype html>'
-    <html lang="en">'
-    <head>'
-    <meta charset="utf-8">'
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="<?$bootstrapURL?>">
-    <title><?$HTMLPageTitle?></title>
-    <!-- Bootstrap CSS -->
-    <script src=<?$javascriptBundleURL?>></script>
-    </head>
-    <?
+    echo '<!doctype html>';
+    echo '<html lang="en">';
+    echo '<head>';
+    echo '<meta charset="utf-8">';
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
+    echo '<link rel="stylesheet" href="'.$bootstrapURL.'">';
+    echo '<title>'.$HTMLPageTitle.'</title>';
+    echo '<!-- Bootstrap CSS -->';
+    echo '<script src="'.$javascriptBundleURL.'"></script>';
+    echo '</head>';
 }
 
 function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
-    ?>
-    <body>
-    <h1><?$pageTitle?></h1>
-    <h3><?$lessonTitle?></h3>
-    <?
+    echo '<body>';
+    echo '<h1>'.$pageTitle.'</h1>';
+    echo '<h3>'.$lessonTitle.'</h3>';
 }
 
 function printHTMLFooter() {
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
     $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
-    ?>
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="<?$javascriptURL?>"></script>
-    <script src="<?$javascriptBundleURL?>"></script>
-    </body>
-    </html>
-    <?
+    echo '<!-- Bootstrap Bundle with Popper -->';
+    //echo '<script src="'.$javascriptURL.'"></script>';
+    echo '<script src="'.$javascriptBundleURL.'"></script>';
+    echo '</body>';
+    echo '</html>';
 }
 
 function printLogin() {
-    ?>
-    <form>
-    <label>Username:</label>
-    <input type="text" placeholder="username" />
-    <label>Password:</label>
-    <input type="password" placeholder="password" />
-    <input type="submit" value="Log in"  />
-    </form>
-    <?
+    echo '<form>';
+    echo '<label>Username:</label>';
+    echo '<input type="text" placeholder="username" />';
+    echo '<label>Password:</label>';
+    echo '<input type="password" placeholder="password" />';
+    echo '<input type="submit" value="Log in"  />';
+    echo '</form>';
 }
 
 function printMenuCard(string $cardTitle, string $cardContent, string $lessonLink="#") {
-    ?>
-    <div class="card">
-    <div class="card-body">
-      <h4 class="card-title"><?$cardTitle?></h4>
-      <p class="card-text"><?$cardContent?></p>
-      <a href="<?$lessonLink?>" class="card-link">Get started...</a>
-    </div>
-  </div>
-  <?
+    echo '<div class="card">';
+    echo '<div class="card-body">';
+    echo '  <h4 class="card-title">'.$cardTitle.'</h4>';
+    echo '  <p class="card-text">'.$cardContent.'</p>';
+    echo '  <a href="'.$lessonLink.'" class="card-link">Get started...</a>';
+    echo '</div>';
+    echo '</div>';
 }
 
 
