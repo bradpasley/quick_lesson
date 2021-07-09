@@ -62,17 +62,21 @@ function printHTMLFooter() {
 
 function printLogin() {
     echo '<form>';
-    echo '<label>Username: </label>';
-    echo '<input type="text" placeholder="username" />';
-    echo '<br>';
-    echo '<label>Password: </label>';
-    echo '<input type="password" placeholder="password" />';
-    echo '<br>';
+    echo '<div class"row"><label>Username: </label>';
+    echo '<div class"col-sm-4 col-lg-2"><label>Username: </label></div>';
+    echo '<div class"col-sm-4 col-lg-2"><input type="text" placeholder="username" /></div>';
+    echo '</div><br>';
+    echo '<div class"col-sm-4 col-lg-2"><label>Password: </label></div>';
+    echo '<div class"col-sm-4 col-lg-2"><input type="password" placeholder="password" /></div>';
+    echo '</div><br>';
     echo '<input type="submit" value="Log in"  />';
     echo '</form>';
 }
 
 function printMenuCard(string $cardTitle, string $cardContent, string $lessonLink="#") {
+
+    $cardColWidth = 2;
+
     echo '<div class="card">';
     echo '<div class="card-body">';
     echo '  <h4 class="card-title">'.$cardTitle.'</h4>';
