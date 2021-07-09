@@ -64,8 +64,10 @@ function printLogin() {
     echo '<form>';
     echo '<label>Username: </label>';
     echo '<input type="text" placeholder="username" />';
+    echo '<br>';
     echo '<label>Password: </label>';
     echo '<input type="password" placeholder="password" />';
+    echo '<br>';
     echo '<input type="submit" value="Log in"  />';
     echo '</form>';
 }
