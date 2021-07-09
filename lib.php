@@ -57,9 +57,9 @@ function printHTMLFooter() {
 
 function printLogin() {
     echo '<form>';
-    echo '<label>Username:</label>';
+    echo '<label>Username: </label>';
     echo '<input type="text" placeholder="username" />';
-    echo '<label>Password:</label>';
+    echo '<label>Password: </label>';
     echo '<input type="password" placeholder="password" />';
     echo '<input type="submit" value="Log in"  />';
     echo '</form>';
