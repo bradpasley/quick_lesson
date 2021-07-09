@@ -29,9 +29,15 @@
  const LESSONNAME = "Korean Alphabet";
 
  printHTMLHeader(SITENAME);
- printHTMLBodyStart("Welcome to ".SITENAME, LESSONNAME);
+ printHTMLBodyStart(SITENAME, LESSONNAME);
  printLogin();
+ echo '<div class="row">';
  printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.");
  printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.");
+ printMenuCard("Quizzes", "Check what you've learnt.");
+ printMenuCard("Review", "Get a summary of the key points.");
+ printMenuCard("Account", "Change your username or password.");
+ printMenuCard("Logout", "Exit ".SITENAME.".");
+ echo '</div>';
  printHTMLFooter();
  ?>
