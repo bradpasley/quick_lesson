@@ -23,6 +23,8 @@
  * lib.php - library file to produce common HTML parts
  */
 
+const MAINBACKGROUNDSTYLE = 'background: #9999FF';
+
 function printHTMLHeader(string $HTMLPageTitle) {
     $bootstrapURL        = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css";
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
@@ -41,6 +43,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
 
 function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
     echo '<body>';
+    echo '<div class="container" style="'.MAINBACKGROUNDSTYLE.'">';
     echo '<h1>'.$pageTitle.'</h1>';
     echo '<h3>'.$lessonTitle.'</h3>';
 }
@@ -48,6 +51,8 @@ function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
 function printHTMLFooter() {
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
     $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
+    echo '<!-- end of container -->';
+    echo '</div>';
     echo '<!-- Bootstrap Bundle with Popper -->';
     //echo '<script src="'.$javascriptURL.'"></script>';
     echo '<script src="'.$javascriptBundleURL.'"></script>';
