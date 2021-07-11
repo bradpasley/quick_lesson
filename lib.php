@@ -73,6 +73,7 @@ function printHTMLFooter() {
 
 function printLogin() {
     echo '<form>';
+    echo '<input type="hidden" name="Screen" value="'.SCREENWELCOME.'"></td></tr>';
     echo '<div class"row justify-content-center">';
     echo '<div class"col-md-3"></div>';
     echo '<div class"col-md">';
