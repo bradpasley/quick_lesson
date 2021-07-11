@@ -23,7 +23,7 @@
  * lib.php - library file to produce common HTML parts
  */
 
-const MAINBACKGROUNDSTYLE = 'background: #FFE6E3';
+include_once('constants.php');
 
 function printHTMLHeader(string $HTMLPageTitle) {
     $bootstrapURL        = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css";
@@ -73,7 +73,7 @@ function printHTMLFooter() {
 
 function printLogin() {
     echo '<form id="login" method="post">';
-    echo '<input type="hidden" name="Screen" value="'.SCREENWELCOME.'"></td></tr>';
+    echo '<input type="hidden" name="Screen" value="'.SCREENMAINMENU.'"></td></tr>';
     echo '<div class"row justify-content-center">';
     echo '<div class"col-md-3"></div>';
     echo '<div class"col-md">';
