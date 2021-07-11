@@ -130,8 +130,9 @@ function printModulePage(int $moduleID, int $conceptID=-1) {
     println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
     if($conceptID==-1) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
-    } else {
-        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$moduleTitle.'</h3>');
+    } else {//print concept page
+        $conceptTitle = "Demo Concept Title";
+        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
@@ -157,7 +158,8 @@ function printReviewPage(int $moduleID, int $conceptID=-1) {
     if($conceptID==-1) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
     } else {
-        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$moduleTitle.'</h3>');
+        $conceptTitle = "Demo Concept Title";
+        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
@@ -182,7 +184,8 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
     if($conceptID==-1) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
     } else {
-        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$moduleTitle.'</h3>');
+        $conceptTitle = "Demo Concept Title";
+        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
