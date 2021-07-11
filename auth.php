@@ -46,9 +46,8 @@ if(isLoginAttempt()) {
     echo PHP_EOL.'<h6>login attempted</h6>'.PHP_EOL;
 	if(authenticateValidCredentials($_POST['username'], $_POST['password'])) {
         $Screen=SCREENMAINMENU;
-        echo PHP_EOL.'<h6>login authenticated</h6>'.PHP_EOL;
-	} else {
-        echo PHP_EOL.'<h6>login failed</h6>'.PHP_EOL;
+	} else {//login failed
+        $Screen=SCREENLOGIN;
     }
 } else if ($Screen==SCREENEXIT) {
 	session_unset();

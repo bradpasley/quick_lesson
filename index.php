@@ -33,7 +33,7 @@ include('lib.php');
 if(!isSessionValid()) {
     printLogin();
     if(isLoginAttempt()) { //if login attempted but session not valid
-        println('<p class="text-warning">username/password incorrect.</p>');
+        println('<p class="text-danger">username/password incorrect.</p>');
     }
  } else {//authenticated user & session valid
     if($Screen == SCREENMAINMENU) {
