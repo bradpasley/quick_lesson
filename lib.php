@@ -45,10 +45,10 @@ function printHTMLHeader(string $HTMLPageTitle) {
 
 function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
 
-    if(isSessionValid() && $screen!=SCREENMAINMENU) {
-        $isHome=false;
-    } else {
+    if(!isSessionValid() || !isset($screen) || $screen==SCREENMAINMENU) {
         $isHome=true;
+    } else {
+        $isHome=false;
     }
 
     println('<body>');
