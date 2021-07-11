@@ -232,8 +232,9 @@ function printMainMenuButton() {
     println('  <input type="hidden" name="screen" value="'.SCREENMAINMENU.'">');
     println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light lead shadow-lg" '
             .'style="font-size: 1.6em; text-align: center" name="mainMenu">'
+            .MAINMENUBUTTONICON.'&nbsp;'
             .'<p class="bg-secondary text-light lead" style="font-size: 1.6em; text-align: center">'
-            .'&nbsp;'.MAINMENUBUTTONICON.'&nbsp;'.$buttonText.'</p>'
+            .'&nbsp;'.$buttonText.'</p>'
             .'</button>');
     println('</form>');
 }
