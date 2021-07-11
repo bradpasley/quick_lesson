@@ -137,7 +137,6 @@ function printModulePage(int $moduleID, int $conceptID=-1) {
     }
     println("<h3>CHECK ModuleID: $moduleID ConceptID: $conceptID</h3>");
     if($moduleID!=-1 && $conceptID!=-1) {
-        $moduleID++;
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $moduleID, $conceptID);
@@ -163,7 +162,6 @@ function printReviewPage(int $moduleID, int $conceptID=-1) {
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
     if($moduleID!=-1 && $conceptID!=-1) {
-        $moduleID++;
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $moduleID, $conceptID);
@@ -189,7 +187,6 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
     if($moduleID!=-1 && $conceptID!=-1) {
-        $moduleID++;
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $moduleID, $conceptID);
