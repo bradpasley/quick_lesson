@@ -44,8 +44,8 @@ include('lib.php');
             printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.", SCREENMODULE, 2);
             printMenuCard("Review", "Get a summary of the key points.", SCREENREVIEW);
             printMenuCard("Quizzes", "Check what you've learnt.", SCREENQUIZ);
-            printMenuCard("Account", "Change your username or password."); //need to add
-            printMenuCard("Logout", "Exit ".SITENAME."."); //need to add
+            printMenuCard("Account", "Change your username or password.", SCREENACCOUNTEDIT); //need to add
+            printMenuCard("Logout", "Exit ".SITENAME.".", SCREENEXIT); //need to add
             println('</div>');
             break;
         case SCREENMODULE:

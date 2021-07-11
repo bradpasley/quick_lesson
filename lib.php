@@ -110,6 +110,7 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
     println('<div class="card-body">');
     println('  <h4 class="card-title">'.$cardTitle.'</h4>');
     println('  <p class="card-text">'.$cardContent.'</p>');
+    println('  <p class="card-text"><b>menuScreen:</b>'.$menuScreen.'</p>');
     if($moduleID!=-1 && $conceptID!=-1) {
         printRightArrowButton($cardTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
