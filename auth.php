@@ -26,8 +26,6 @@
 session_start();
 //include("rollover_conf.php");
 
-//now the page contents
-
 const SCREENLOGIN = 0;
 const SCREENMAINMENU = 10;
 const SCREENMODULE = 20;
@@ -51,8 +49,8 @@ if(ISSET($_SESSION['last_activity']) && $_SESSION['last_activity'] + 30 * 60 < t
 
 //establish session if credentials provided
 $valid_session = false;
-if(ISSET($_POST['username']) && ISSET($_POST['password'])) {
-	if(checkCredentials($_POST['username'], $_POST['password'])) {
+if(isLoginAttempt()) {
+	if(authenticateValidCredentials($_POST['username'], $_POST['password'])) {
         $Screen=SCREENMAINMENU;
 	}
 } else if ($Screen==SCREENEXIT) {
@@ -71,6 +69,10 @@ function authenticateValidCredentials(string $username, $password) {
     } else {
         return false;
     }
+}
+
+function isLoginAttempt() {
+    return ISSET($_POST['username']) && ISSET($_POST['password']);
 }
 
 function isSessionValid() {

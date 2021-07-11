@@ -32,7 +32,12 @@ include('auth.php');
 
  printHTMLHeader(SITENAME);
  printHTMLBodyStart(SITENAME, LESSONNAME);
- if(!isSessionValid()) printLogin();
+if(!isSessionValid()) {
+    printLogin();
+    if(isLoginAttempt()) { //if login attempted but session not valid
+        echo '<p class="text-warning">username/password incorrect.</p>';
+    }
+ }
  if(isSessionValid()) {
     if($Screen = SCREENMAINMENU) {
         echo '<div class="row">';
