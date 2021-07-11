@@ -40,12 +40,12 @@ include('lib.php');
     switch($screen) {
         case SCREENMAINMENU:
             println('<div class="row">');
-            printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.", SCREENMODULE, 1);
-            printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.", SCREENMODULE, 2);
-            printMenuCard("Review", "Get a summary of the key points.", SCREENREVIEW);
-            printMenuCard("Quizzes", "Check what you've learnt.", SCREENQUIZ);
-            printMenuCard("Account", "Change your username or password."); //need to add
-            printMenuCard("Logout", "Exit ".SITENAME."."); //need to add
+            printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.", "Learn", SCREENMODULE, 1);
+            printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.", "Learn", SCREENMODULE, 2);
+            printMenuCard("Review", "Get a summary of the key points.", "Review",SCREENREVIEW);
+            printMenuCard("Quizzes", "Check what you've learnt.", "Quiz me!", SCREENQUIZ);
+            printMenuCard("Account", "Change your username or password.", "Edit"); //need to add
+            printMenuCard("Logout", "Exit ".SITENAME.".", "Log out"); //need to add
             println('</div>');
             break;
         case SCREENMODULE:
