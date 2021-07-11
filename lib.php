@@ -135,14 +135,15 @@ function printModulePage(int $moduleID, int $conceptID=-1) {
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
+    println("<h3>CHECK ModuleID: $moduleID ConceptID: $conceptID</h3>");
     if($moduleID!=-1 && $conceptID!=-1) {
         $moduleID++;
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
-        $moduleID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID);
+        $conceptID = 1;
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else {
         printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
     }
@@ -166,8 +167,8 @@ function printReviewPage(int $moduleID, int $conceptID=-1) {
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
-        $moduleID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID);
+        $conceptID = 1;
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else {
         printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
     }
@@ -191,8 +192,8 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
-        $moduleID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID);
+        $conceptID = 1;
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else {
         printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
     }

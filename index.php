@@ -36,7 +36,7 @@ include('lib.php');
         println('<p class="text-danger">username/password incorrect.</p>');
     }
  } else {//authenticated user & session valid
-    println("<h3>Screen: $screen</h3>");
+    println("<h3>CHECK Screen: $screen</h3>");
     switch($screen) {
         case SCREENMAINMENU:
             println('<div class="row">');
