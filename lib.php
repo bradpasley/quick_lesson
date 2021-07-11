@@ -140,12 +140,13 @@ function printModulePage(int $moduleID, int $conceptID=-1) {
         $moduleID++;
         $conceptID++;
         $buttonName = "Next";
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
+        printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
         $conceptID = 1;
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
+        printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $moduleID, $conceptID);
     } else {
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
+        $buttonName = "Main Menu";
+        printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName);
     }
 }
 
@@ -165,12 +166,13 @@ function printReviewPage(int $moduleID, int $conceptID=-1) {
         $moduleID++;
         $conceptID++;
         $buttonName = "Next";
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
+        printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
         $conceptID = 1;
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
+        printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $moduleID, $conceptID);
     } else {
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
+        $buttonName = "Main Menu";
+        printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName);
     }
 }
 
@@ -190,12 +192,13 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
         $moduleID++;
         $conceptID++;
         $buttonName = "Next";
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
+        printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
         $conceptID = 1;
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
+        printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $moduleID, $conceptID);
     } else {
-        printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
+        $buttonName = "Main Menu";
+        printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName);
     }
 }
 
