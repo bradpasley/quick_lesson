@@ -43,7 +43,14 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('</head>');
 }
 
-function printHTMLBodyStart(string $pageTitle, string $lessonTitle="", bool $isHome) {
+function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
+
+    if(isSessionValid() && $screen!=SCREENMAINMENU) {
+        $isHome=false;
+    } else {
+        $isHome=true;
+    }
+
     println('<body>');
     println('<div class="container col-sm-11" style="'.MAINBACKGROUNDSTYLE.'">');
     println('<div class="jumbotron py-3 px-lg-3">');

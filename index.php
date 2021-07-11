@@ -27,15 +27,16 @@ include_once('constants.php');
 include('auth.php');
 include('lib.php');
 
- printHTMLHeader(SITENAME);
- printHTMLBodyStart(SITENAME, LESSONNAME);
+
+printHTMLHeader(SITENAME);
+printHTMLBodyStart(SITENAME, LESSONNAME);
  
- if(!isSessionValid()) {
+if(!isSessionValid()) {
     printLogin();
     if(isLoginAttempt()) { //if login attempted but session not valid
         println('<p class="text-danger">username/password incorrect.</p>');
     }
- } else {//authenticated user & session valid
+} else {//authenticated user & session valid
     println("<h3>CHECK Screen: $screen</h3>");
     switch($screen) {
         case SCREENMAINMENU:
@@ -108,5 +109,5 @@ include('lib.php');
             printLogin();
     }
 }
- printHTMLFooter();
- ?>
+printHTMLFooter();
+?>
