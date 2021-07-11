@@ -181,7 +181,7 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
     }
 }
 
-function printRightArrowButton(string $pageTitle, int $screenType, int $moduleID=-1, int $conceptID=-1) {
+function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $moduleID=-1, int $conceptID=-1) {
     println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
     println('  <input type="hidden" name="screen" value="'.$screenType.'">');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
@@ -190,7 +190,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, int $moduleID
     if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
         if($conceptID!=-1) println('  <input type="hidden" name="conceptID" value="'.$conceptID.'">');
     }
-    println('  <button type="button" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.NEXTBUTTONICON.'</button>');
+    println('  <button type="button" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
     println('</form>');
 }
 
