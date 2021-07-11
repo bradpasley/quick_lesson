@@ -32,18 +32,18 @@ include('lib.php');
 if(!isSessionValid()) {
     printLogin();
     if(isLoginAttempt()) { //if login attempted but session not valid
-        echo '<p class="text-warning">username/password incorrect.</p>';
+        println('<p class="text-warning">username/password incorrect.</p>');
     }
  } else {//authenticated user & session valid
     if($Screen = SCREENMAINMENU) {
-        echo '<div class="row">';
+        println('<div class="row">');
         printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.");
         printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.");
         printMenuCard("Review", "Get a summary of the key points.");
         printMenuCard("Quizzes", "Check what you've learnt.");
         printMenuCard("Account", "Change your username or password.");
         printMenuCard("Logout", "Exit ".SITENAME.".");
-        echo '</div>';
+        println('</div>');
     }
 }
  printHTMLFooter();

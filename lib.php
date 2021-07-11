@@ -30,82 +30,84 @@ function printHTMLHeader(string $HTMLPageTitle) {
     $bootstrapIconURL    = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css";
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
     $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
-    echo '<!doctype html>';
-    echo '<html lang="en">';
-    echo '<head>';
-    echo '<meta charset="utf-8">';
-    echo '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
-    echo '<link rel="stylesheet" href="'.$bootstrapURL.'">';
-    echo '<link rel="stylesheet" href="'.$bootstrapIconURL.'">';
-    echo '<title>'.$HTMLPageTitle.'</title>';
-    echo '<!-- Bootstrap CSS -->';
-    echo '<script src="'.$javascriptBundleURL.'"></script>';
-    echo '</head>';
+    println('<!doctype html>');
+    println('<html lang="en">');
+    println('<head>');
+    println('<meta charset="utf-8">');
+    println('<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">');
+    println('<link rel="stylesheet" href="'.$bootstrapURL.'">');
+    println('<link rel="stylesheet" href="'.$bootstrapIconURL.'">');
+    println('<title>'.$HTMLPageTitle.'</title>');
+    println('<!-- Bootstrap CSS -->');
+    println('<script src="'.$javascriptBundleURL.'"></script>');
+    println('</head>');
 }
 
 function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
-    echo '<body>';
-    echo '<div class="container col-sm-11" style="'.MAINBACKGROUNDSTYLE.'">';
-    echo '<div class="jumbotron py-3 px-lg-3">';
-    echo '<div class="row justify-content-center">';
-    echo '<h3 class="col-sm-8 display-4" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check">'.$pageTitle.'</i></h1>';
-    echo '</div>';//row
-    echo '<br>';
-    echo '<div class="row justify-content-center">';
-    echo '<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">';
-    echo '<p class="bg-secondary text-light lead" style="font-size: 1.6em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</p>';
-    echo '</span>';
-    echo '</div>';//row
-    echo '</div>';//jumbotron
+    println('<body>');
+    println('<div class="container col-sm-11" style="'.MAINBACKGROUNDSTYLE.'">');
+    println('<div class="jumbotron py-3 px-lg-3">');
+    println('<div class="row justify-content-center">');
+    println('<h3 class="col-sm-8 display-4" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check">'.$pageTitle.'</i></h1>');
+    println('</div>');//row
+    println('<br>');
+    println('<div class="row justify-content-center">');
+    println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">');
+    println('<p class="bg-secondary text-light lead" style="font-size: 1.6em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</p>');
+    println('</span>');
+    println('</div>');//row
+    println('</div>');//jumbotron
 }
 
 function printHTMLFooter() {
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
     $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
-    echo '<!-- end of container -->';
-    echo '</div>';
-    echo '<!-- Bootstrap Bundle with Popper -->';
-    //echo '<script src="'.$javascriptURL.'"></script>';
-    echo '<script src="'.$javascriptBundleURL.'"></script>';
-    echo '</body>';
-    echo '</html>';
+    println('<!-- end of container -->');
+    println('</div>');
+    println('<!-- Bootstrap Bundle with Popper -->');
+    //println('<script src="'.$javascriptURL.'"></script>');
+    println('<script src="'.$javascriptBundleURL.'"></script>');
+    println('</body>');
+    println('</html>');
 }
 
 function printLogin() {
-    echo '<form id="login" method="post">';
-    echo '<input type="hidden" name="Screen" value="'.SCREENMAINMENU.'"></td></tr>';
-    echo '<div class"row justify-content-center">';
-    echo '<div class"col-md-3"></div>';
-    echo '<div class"col-md">';
-    echo '<label>Username:&nbsp;</label><input type="text" placeholder="username" /></div>';
-    echo '<div class"col-md-3"></div>';
-    echo '</div><br>';
-    echo '<div class"row">';
-    echo '<div class"col-md-3"></div>';
-    echo '<div class"col-md">';
-    echo '<label>Password:&nbsp;</label><input type="password" placeholder="password" /></div>';
-    echo '</div><br>';
-    echo '<div class"row justify-content-md-center">';
-    echo '<div class"col-md-6"><input class="btn bg-primary text-light" type="submit" name="login" value="Log in"  /></div>';
-    echo '</div></form>';
+    println('<form id="login" method="post">');
+    println('<input type="hidden" name="Screen" value="'.SCREENMAINMENU.'"></td></tr>');
+    println('<div class"row justify-content-center">');
+    println('<div class"col-md-3"></div>');
+    println('<div class"col-md">');
+    println('<label>Username:&nbsp;</label><input type="text" placeholder="username" /></div>');
+    println('<div class"col-md-3"></div>');
+    println('</div><br>');
+    println('<div class"row">');
+    println('<div class"col-md-3"></div>');
+    println('<div class"col-md">');
+    println('<label>Password:&nbsp;</label><input type="password" placeholder="password" /></div>');
+    println('</div><br>');
+    println('<div class"row justify-content-md-center">');
+    println('<div class"col-md-6"><input class="btn bg-primary text-light" type="submit" name="login" value="Log in"  /></div>');
+    println('</div></form>');
 }
 
 function printMenuCard(string $cardTitle, string $cardContent, string $lessonLink="#") {
 
     $cardColWidth = 2;
     
-    //echo '<div class="row">';
-    echo '<div class="col-lg-2 col-md-4 col-sm-6 card">';
-    echo '<div class="card-body">';
-    echo '  <h4 class="card-title">'.$cardTitle.'</h4>';
-    echo '  <p class="card-text">'.$cardContent.'</p>';
-    echo '  <a href="'.$lessonLink.'" class="btn card-link"><i class="bi bi-arrow-right-circle-fill"></i></a>';
-    //echo '</div>';//
-    echo '</div>';//card-body
-    echo '</div>';//card
-    //echo '</div>';//row
+    //println('<div class="row">');
+    println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
+    println('<div class="card-body">');
+    println('  <h4 class="card-title">'.$cardTitle.'</h4>');
+    println('  <p class="card-text">'.$cardContent.'</p>');
+    println('  <a href="'.$lessonLink.'" class="btn card-link"><i class="bi bi-arrow-right-circle-fill"></i></a>');
+    //println('</div>');//
+    println('</div>');//card-body
+    println('</div>');//card
+    //println('</div>');//row
 }
 
-
+function println(string $string) {
+    print($string.PHP_EOL);
+}
 
 ?>
