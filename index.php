@@ -99,6 +99,8 @@ include('lib.php');
                 }
             }
             break;
+        default:
+            printLogin();
     }
 }
  printHTMLFooter();
