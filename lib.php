@@ -46,7 +46,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
 function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
 
     $isHome = true;
-    if(!isSessionValid() || !isset($screen) || $screen==SCREENMAINMENU) {
+    if(!isSessionValid() || !isset($_REQUEST['screen']) || $_REQUEST['screen']==SCREENMAINMENU) {
         $isHome=true;
     } else {
         $isHome=false;
