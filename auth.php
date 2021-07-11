@@ -43,8 +43,7 @@ if(ISSET($_SESSION['last_activity']) && $_SESSION['last_activity'] + 30 * 60 < t
 //establish session if credentials provided
 $valid_session = false;
 if(isLoginAttempt()) {
-    echo PHP_EOL.'<h6>login attempted</h6>'.PHP_EOL;
-	if(authenticateValidCredentials($_POST['username'], $_POST['password'])) {
+    if(authenticateValidCredentials($_POST['username'], $_POST['password'])) {
         $screen=SCREENMAINMENU;
 	} else {//login failed
         $screen=SCREENLOGIN;
