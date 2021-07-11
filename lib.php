@@ -207,7 +207,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
     if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
         if($conceptID!=-1) println('  <input type="hidden" name="conceptID" value="'.$conceptID.'">');
     }
-    println('  <button type="button" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
+    println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
     println('</form>');
 }
 
