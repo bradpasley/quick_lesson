@@ -23,11 +23,9 @@
  * index.php - main page
  */
 
+include_once('constants.php');
 include('auth.php');
 include('lib.php');
-
-const SITENAME = "Quick Lesson";
-const LESSONNAME = "Korean Alphabet";
 
  printHTMLHeader(SITENAME);
  printHTMLBodyStart(SITENAME, LESSONNAME);

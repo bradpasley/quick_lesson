@@ -25,14 +25,7 @@
 
 session_start();
 //include("rollover_conf.php");
-
-const SCREENLOGIN = 0;
-const SCREENMAINMENU = 10;
-const SCREENMODULE = 20;
-const SCREENMODULECONCEPT = 25;
-const SCREENREVIEW = 30;
-const SCREENQUIZ = 40;
-const SCREENEXIT = -100;
+include_once('constants.php');
 
 if (!ISSET($Screen) ) $Screen=SCREENLOGIN; //if no POST Screen parameter, set to login page
 if (ISSET($_REQUEST['Screen'])) $Screen=$_REQUEST['Screen']; //if POST Screen parameter, set to that.
