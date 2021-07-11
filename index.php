@@ -29,14 +29,14 @@ include('lib.php');
 
  printHTMLHeader(SITENAME);
  printHTMLBodyStart(SITENAME, LESSONNAME);
- println("<H1>Screen: $Screen");
+ println("<h1>Screen: $Screen</h1>");
 if(!isSessionValid()) {
     printLogin();
     if(isLoginAttempt()) { //if login attempted but session not valid
         println('<p class="text-warning">username/password incorrect.</p>');
     }
  } else {//authenticated user & session valid
-    if($Screen = SCREENMAINMENU) {
+    if($Screen == SCREENMAINMENU) {
         println('<div class="row">');
         printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.");
         printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.");

@@ -28,8 +28,7 @@ session_start();
 include_once('constants.php');
 
 if (ISSET($_REQUEST['Screen'])) $Screen=$_REQUEST['Screen']; //if POST Screen parameter, set to that.
-if (!ISSET($Screen) ) $Screen=SCREENLOGIN; //if no POST Screen parameter, set to login page
-
+else $Screen=SCREENLOGIN; //if no POST Screen parameter, set to login page
 
 //if last update was more than 30 minutes, destroy the session
 if(ISSET($_SESSION['last_activity']) && $_SESSION['last_activity'] + 30 * 60 < time()) { 
