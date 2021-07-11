@@ -27,8 +27,8 @@ session_start();
 //include("rollover_conf.php");
 include_once('constants.php');
 
-if (ISSET($_REQUEST['Screen'])) $Screen=$_REQUEST['Screen']; //if POST Screen parameter, set to that.
-else $Screen=SCREENLOGIN; //if no POST Screen parameter, set to login page
+if (ISSET($_REQUEST['screen'])) $screen=$_REQUEST['screen']; //if POST screen parameter, set to that.
+else $screen=SCREENLOGIN; //if no POST screen parameter, set to login page
 
 //if last update was more than 30 minutes, destroy the session
 if(ISSET($_SESSION['last_activity']) && $_SESSION['last_activity'] + 30 * 60 < time()) { 
@@ -45,14 +45,14 @@ $valid_session = false;
 if(isLoginAttempt()) {
     echo PHP_EOL.'<h6>login attempted</h6>'.PHP_EOL;
 	if(authenticateValidCredentials($_POST['username'], $_POST['password'])) {
-        $Screen=SCREENMAINMENU;
+        $screen=SCREENMAINMENU;
 	} else {//login failed
-        $Screen=SCREENLOGIN;
+        $screen=SCREENLOGIN;
     }
-} else if ($Screen==SCREENEXIT) {
+} else if ($screen==SCREENEXIT) {
 	session_unset();
 	session_destroy();
-	$Screen = $SCREENLOGIN;
+	$screen = SCREENLOGIN;
 }
 
 function authenticateValidCredentials(string $username, $password) {

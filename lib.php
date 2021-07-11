@@ -48,7 +48,7 @@ function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
     println('<div class="container col-sm-11" style="'.MAINBACKGROUNDSTYLE.'">');
     println('<div class="jumbotron py-3 px-lg-3">');
     println('<div class="row justify-content-center">');
-    println('<h3 class="col-sm-8 display-4" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check">'.$pageTitle.'</i></h1>');
+    println('<h3 class="col-sm-8 display-3 text-secondary" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check"></i>'.$pageTitle.'</h1>');
     println('</div>');//row
     println('<br>');
     println('<div class="row justify-content-center">');
@@ -73,7 +73,7 @@ function printHTMLFooter() {
 
 function printLogin() {
     println('<form id="login" method="post">');
-    println('<input type="hidden" name="Screen" value="'.SCREENMAINMENU.'"></td></tr>');
+    println('<input type="hidden" name="screen" value="'.SCREENMAINMENU.'">');
     println('<div class"row justify-content-center">');
     println('<div class"col-md-3"></div>');
     println('<div class"col-md">');
@@ -90,7 +90,7 @@ function printLogin() {
     println('</div></form>');
 }
 
-function printMenuCard(string $cardTitle, string $cardContent, string $lessonLink="#") {
+function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=SCREENEXIT, int $moduleID=-1, int $conceptID=-1) {
 
     $cardColWidth = 2;
     
@@ -99,11 +99,99 @@ function printMenuCard(string $cardTitle, string $cardContent, string $lessonLin
     println('<div class="card-body">');
     println('  <h4 class="card-title">'.$cardTitle.'</h4>');
     println('  <p class="card-text">'.$cardContent.'</p>');
-    println('  <a href="'.$lessonLink.'" class="btn card-link"><i class="bi bi-arrow-right-circle-fill"></i></a>');
+    if($moduleID!=-1 && $conceptID!=-1) {
+        printRightArrowButton($cardTitle, $menuScreen, $moduleID, $conceptID);
+    } else if($moduleID!=-1) {
+        printRightArrowButton($cardTitle, $menuScreen, $moduleID);
+    } else {
+        printRightArrowButton($cardTitle, $menuScreen);
+    }
     //println('</div>');//
     println('</div>');//card-body
     println('</div>');//card
     //println('</div>');//row
+}
+
+function printModulePage(int $moduleID, int $conceptID=-1) {
+    $moduleTitle = "Demo Module Title";
+    $moduleWelcomeMessage = "In this module you will learn about ".$moduleTitle;
+    println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
+    if($conceptID==-1) { //just print main page
+        println('<p>'.$moduleWelcomeMessage.'</p>');
+    } else {
+        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$moduleTitle.'</h3>');
+        println('<p>Module ID:  '.$moduleID.'</p>');
+        println('<p>Concept ID: '.$conceptID.'</p>');
+    }
+    if($moduleID!=-1 && $conceptID!=-1) {
+        $moduleID++;
+        $conceptID++;
+        printRightArrowButton($moduleTitle, $menuScreen, $moduleID, $conceptID);
+    } else if($moduleID!=-1) {
+        $moduleID++;
+        printRightArrowButton($moduleTitle, $menuScreen, $moduleID);
+    } else {
+        printRightArrowButton($moduleTitle, $menuScreen);
+    }
+}
+
+function printReviewPage(int $moduleID, int $conceptID=-1) {
+    $moduleTitle = "Demo Module Title";
+    $moduleWelcomeMessage = "This module was about ".$moduleTitle.".";
+    println('<h3 class="display-4 text-secondary">Review '.$moduleTitle.'</h3>');
+    if($conceptID==-1) { //just print main page
+        println('<p>'.$moduleWelcomeMessage.'</p>');
+    } else {
+        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$moduleTitle.'</h3>');
+        println('<p>Module ID:  '.$moduleID.'</p>');
+        println('<p>Concept ID: '.$conceptID.'</p>');
+    }
+    if($moduleID!=-1 && $conceptID!=-1) {
+        $moduleID++;
+        $conceptID++;
+        printRightArrowButton($moduleTitle, $menuScreen, $moduleID, $conceptID);
+    } else if($moduleID!=-1) {
+        $moduleID++;
+        printRightArrowButton($moduleTitle, $menuScreen, $moduleID);
+    } else {
+        printRightArrowButton($moduleTitle, $menuScreen);
+    }
+}
+
+function printQuizPage(int $moduleID, int $conceptID=-1) {
+    $moduleTitle = "Demo Module Title";
+    $moduleWelcomeMessage = "Are you ready to check your knowledge on ".$moduleTitle."?";
+    println('<h3 class="display-4 text-secondary">Quiz '.$moduleTitle.'</h3>');
+    if($conceptID==-1) { //just print main page
+        println('<p>'.$moduleWelcomeMessage.'</p>');
+    } else {
+        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$moduleTitle.'</h3>');
+        println('<p>Module ID:  '.$moduleID.'</p>');
+        println('<p>Concept ID: '.$conceptID.'</p>');
+    }
+    if($moduleID!=-1 && $conceptID!=-1) {
+        $moduleID++;
+        $conceptID++;
+        printRightArrowButton($moduleTitle, $menuScreen, $moduleID, $conceptID);
+    } else if($moduleID!=-1) {
+        $moduleID++;
+        printRightArrowButton($moduleTitle, $menuScreen, $moduleID);
+    } else {
+        printRightArrowButton($moduleTitle, $menuScreen);
+    }
+}
+
+function printRightArrowButton(string $pageTitle, int $screenType, int $moduleID=-1, int $conceptID=-1) {
+    println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
+    println('  <input type="hidden" name="screen" value="'.$screenType.'">');
+    if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
+        if($moduleID!=-1) println('  <input type="hidden" name="moduleID" value="'.$moduleID.'">');
+    }
+    if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
+        if($conceptID!=-1) println('  <input type="hidden" name="conceptID" value="'.$conceptID.'">');
+    }
+    println('  <input type="submit" class="btn rounded-pill lh-lg bg-secondary shadow-lg" "name="rightArrowButton_'.$pageTitle.'">'.NEXTBUTTONICON.'</input>');
+    println('</form>');
 }
 
 function println(string $string) {

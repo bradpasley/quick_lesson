@@ -29,22 +29,75 @@ include('lib.php');
 
  printHTMLHeader(SITENAME);
  printHTMLBodyStart(SITENAME, LESSONNAME);
- println("<h1>Screen: $Screen</h1>");
-if(!isSessionValid()) {
+ 
+ if(!isSessionValid()) {
     printLogin();
     if(isLoginAttempt()) { //if login attempted but session not valid
         println('<p class="text-danger">username/password incorrect.</p>');
     }
  } else {//authenticated user & session valid
-    if($Screen == SCREENMAINMENU) {
-        println('<div class="row">');
-        printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.");
-        printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.");
-        printMenuCard("Review", "Get a summary of the key points.");
-        printMenuCard("Quizzes", "Check what you've learnt.");
-        printMenuCard("Account", "Change your username or password.");
-        printMenuCard("Logout", "Exit ".SITENAME.".");
-        println('</div>');
+    switch($Screen) {
+        case SCREENMAINMENU:
+            println('<div class="row">');
+            printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.", SCREENMODULE, 1);
+            printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.", SCREENMODULE, 2);
+            printMenuCard("Review", "Get a summary of the key points.", SCREENREVIEW);
+            printMenuCard("Quizzes", "Check what you've learnt.", SCREENQUIZ);
+            printMenuCard("Account", "Change your username or password."); //need to add
+            printMenuCard("Logout", "Exit ".SITENAME."."); //need to add
+            println('</div>');
+            break;
+        case SCREENMODULE:
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+                //main menu of Module
+                printModulePage($moduleID);
+            }
+            break;
+        case SCREENMODULECONCEPT:
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+                if(isset($_POST['conceptID']) && $_POST['conceptID']!=-1) {//concept screen of module
+                    $moduleID = $_POST['moduleID'];
+                    $conceptID = $_POST['conceptID'];
+                    printModulePage($moduleID, $conceptID);
+                } else {//main menu of Module
+                    printModulePage($moduleID);
+                }
+            }
+            break;
+        case SCREENREVIEW:
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+                //main menu of Module
+                printModulePage($moduleID);
+            }
+            break;
+        case SCREENREVIEWCONCEPT:
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+                if(isset($_POST['conceptID']) && $_POST['conceptID']!=-1) {//concept screen of module
+                    $moduleID = $_POST['moduleID'];
+                    $conceptID = $_POST['conceptID'];
+                    printReviewPage($moduleID, $conceptID);
+                } else {//main menu of Module
+                    printReviewPage($moduleID);
+                }
+            }
+            break;
+        case SCREENQUIZ:
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+                //main menu of Module
+                printQuizPage($moduleID);
+            }
+            break;
+        case SCREENQUIZCONCEPT:
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+                if(isset($_POST['conceptID']) && $_POST['conceptID']!=-1) {//concept screen of module
+                    $moduleID = $_POST['moduleID'];
+                    $conceptID = $_POST['conceptID'];
+                    printQuizPage($moduleID, $conceptID);
+                } else {//main menu of Module
+                    printQuizPage($moduleID);
+                }
+            }
+            break;
     }
 }
  printHTMLFooter();

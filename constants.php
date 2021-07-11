@@ -31,7 +31,10 @@ const SCREENMAINMENU = 10;
 const SCREENMODULE = 20;
 const SCREENMODULECONCEPT = 25;
 const SCREENREVIEW = 30;
+const SCREENREVIEWCONCEPT = 35;
 const SCREENQUIZ = 40;
+const SCREENQUIZCONCEPT = 45;
 const SCREENEXIT = -100;
 
 const MAINBACKGROUNDSTYLE = 'background: #FFE6E3';
+const NEXTBUTTONICON = '<i class="bi bi-arrow-right-circle-fill"></i>';
