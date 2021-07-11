@@ -95,15 +95,14 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
     $cardColWidth = 2;
     
     $buttonName = "Go!";
-    if(in_array($menuScreen, SCREENMODULE, SCREENMODULECONCEPT))
+    if(in_array($menuScreen, array(SCREENMODULE, SCREENMODULECONCEPT)))
         $buttonName = "Learn";
-    if(in_array($menuScreen, SCREENREVIEW, SCREENREVIEWCONCEPT))
+    if(in_array($menuScreen, array(SCREENREVIEW, SCREENREVIEWCONCEPT)))
         $buttonName = "Revise";
-    if(in_array($menuScreen, SCREENQUIZ, SCREENQUIZCONCEPT))
+    if(in_array($menuScreen, array(SCREENQUIZ, SCREENQUIZCONCEPT)))
         $buttonName = "Test";
-    if(in_array($menuScreen, SCREENACCOUNTEDIT))
+    if(in_array($menuScreen, array(SCREENACCOUNTEDIT)))
         $buttonName = "Edit";
-
 
     //println('<div class="row">');
     println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
