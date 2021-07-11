@@ -45,6 +45,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
 
 function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
 
+    $isHome = true;
     if(!isSessionValid() || !isset($screen) || $screen==SCREENMAINMENU) {
         $isHome=true;
     } else {
@@ -61,6 +62,8 @@ function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
     println('<div class="row justify-content-center">');
     if(!$isHome) {//print the home button except when already home
         printMainMenuButton();
+    } else {
+        println('<h3>session: '.isSessionValid().' screen is set: '.isset($screen).'</h3>');
     }
     println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">');
     println('<p class="bg-secondary text-light lead" style="font-size: 1.6em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</p>');
