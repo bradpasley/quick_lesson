@@ -49,7 +49,10 @@ include('lib.php');
             println('</div>');
             break;
         case SCREENMODULE:
+            //println('<h4>screen module...</h4>');
             if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+                $moduleID = $_POST['moduleID'];
+                //println('<h4>module id: '.$moduleID.'</h4>');
                 //main menu of Module
                 printModulePage($moduleID);
             }
@@ -67,8 +70,9 @@ include('lib.php');
             break;
         case SCREENREVIEW:
             if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
-                //main menu of Module
-                printModulePage($moduleID);
+                $moduleID = $_POST['moduleID'];
+                //main menu of Review
+                printReviewPage($moduleID);
             }
             break;
         case SCREENREVIEWCONCEPT:
@@ -84,7 +88,8 @@ include('lib.php');
             break;
         case SCREENQUIZ:
             if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
-                //main menu of Module
+                $moduleID = $_POST['moduleID'];
+                //main menu of Quiz
                 printQuizPage($moduleID);
             }
             break;
