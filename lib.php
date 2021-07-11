@@ -234,11 +234,13 @@ function printMainMenuButton() {
     $buttonText = "Main Menu";
     println('<form id="mainMenu" method="post">');
     println('  <input type="hidden" name="screen" value="'.SCREENMAINMENU.'">');
+    println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center">');
     println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light lead shadow-lg" '
             .'style="font-size: 1.6em; text-align: center" name="mainMenu">'
             .'<p class="bg-secondary text-light lead" style="font-size: 1.6em; text-align: center">'
             .MAINMENUBUTTONSVG.'&nbsp;'.$buttonText.'&nbsp;'.'</p>'
             .'</button>');
+    println('</span>');
     println('</form>');
 }
 
