@@ -94,17 +94,28 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
 
     $cardColWidth = 2;
     
+    $buttonName = "Go!";
+    if(in_array($menuScreen, SCREENMODULE, SCREENMODULECONCEPT))
+        $buttonName = "Learn";
+    if(in_array($menuScreen, SCREENREVIEW, SCREENREVIEWCONCEPT))
+        $buttonName = "Revise";
+    if(in_array($menuScreen, SCREENQUIZ, SCREENQUIZCONCEPT))
+        $buttonName = "Test";
+    if(in_array($menuScreen, SCREENACCOUNTEDIT))
+        $buttonName = "Edit";
+
+
     //println('<div class="row">');
     println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
     println('<div class="card-body">');
     println('  <h4 class="card-title">'.$cardTitle.'</h4>');
     println('  <p class="card-text">'.$cardContent.'</p>');
     if($moduleID!=-1 && $conceptID!=-1) {
-        printRightArrowButton($cardTitle, $menuScreen, $moduleID, $conceptID);
+        printRightArrowButton($cardTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
-        printRightArrowButton($cardTitle, $menuScreen, $moduleID);
+        printRightArrowButton($cardTitle, $menuScreen, $buttonName, $moduleID);
     } else {
-        printRightArrowButton($cardTitle, $menuScreen);
+        printRightArrowButton($cardTitle, $menuScreen, $buttonName);
     }
     //println('</div>');//
     println('</div>');//card-body
@@ -115,6 +126,7 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
 function printModulePage(int $moduleID, int $conceptID=-1) {
     $moduleTitle = "Demo Module Title";
     $moduleWelcomeMessage = "In this module you will learn about ".$moduleTitle;
+    $buttonName = "Learn";
     println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
     if($conceptID==-1) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
@@ -126,18 +138,20 @@ function printModulePage(int $moduleID, int $conceptID=-1) {
     if($moduleID!=-1 && $conceptID!=-1) {
         $moduleID++;
         $conceptID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $moduleID, $conceptID);
+        $buttonName = "Next";
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
         $moduleID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $moduleID);
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID);
     } else {
-        printRightArrowButton($moduleTitle, $menuScreen);
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
     }
 }
 
 function printReviewPage(int $moduleID, int $conceptID=-1) {
     $moduleTitle = "Demo Module Title";
     $moduleWelcomeMessage = "This module was about ".$moduleTitle.".";
+    $buttonName = "Review";
     println('<h3 class="display-4 text-secondary">Review '.$moduleTitle.'</h3>');
     if($conceptID==-1) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
@@ -149,18 +163,20 @@ function printReviewPage(int $moduleID, int $conceptID=-1) {
     if($moduleID!=-1 && $conceptID!=-1) {
         $moduleID++;
         $conceptID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $moduleID, $conceptID);
+        $buttonName = "Next";
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
         $moduleID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $moduleID);
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID);
     } else {
-        printRightArrowButton($moduleTitle, $menuScreen);
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
     }
 }
 
 function printQuizPage(int $moduleID, int $conceptID=-1) {
     $moduleTitle = "Demo Module Title";
     $moduleWelcomeMessage = "Are you ready to check your knowledge on ".$moduleTitle."?";
+    $buttonName = "Test";
     println('<h3 class="display-4 text-secondary">Quiz '.$moduleTitle.'</h3>');
     if($conceptID==-1) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
@@ -172,12 +188,13 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
     if($moduleID!=-1 && $conceptID!=-1) {
         $moduleID++;
         $conceptID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $moduleID, $conceptID);
+        $buttonName = "Next";
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
     } else if($moduleID!=-1) {
         $moduleID++;
-        printRightArrowButton($moduleTitle, $menuScreen, $moduleID);
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName, $moduleID);
     } else {
-        printRightArrowButton($moduleTitle, $menuScreen);
+        printRightArrowButton($moduleTitle, $menuScreen, $buttonName);
     }
 }
 
