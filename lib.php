@@ -61,11 +61,15 @@ function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
     println('<br>');
     println('<div class="row justify-content-center">');
     if(!$isHome) {//print the home button except when already home
+        println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
         printMainMenuButton();
-    } 
+        println('</div>'); //col    
+    }
+    println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
     println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">');
     println('<p class="bg-secondary text-light lead" style="font-size: 1.6em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</p>');
     println('</span>');
+    println('</div>'); //col
     println('</div>');//row
     println('</div>');//jumbotron
 }
