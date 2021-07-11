@@ -24,11 +24,10 @@
  */
 
 include('auth.php');
- include('lib.php');
- 
+include('lib.php');
 
- const SITENAME = "Quick Lesson";
- const LESSONNAME = "Korean Alphabet";
+const SITENAME = "Quick Lesson";
+const LESSONNAME = "Korean Alphabet";
 
  printHTMLHeader(SITENAME);
  printHTMLBodyStart(SITENAME, LESSONNAME);
@@ -37,8 +36,7 @@ if(!isSessionValid()) {
     if(isLoginAttempt()) { //if login attempted but session not valid
         echo '<p class="text-warning">username/password incorrect.</p>';
     }
- }
- if(isSessionValid()) {
+ } else {//authenticated user & session valid
     if($Screen = SCREENMAINMENU) {
         echo '<div class="row">';
         printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.");
