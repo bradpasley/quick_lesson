@@ -67,7 +67,7 @@ function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
     }
     //println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
     println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">');
-    println('<button class="btn rounded-pill bg-secondary text-light lead" pointer-event="none" aria-disabled="true" style="font-size: 1.6em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</button>');
+    println('<button class="btn rounded-pill bg-secondary text-light lead" pointer-event="none" aria-disabled="true" style="font-size: 1.4em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</button>');
     println('</span>');
     //println('</div>'); //col
     println('</div>');//row
@@ -236,10 +236,8 @@ function printMainMenuButton() {
     println('  <input type="hidden" name="screen" value="'.SCREENMAINMENU.'">');
     println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center">');
     println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light lead" '
-            .'style="font-size: 1.6em; text-align: center" name="mainMenu">'
-            //.'<p class="bg-secondary text-light lead" style="font-size: 1.6em; text-align: center">'
+            .'style="font-size: 1.4em; text-align: center" name="mainMenu">'
             .MAINMENUBUTTONSVG.'&nbsp;'.$buttonText.'&nbsp;'
-            //.'</p>'
             .'</button>');
     println('</span>');
     println('</form>');
