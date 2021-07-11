@@ -199,7 +199,7 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
 }
 
 function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $moduleID=-1, int $conceptID=-1) {
-    println('<form id="rightArrowButton_'.$pageTitle.'" method="get">');
+    println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
     println('  <input type="hidden" name="screen" value="'.$screenType.'">');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
         if($moduleID!=-1) println('  <input type="hidden" name="moduleID" value="'.$moduleID.'">');
