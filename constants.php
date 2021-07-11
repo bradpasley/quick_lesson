@@ -37,4 +37,4 @@ const SCREENQUIZCONCEPT = 45;
 const SCREENEXIT = -100;
 
 const MAINBACKGROUNDSTYLE = 'background: #FFE6E3';
-const NEXTBUTTONICON = '<i class="bi bi-arrow-right-circle-fill"></i>';
+const NEXTBUTTONICON = '<i class="bi bi-arrow-right-circle"></i>';
