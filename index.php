@@ -23,21 +23,27 @@
  * index.php - main page
  */
 
+include('auth.php');
  include('lib.php');
+ 
 
  const SITENAME = "Quick Lesson";
  const LESSONNAME = "Korean Alphabet";
 
  printHTMLHeader(SITENAME);
  printHTMLBodyStart(SITENAME, LESSONNAME);
- printLogin();
- echo '<div class="row">';
- printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.");
- printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.");
- printMenuCard("Quizzes", "Check what you've learnt.");
- printMenuCard("Review", "Get a summary of the key points.");
- printMenuCard("Account", "Change your username or password.");
- printMenuCard("Logout", "Exit ".SITENAME.".");
- echo '</div>';
+ if(!isSessionValid()) printLogin();
+ if(isSessionValid()) {
+    if($Screen = SCREENMAINMENU) {
+        echo '<div class="row">';
+        printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.");
+        printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.");
+        printMenuCard("Review", "Get a summary of the key points.");
+        printMenuCard("Quizzes", "Check what you've learnt.");
+        printMenuCard("Account", "Change your username or password.");
+        printMenuCard("Logout", "Exit ".SITENAME.".");
+        echo '</div>';
+    }
+}
  printHTMLFooter();
  ?>

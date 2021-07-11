@@ -98,7 +98,7 @@ function printMenuCard(string $cardTitle, string $cardContent, string $lessonLin
     echo '<div class="card-body">';
     echo '  <h4 class="card-title">'.$cardTitle.'</h4>';
     echo '  <p class="card-text">'.$cardContent.'</p>';
-    echo '  <a href="'.$lessonLink.'" class="card-link">Get started...</a>';
+    echo '  <a href="'.$lessonLink.'" class="btn card-link"><i class="bi bi-arrow-right-circle-fill"></i></a>';
     //echo '</div>';//
     echo '</div>';//card-body
     echo '</div>';//card
