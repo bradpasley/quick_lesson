@@ -36,8 +36,8 @@ include('lib.php');
         println('<p class="text-danger">username/password incorrect.</p>');
     }
  } else {//authenticated user & session valid
-    println("<h3>Screen: $Screen</h3>");
-    switch($Screen) {
+    println("<h3>Screen: $screen</h3>");
+    switch($screen) {
         case SCREENMAINMENU:
             println('<div class="row">');
             printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.", SCREENMODULE, 1);
