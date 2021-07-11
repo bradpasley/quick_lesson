@@ -72,7 +72,7 @@ function printHTMLFooter() {
 }
 
 function printLogin() {
-    echo '<form>';
+    echo '<form id="login" method="post">';
     echo '<input type="hidden" name="Screen" value="'.SCREENWELCOME.'"></td></tr>';
     echo '<div class"row justify-content-center">';
     echo '<div class"col-md-3"></div>';
@@ -86,7 +86,7 @@ function printLogin() {
     echo '<label>Password:&nbsp;</label><input type="password" placeholder="password" /></div>';
     echo '</div><br>';
     echo '<div class"row justify-content-md-center">';
-    echo '<div class"col-md-6"><input class="btn bg-primary text-light" type="submit" value="Log in"  /></div>';
+    echo '<div class"col-md-6"><input class="btn bg-primary text-light" type="submit" name="login" value="Log in"  /></div>';
     echo '</div></form>';
 }
 
