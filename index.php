@@ -29,6 +29,7 @@ include('lib.php');
 
  printHTMLHeader(SITENAME);
  printHTMLBodyStart(SITENAME, LESSONNAME);
+ println("<H1>Screen: $Screen");
 if(!isSessionValid()) {
     printLogin();
     if(isLoginAttempt()) { //if login attempted but session not valid
