@@ -43,7 +43,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('</head>');
 }
 
-function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
+function printHTMLBodyStart(string $pageTitle, string $lessonTitle="", bool $isHome) {
     println('<body>');
     println('<div class="container col-sm-11" style="'.MAINBACKGROUNDSTYLE.'">');
     println('<div class="jumbotron py-3 px-lg-3">');
@@ -52,6 +52,9 @@ function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
     println('</div>');//row
     println('<br>');
     println('<div class="row justify-content-center">');
+    if(!$isHome) {//print the home button except when already home
+        printMainMenuButton();
+    }
     println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">');
     println('<p class="bg-secondary text-light lead" style="font-size: 1.6em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</p>');
     println('</span>');
@@ -212,6 +215,15 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
         if($conceptID!=-1) println('  <input type="hidden" name="conceptID" value="'.$conceptID.'">');
     }
     println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
+    println('</form>');
+}
+
+function printMainMenuButton() {
+    $buttonText = "Main Menu";
+    println('<form id="mainMenu" method="post">');
+    println('  <input type="hidden" name="screen" value="'.SCREENMAINMENU.'">');
+    println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light lead shadow-lg" '
+            .'style="font-size: 1.6em; text-align: center" name="mainMenu">'.MAINMENUBUTTONICON.'&nbsp;'.$buttonText.'</button>');
     println('</form>');
 }
 

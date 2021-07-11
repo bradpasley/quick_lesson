@@ -39,3 +39,4 @@ const SCREENEXIT = -100;
 
 const MAINBACKGROUNDSTYLE = 'background: #FFE6E3';
 const NEXTBUTTONICON = '<i class="bi bi-arrow-right-circle"></i>';
+const MAINMENUBUTTONICON = '<i class="bi bi-house-door"></i>';
