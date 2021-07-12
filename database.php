@@ -115,6 +115,7 @@ class QuickDatabase {
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
         $sqlQueryTitle = "";
+        println("<h5>getLessonTitle($lessonID, $moduleID, $conceptID</h5>");
 
         if($moduleID==0 && $conceptID==0) {//Lesson title
             $sqlQueryTitle = "SELECT title FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
