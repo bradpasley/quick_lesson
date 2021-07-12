@@ -222,7 +222,7 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
-    if($moduleID!=0 && $conceptID!=0) {
+    if($moduleID>0 && $conceptID>0) {
         $conceptID--;
         $buttonName = "Previous";
         printLeftArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
@@ -230,7 +230,7 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
-    } else if($moduleID!=0) {
+    } else if($moduleID>0) {
         $conceptID = 1;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
@@ -268,7 +268,7 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
-    if($moduleID!=0 && $conceptID!=0) {
+    if($moduleID>0 && $conceptID>0) {
         $conceptID--;
         $buttonName = "Previous";
         printLeftArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
@@ -276,7 +276,7 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
-    } else if($moduleID!=0) {
+    } else if($moduleID>0) {
         $conceptID = 1;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
@@ -289,20 +289,16 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
 function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonID=0, int $moduleID=0, int $conceptID=0) {
     global $quickDatabase;
     $middleText = "";
-    println('<p>printRight?</p>');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
         if($moduleID>0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
     }
-    println("<p>printRight: screentype: $screenType, mid text: $middleText </p>");
     if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
-        println("<p>printRight is quickDatabase set? ".isset($quickDatabase)."</p>");        
         $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
         println("<p>printRight Count: $conceptCount</p>");  
         if($conceptID>0 && $conceptID<$conceptCount) {
             $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
         } //don't print right button for last concept.
     }
-    println("<p>printRight:: $middleText</p>");
     println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
     println('  <input type="hidden" name="screen" value="'.$screenType.'">');
     println($middleText);
@@ -313,21 +309,19 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
 function printLeftArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonID=0, int $moduleID=0, int $conceptID=0) {
     global $quickDatabase;
     $middleText = "";
-    println('<p>printLeft?</p>');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
         if($moduleID>0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
     }
     if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
         if($conceptID>0) {
             $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
-            println('<form id="leftArrowButton_'.$pageTitle.'" method="post">');
-            println('  <input type="hidden" name="screen" value="'.$screenType.'">');
-            println($middleText);
-            println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="leftArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.PREVBUTTONICON.'</button>');
-            println('</form>');
         }
-        //don't print left button for first concept.
     }
+    println('<form id="leftArrowButton_'.$pageTitle.'" method="post">');
+    println('  <input type="hidden" name="screen" value="'.$screenType.'">');
+    println($middleText);
+    println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="leftArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.PREVBUTTONICON.'</button>');
+    println('</form>');
 }
 
 function printMainMenuButton() {
