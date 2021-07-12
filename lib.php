@@ -292,7 +292,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
         if($moduleID!=0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
     }
-    println("<p>printRight: $middleText</p>");
+    println("<p>printRight: screntype: $screenType, mid text: $middleText </p>");
     if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {    
         $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
         if($conceptID>0 && $conceptID<$conceptCount) {
