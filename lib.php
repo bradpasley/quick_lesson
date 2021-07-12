@@ -288,6 +288,7 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
 
 function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonID=0, int $moduleID=0, int $conceptID=0) {
     $middleText = "";
+    println('<p>printRight?</p>');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
         if($moduleID!=0) $middleText = '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
     }
@@ -305,6 +306,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
 
 function printLeftArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonID=0, int $moduleID=0, int $conceptID=0) {
     $middleText = "";
+    println('<p>printLeft?</p>');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
         if($moduleID!=0) $middleText = '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
     }
