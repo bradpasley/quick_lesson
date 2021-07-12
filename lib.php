@@ -172,9 +172,9 @@ function printModulePage(int $moduleID, int $conceptID=0) {
         }    
         println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
         println('<p>'.$conceptContent.'</p>');
-        println('<p>Module ID:  '.$moduleID.'</p>');
-        println('<p>Concept ID: '.$conceptID.'</p>');
     }
+    println('<p>Module ID:  '.$moduleID.'</p>');
+    println('<p>Concept ID: '.$conceptID.'</p>');
     
     if($moduleID!=0 && $conceptID!=0) {
         $conceptID--;
