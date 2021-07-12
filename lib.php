@@ -289,13 +289,13 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
 function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonID=0, int $moduleID=0, int $conceptID=0) {
     global $quickDatabase;
     $middleText = "";
+    $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
+    println("<p>printRight Count: $conceptCount</p>");  
     if($conceptID<$conceptCount) {//don't print right button for last concept.
         if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
             if($moduleID>0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
         }
         if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
-            $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
-            println("<p>printRight Count: $conceptCount</p>");  
             if($conceptID>0) {
                 $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
             } 
