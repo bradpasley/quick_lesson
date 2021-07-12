@@ -5,7 +5,7 @@
     height:400px;
     margin-top:20px;
     padding:3px;
-    -moz-user-select:no;
+    /*-moz-user-select:no;*/
 }
 
 #questionDiv{	/* Big div for all the questions */
