@@ -290,7 +290,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
         if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
             $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
         } 
-        println('<div class="col-sm-2">');//start of col
+        println('<div class="col-sm-4 col-md-3 col-lg-2">');//start of col
         println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
@@ -312,7 +312,7 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
         if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
                 $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
         }
-        println('<div class="col-sm-2">');//start of col
+        println('<div class="col-sm-4 col-md-3 col-lg-2">');//start of col
         println('<form id="leftArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
