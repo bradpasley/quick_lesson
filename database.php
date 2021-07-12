@@ -114,13 +114,13 @@ class QuickDatabase {
         
         if($moduleID==0 && $conceptID==0) {//Lesson title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
-                            ."WHERE lessonID='$lessonID' AND moduleID=0 AND conceptID=0";
+                            ."WHERE lessonid='$lessonID' AND moduleid=0 AND conceptid=0";
         } else if($conceptID==0) {//Module title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
-                            ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID=0";
+                            ."WHERE lessonid='$lessonID' AND moduleid='$moduleID' AND conceptid=0";
         } else {//concept title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
-                            ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID='$conceptID'";
+                            ."WHERE lessonid='$lessonID' AND moduleid='$moduleID' AND conceptid='$conceptID'";
         }
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryTitle)) {
@@ -140,13 +140,13 @@ class QuickDatabase {
 
         if($moduleID==0 && $conceptID==0) {//Lesson content
             $sqlQueryContent = "SELECT content FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
-                            ."WHERE lessonID='$lessonID' AND moduleID=0 AND conceptID=0";
+                            ."WHERE lessonid='$lessonID' AND moduleid=0 AND conceptid=0";
         } else if($conceptID==0) {//Module content
             $sqlQueryContent = "SELECT content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
-                            ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID=0";
+                            ."WHERE lessonid='$lessonID' AND moduleid='$moduleID' AND conceptid=0";
         } else {//concept content
             $sqlQueryContent = "SELECT content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
-            ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID='$conceptID'";
+            ."WHERE lessonid='$lessonID' AND moduleid='$moduleID' AND conceptid='$conceptID'";
         }
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryContent)) {
@@ -156,7 +156,37 @@ class QuickDatabase {
         } else {
             return "{unknown}";
         }
-     }
+    }
+
+    function getNumberOfModulesInLesson(int $lessonID) {
+        if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
+
+        $sqlCountQuery = "SELECT COUNT(DISTINCT(moduleid)) FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
+                            ."WHERE lessonid='$lessonID' AND moduleid!=0";
+        
+        if($queryResult = mysqli_query($this->DBConnection,$sqlCountQuery)) {
+            $row = $queryResult->fetch_row();
+            $content = $row[0];
+            return $content;
+        } else {
+            return "{unknown}";
+        }
+    }
+
+    function getNumberOfConceptsInModule(int $lessonID, int $moduleID) {
+        if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
+
+        $sqlCountQuery = "SELECT COUNT(DISTINCT(conceptid)) FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
+                            ."WHERE lessonid='$lessonID' AND moduleid='$moduleID' AND conceptid!=0";
+        
+        if($queryResult = mysqli_query($this->DBConnection,$sqlCountQuery)) {
+            $row = $queryResult->fetch_row();
+            $content = $row[0];
+            return $content;
+        } else {
+            return "{unknown}";
+        }
+    }
 
 }//end of class
 
