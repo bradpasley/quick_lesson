@@ -179,11 +179,11 @@ function printModulePage(int $moduleID, int $conceptID=0) {
     
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
-        println('<div class="row">');
+        println('<div class="row justify-content-center">');//start row
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
-        println('</div>');
+        println('</div>');//end row
     } else if($moduleID>0) {
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
@@ -296,7 +296,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
         println($middleText);
         println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
         println('</form>');
-        println('</div">');//end of col
+        println('</div>');//end of col
     }
 }
 
@@ -318,7 +318,7 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
         println($middleText);
         println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="leftArrowButton_'.$pageTitle.'">'.PREVBUTTONICON.'&nbsp;'.$buttonText.'</button>');
         println('</form>');
-        println('</div">');//end of col
+        println('</div>');//end of col
     }
 }
 
