@@ -88,7 +88,7 @@ class QuickDatabase {
      * returns true if successfully added, false if failed.
      */
 
-     function createNewUser(string $email, string $password, string $firstname, string $surname) {
+    public function createNewUser(string $email, string $password, string $firstname, string $surname) {
         $this->connectToDatabase();
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
@@ -110,7 +110,7 @@ class QuickDatabase {
         }
      }
 
-     function getLessonTitle(int $lessonID, int $moduleID=0, int $conceptID=0) {
+    public function getLessonTitle(int $lessonID, int $moduleID=0, int $conceptID=0) {
         $this->connectToDatabase();
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
@@ -145,7 +145,7 @@ class QuickDatabase {
         }
      }
      
-     function getLessonContent(int $lessonID, int $moduleID=0, int $conceptID=0) {
+    public function getLessonContent(int $lessonID, int $moduleID=0, int $conceptID=0) {
         $this->connectToDatabase();
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
