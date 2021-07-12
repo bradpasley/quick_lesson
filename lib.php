@@ -169,7 +169,6 @@ function printModulePage(int $moduleID, int $conceptID=0) {
         println('<p>'.$moduleContent.'</p>');
     } else {//print concept page
         if(isset($quickDatabase)) {
-            $lessonID = 1;
             $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
             $conceptContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
         } else {
@@ -215,7 +214,6 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
         println('<p>'.$moduleContent.'</p>');
     } else {//print concept page
         if(isset($quickDatabase)) {
-            $lessonID = 1;
             $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
             $conceptContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
         } else {
@@ -254,7 +252,7 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
     }
 }
 
-function printQuizPage(int $moduleID, int $conceptID=0) {
+function printQuizPage(int $moduleID) { //int $conceptID=0
     global $quickDatabase;
     $lessonID = 1; //only one lesson currently
     if(isset($quickDatabase)) {
@@ -264,25 +262,49 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
         $moduleTitle = "Demo Quiz Title";
     }
     $moduleContent = "In this quiz you will be tested on ".$moduleTitle;
-    $buttonName = "Test";
     println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
     if($conceptID==0) { //just print main page
         println('<p>'.$moduleContent.'</p>');
     } else {//print concept page
         if(isset($quickDatabase)) {
-            $lessonID = 1;
-            $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
-            $conceptContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
+            $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
+            
+            //questions
+            $quizHeadHTML = '<div id="dragScriptContainer">';//start of dragScriptContainer div tag
+            $quizQuestionsHTML = '<div id="questionDiv">';//start of questionDiv div tag
+            for($conceptID=1; $conceptID<=$conceptCount; $conceptID++) {
+                $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
+                $quizQuestionsHTML .= '<div class="dragDropSmallBox" id="q'.$conceptID.'">'.$conceptTitle.'</div>'
+                                      .'<div class="destinationBox"></div>';
+            }
+            $quizQuestionsHTML .= '</div>';//end of questionDiv div tag
+
+            //answers
+            $quizAnswersHTML = '<div id="answerDiv">';//start of answerDiv div tag
+            for($conceptID=1; $conceptID<=$conceptCount; $conceptID++) {
+                $conceptContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
+                $quizAnswersHTML .= '<div class="dragDropSmallBox" id="a'.$conceptID.'">'.$conceptContent.'</div>'
+                                      .'<div class="destinationBox"></div>';
+            }
+            $quizAnswersHTML .= '</div>';//end of answerDiv div tag
+            $quizTail = '</div>' //end of dragScriptContainer div tag
+                        .'<div id="dragContent"></div>'
+                        .'<input type="button" onclick="dragDropResetForm();return false" value="Reset">';
         } else {
             $conceptTitle = "Demo Concept Review Title";
             $conceptContent = "Insert content here";
         }    
         println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">Quiz '.$conceptTitle.'</h4>');
         println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');
+        println($quizHeadHTML);
+        println($quizQuestionsHTML);
+        println($quizAnswersHTML);
+        println($quizTailHTML);
         println('<br><br>');
         //println('<p>Module ID:  '.$moduleID.'</p>');
         //println('<p>Concept ID: '.$conceptID.'</p>');
     }
+    /*
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
         println('<div class="row">');//start row
@@ -296,7 +318,7 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
     } else {
         $buttonName = "Main Menu";
         printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName, $lessonID);
-    }
+    }*/
 }
 
 function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonID=0, int $moduleID=0, int $conceptID=0) {
