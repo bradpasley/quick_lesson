@@ -176,6 +176,7 @@ function printModulePage(int $moduleID, int $conceptID=0) {
         println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">'.$conceptTitle.'</h4>');
         println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');
     }
+    println('<br><br>');
     //println('<p>Module ID:  '.$moduleID.'</p>');
     //println('<p>Concept ID: '.$conceptID.'</p>');
     
@@ -230,17 +231,20 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
                         </div>
                     </div>
                 </div>');
+        println('<br><br>');
         //println('<p>Module ID:  '.$moduleID.'</p>');
         //println('<p>Concept ID: '.$conceptID.'</p>');
     }
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
+        println('<div class="row">');//start row
         printLeftArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
     } else if($moduleID>0) {
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
+        println('</div>');//end row
     } else {
         $buttonName = "Main Menu";
         printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName, $lessonID);
@@ -272,14 +276,17 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
         }    
         println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">Quiz '.$conceptTitle.'</h4>');
         println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');
+        println('<br><br>');
         //println('<p>Module ID:  '.$moduleID.'</p>');
         //println('<p>Concept ID: '.$conceptID.'</p>');
     }
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
+        println('<div class="row">');//start row
         printLeftArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
+        println('</div>');//end row
     } else if($moduleID>0) {
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
