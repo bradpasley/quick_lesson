@@ -171,8 +171,8 @@ function printModulePage(int $moduleID, int $conceptID=0) {
             $conceptTitle = "Demo Concept Title";
             $conceptContent = "Insert content here";
         }    
-        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
-        println('<p style="font-size: 1.2em">'.$conceptContent.'</p>');
+        println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">Review '.$conceptTitle.'</h4>');
+        println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');
     }
     //println('<p>Module ID:  '.$moduleID.'</p>');
     //println('<p>Concept ID: '.$conceptID.'</p>');
@@ -216,8 +216,8 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
             $conceptTitle = "Demo Concept Review Title";
             $conceptContent = "Insert content here";
         }    
-        println('<h4 class="lead text-primary" style="font-size: 1.4em">Review '.$conceptTitle.'</h4>');
-        println('<p style="font-size: 1.2em">'.$conceptContent.'</p>');
+        println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">Review '.$conceptTitle.'</h4>');
+        println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');
         //println('<p>Module ID:  '.$moduleID.'</p>');
         //println('<p>Concept ID: '.$conceptID.'</p>');
     }
@@ -258,8 +258,8 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
             $conceptTitle = "Demo Concept Review Title";
             $conceptContent = "Insert content here";
         }    
-        println('<h4 class="lead text-primary" style="font-size: 1.4em">Review '.$conceptTitle.'</h4>');
-        println('<p style="font-size: 1.2em">'.$conceptContent.'</p>');
+        println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">Review '.$conceptTitle.'</h4>');
+        println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');
         //println('<p>Module ID:  '.$moduleID.'</p>');
         //println('<p>Concept ID: '.$conceptID.'</p>');
     }
