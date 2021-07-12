@@ -172,7 +172,7 @@ function printModulePage(int $moduleID, int $conceptID=0) {
             $conceptContent = "Insert content here";
         }    
         println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
-        println('<p>'.$conceptContent.'</p>');
+        println('<p style="font-size: 1.2em">'.$conceptContent.'</p>');
     }
     //println('<p>Module ID:  '.$moduleID.'</p>');
     //println('<p>Concept ID: '.$conceptID.'</p>');
@@ -217,7 +217,7 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
             $conceptContent = "Insert content here";
         }    
         println('<h4 class="lead text-primary" style="font-size: 1.4em">Review '.$conceptTitle.'</h4>');
-        println('<p>'.$conceptContent.'</p>');
+        println('<p style="font-size: 1.2em">'.$conceptContent.'</p>');
         //println('<p>Module ID:  '.$moduleID.'</p>');
         //println('<p>Concept ID: '.$conceptID.'</p>');
     }
@@ -259,7 +259,7 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
             $conceptContent = "Insert content here";
         }    
         println('<h4 class="lead text-primary" style="font-size: 1.4em">Review '.$conceptTitle.'</h4>');
-        println('<p>'.$conceptContent.'</p>');
+        println('<p style="font-size: 1.2em">'.$conceptContent.'</p>');
         //println('<p>Module ID:  '.$moduleID.'</p>');
         //println('<p>Concept ID: '.$conceptID.'</p>');
     }
