@@ -179,7 +179,7 @@ function printModulePage(int $moduleID, int $conceptID=0) {
     
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
-        println('<div class="row justify-content-center">');//start row
+        println('<div class="row">');//start row
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
