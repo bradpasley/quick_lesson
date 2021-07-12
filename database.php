@@ -125,20 +125,20 @@ class QuickDatabase {
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonID='%s' AND moduleID=0 AND conceptID=0";
             $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
-                                    mysqli_real_escape_string($this->DBConnection, $lessonID));
+                                 intval(mysqli_real_escape_string($this->DBConnection, $lessonID)));
         } else if($conceptID==0) {//Module title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID=0";
             $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
-                    mysqli_real_escape_string($this->DBConnection, $lessonID),
-                    mysqli_real_escape_string($this->DBConnection, $moduleID));
+                                intval(mysqli_real_escape_string($this->DBConnection, $lessonID)),
+                                intval(mysqli_real_escape_string($this->DBConnection, $moduleID)));
         } else {//concept title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID='%s'";
             $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
-                    mysqli_real_escape_string($this->DBConnection, $lessonID),
-                    mysqli_real_escape_string($this->DBConnection, $moduleID),
-                    mysqli_real_escape_string($this->DBConnection, $conceptID));
+                                intval(mysqli_real_escape_string($this->DBConnection, $lessonID)),
+                                intval(mysqli_real_escape_string($this->DBConnection, $moduleID)),
+                                intval(mysqli_real_escape_string($this->DBConnection, $conceptID)));
         }
         println("<h5>Query? ".$sqlQueryTitle."</h5>");
         
