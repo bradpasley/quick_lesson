@@ -295,7 +295,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
     }
     println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
     println('  <input type="hidden" name="screen" value="'.$screenType.'">');
-    
+    println($middleText);
     println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
     println('</form>');
 }
