@@ -174,7 +174,7 @@ class QuickDatabase {
     }
 
     function getNumberOfConceptsInModule(int $lessonID, int $moduleID) {
-        println("getNumberConcepts: lesson: $lessonID, module: $moduleID");
+        //println("getNumberConcepts: lesson: $lessonID, module: $moduleID");
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
         
         $sqlCountQuery = "SELECT COUNT(DISTINCT(conceptid)) FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
@@ -183,7 +183,7 @@ class QuickDatabase {
         if($queryResult = mysqli_query($this->DBConnection,$sqlCountQuery)) {
             $row = $queryResult->fetch_row();
             $count = $row[0];
-            println("getNumberConcepts: $count");
+            //println("getNumberConcepts: $count");
             return $count;
         } else {
             return "-1";
