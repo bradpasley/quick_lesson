@@ -149,24 +149,23 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
 
 function printModulePage(int $moduleID, int $conceptID=0) {
     global $quickDatabase;
+    $lessonID = 1; //only one lesson currently
     if(isset($quickDatabase)) {
-        println("<h4>printModulePage($moduleID, $conceptID) Database connected</h4>");
-        $tempLessonID = 1;
-        $moduleTitle = $quickDatabase->getLessonTitle($tempLessonID, $moduleID, $conceptID);
-        $moduleWelcomeMessage = $quickDatabase->getLessonContent($tempLessonID, $conceptID);
+        $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
+        $moduleContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
     } else {//when database not active
         $moduleTitle = "Demo Module Title";
-        $moduleWelcomeMessage = "In this module you will learn about ".$moduleTitle;
+        $moduleContent = "In this module you will learn about ".$moduleTitle;
     }
     $buttonName = "Learn";
     println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
     if($conceptID==0) { //just print main page
-        println('<p>'.$moduleWelcomeMessage.'</p>');
+        println('<p>'.$moduleContent.'</p>');
     } else {//print concept page
         if(isset($quickDatabase)) {
-            $tempLessonID = 1;
-            $conceptTitle = $quickDatabase->getLessonTitle($tempLessonID, $moduleID, $conceptID);
-            $conceptContent = $quickDatabase->getLessonContent($tempLessonID, $conceptID);
+            $lessonID = 1;
+            $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
+            $conceptContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
         } else {
             $conceptTitle = "Demo Concept Title";
             $conceptContent = "Insert content here";
@@ -176,7 +175,7 @@ function printModulePage(int $moduleID, int $conceptID=0) {
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
-    println("<h3>CHECK ModuleID: $moduleID ConceptID: $conceptID</h3>");
+    
     if($moduleID!=0 && $conceptID!=0) {
         //insert database concept count check here
         $conceptID++;
@@ -193,21 +192,29 @@ function printModulePage(int $moduleID, int $conceptID=0) {
 
 function printReviewPage(int $moduleID, int $conceptID=0) {
     global $quickDatabase;
+    $lessonID = 1; //only one lesson currently
     if(isset($quickDatabase)) {
-        $tempLessonID = 1;
-        $moduleTitle = $quickDatabase->getLessonTitle($tempLessonID, $moduleID, $conceptID);
-        $moduleWelcomeMessage = $quickDatabase->getLessonContent($tempLessonID, $conceptID);
+        $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
+        //$moduleContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
     } else {//when database not active
         $moduleTitle = "Demo Review Title";
-        $moduleWelcomeMessage = "In this module you will learn about ".$moduleTitle;
     }
+    $moduleContent = "In this module you will review ".$moduleTitle;
     $buttonName = "Review";
-    println('<h3 class="display-4 text-secondary">Review '.$moduleTitle.'</h3>');
+    println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
     if($conceptID==0) { //just print main page
-        println('<p>'.$moduleWelcomeMessage.'</p>');
-    } else {
-        $conceptTitle = "Demo Concept Title";
-        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
+        println('<p>'.$moduleContent.'</p>');
+    } else {//print concept page
+        if(isset($quickDatabase)) {
+            $lessonID = 1;
+            $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
+            $conceptContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+        } else {
+            $conceptTitle = "Demo Concept Review Title";
+            $conceptContent = "Insert content here";
+        }    
+        println('<h4 class="lead text-primary" style="font-size: 1.4em">Review '.$conceptTitle.'</h4>');
+        println('<p>'.$conceptContent.'</p>');
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
@@ -225,15 +232,30 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
 }
 
 function printQuizPage(int $moduleID, int $conceptID=0) {
-    $moduleTitle = "Demo Module Title";
-    $moduleWelcomeMessage = "Are you ready to check your knowledge on ".$moduleTitle."?";
+    global $quickDatabase;
+    $lessonID = 1; //only one lesson currently
+    if(isset($quickDatabase)) {
+        $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
+        //$moduleContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+    } else {//when database not active
+        $moduleTitle = "Demo Quiz Title";
+    }
+    $moduleContent = "In this quiz you will be tested on ".$moduleTitle;
     $buttonName = "Test";
-    println('<h3 class="display-4 text-secondary">Quiz '.$moduleTitle.'</h3>');
+    println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
     if($conceptID==0) { //just print main page
-        println('<p>'.$moduleWelcomeMessage.'</p>');
-    } else {
-        $conceptTitle = "Demo Concept Title";
-        println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
+        println('<p>'.$moduleContent.'</p>');
+    } else {//print concept page
+        if(isset($quickDatabase)) {
+            $lessonID = 1;
+            $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
+            $conceptContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+        } else {
+            $conceptTitle = "Demo Concept Review Title";
+            $conceptContent = "Insert content here";
+        }    
+        println('<h4 class="lead text-primary" style="font-size: 1.4em">Review '.$conceptTitle.'</h4>');
+        println('<p>'.$conceptContent.'</p>');
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
