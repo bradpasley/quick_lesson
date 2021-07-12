@@ -173,8 +173,8 @@ function printModulePage(int $moduleID, int $conceptID=0) {
         println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
         println('<p>'.$conceptContent.'</p>');
     }
-    println('<p>Module ID:  '.$moduleID.'</p>');
-    println('<p>Concept ID: '.$conceptID.'</p>');
+    //println('<p>Module ID:  '.$moduleID.'</p>');
+    //println('<p>Concept ID: '.$conceptID.'</p>');
     
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
@@ -215,8 +215,8 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
         }    
         println('<h4 class="lead text-primary" style="font-size: 1.4em">Review '.$conceptTitle.'</h4>');
         println('<p>'.$conceptContent.'</p>');
-        println('<p>Module ID:  '.$moduleID.'</p>');
-        println('<p>Concept ID: '.$conceptID.'</p>');
+        //println('<p>Module ID:  '.$moduleID.'</p>');
+        //println('<p>Concept ID: '.$conceptID.'</p>');
     }
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
@@ -257,8 +257,8 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
         }    
         println('<h4 class="lead text-primary" style="font-size: 1.4em">Review '.$conceptTitle.'</h4>');
         println('<p>'.$conceptContent.'</p>');
-        println('<p>Module ID:  '.$moduleID.'</p>');
-        println('<p>Concept ID: '.$conceptID.'</p>');
+        //println('<p>Module ID:  '.$moduleID.'</p>');
+        //println('<p>Concept ID: '.$conceptID.'</p>');
     }
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
@@ -278,7 +278,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
     global $quickDatabase;
     $middleText = "";
     $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
-    println("<p>printRight Count: $conceptCount</p>");  
+    //println("<p>printRight Count: $conceptCount</p>");  
     if($conceptID<$conceptCount) {//don't print right button for last concept.
         $conceptID++; //change to the value of next screen
         if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
@@ -310,7 +310,7 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
         println('<form id="leftArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
-        println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="leftArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.PREVBUTTONICON.'</button>');
+        println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="leftArrowButton_'.$pageTitle.'">'.PREVBUTTONICON.'&nbsp;'.$buttonText.'</button>');
         println('</form>');
     }
 }

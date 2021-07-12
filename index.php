@@ -43,7 +43,7 @@ if(!isSessionValid()) {
         println('<p class="text-danger">username/password incorrect.</p>');
     }
 } else {//authenticated user & session valid
-    println("<h3>CHECK Screen: $screen</h3>");
+    //println("<h3>CHECK Screen: $screen</h3>");
     $quickDatabase = new QuickDatabase();
     switch($screen) {
         case SCREENMAINMENU:
