@@ -114,7 +114,7 @@ function printLogin() {
     println('</div></form>');
 }
 
-function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=SCREENEXIT, int $moduleID=0, int $conceptID=0) {
+function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=SCREENEXIT, int $lessonID=0, int $moduleID=0, int $conceptID=0) {
 
     $cardColWidth = 2;
     
@@ -139,7 +139,7 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
     } else if($moduleID!=0) {
         printRightArrowButton($cardTitle, $menuScreen, $buttonName, $lessonID, $moduleID);
     } else {
-        printRightArrowButton($cardTitle, $menuScreen, $buttonName);
+        printRightArrowButton($cardTitle, $menuScreen, $buttonName, $lessonID);
     }
     //println('</div>');//
     println('</div>');//card-body
@@ -189,7 +189,7 @@ function printModulePage(int $moduleID, int $conceptID=0) {
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
     } else {
         $buttonName = "Main Menu";
-        printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName);
+        printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName, $lessonID);
     }
 }
 
@@ -234,7 +234,7 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
     } else {
         $buttonName = "Main Menu";
-        printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName);
+        printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName, $lessonID);
     }
 }
 

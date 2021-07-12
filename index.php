@@ -48,10 +48,10 @@ if(!isSessionValid()) {
     switch($screen) {
         case SCREENMAINMENU:
             println('<div class="row">');
-            printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.", SCREENMODULE, 1);
-            printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.", SCREENMODULE, 2);
-            printMenuCard("Review", "Get a summary of the key points.", SCREENREVIEW, 1); //need to add module list  screen if moduleid left blank
-            printMenuCard("Quizzes", "Check what you've learnt.", SCREENQUIZ, 1);   //need to add module list  screen if moduleid left blank
+            printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.", SCREENMODULE, 1, 1);
+            printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.", SCREENMODULE, 1, 2);
+            printMenuCard("Review", "Get a summary of the key points.", SCREENREVIEW, 1, 1); //need to add module list  screen if moduleid left blank
+            printMenuCard("Quizzes", "Check what you've learnt.", SCREENQUIZ, 1, 1);   //need to add module list  screen if moduleid left blank
             printMenuCard("Account", "Change your username or password.", SCREENACCOUNTEDIT); //need to add
             printMenuCard("Logout", "Exit ".SITENAME.".", SCREENEXIT); //need to add
             println('</div>');
