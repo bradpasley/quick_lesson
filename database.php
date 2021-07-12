@@ -68,7 +68,9 @@ class QuickDatabase {
             }
             println("<h5>connection ok...x2</h5>");
             $this->DBConnection->set_charset("utf8mb4");
+            println("<h5>connection set charset...ok...</h5>");
             $this->DBConnection->mysqli_query('SET NAMES utf8mb4');
+            println("<h5>connection set names...ok...</h5>");
             $this->DBConnectionStatus = true;
             println("<h5>connection ok...xc Connection?".$this->DBConnectionStatus."</h5>");
         } catch (mysqli_sql_exception $e) {
