@@ -140,6 +140,7 @@ class QuickDatabase {
                     mysqli_real_escape_string($this->DBConnection, $moduleID),
                     mysqli_real_escape_string($this->DBConnection, $conceptID));
         }
+        println("<h5>Query? ".$sqlQueryTitle."</h5>");
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryTitle)) {
             $row = $queryResult->fetch_row();
