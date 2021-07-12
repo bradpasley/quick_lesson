@@ -39,6 +39,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     $bootstrapIconURL    = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css";
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
     $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
+    $flipCardCSSURL      = "flipper.css";
     println('<!doctype html>');
     println('<html lang="en">');
     println('<head>');
@@ -46,6 +47,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">');
     println('<link rel="stylesheet" href="'.$bootstrapURL.'">');
     println('<link rel="stylesheet" href="'.$bootstrapIconURL.'">');
+    println('<link rel="stylesheet" href="'.$flipCardCSSURL.'">');
     println('<title>'.$HTMLPageTitle.'</title>');
     println('<!-- Bootstrap CSS -->');
     println('<script src="'.$javascriptBundleURL.'"></script>');
@@ -217,7 +219,17 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
             $conceptContent = "Insert content here";
         }    
         println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">Review '.$conceptTitle.'</h4>');
-        println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');
+        println('<p style="font-size: 1.3em">Flip the card below to reveal the concept explanation.</p>');
+        println('<div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h1>'.$conceptTitle.'</h1>
+                        </div>
+                        <div class="flip-card-back">
+                            <p style="font-size: 1.3em">'.$conceptContent.'</p>
+                        </div>
+                    </div>
+                </div>');
         //println('<p>Module ID:  '.$moduleID.'</p>');
         //println('<p>Concept ID: '.$conceptID.'</p>');
     }
