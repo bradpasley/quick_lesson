@@ -65,7 +65,7 @@ function cancelEvent()
 function initDragDrop(e)
 {
     if(document.all)e = event;
-    if(lockedAfterDrag && this.parentNode.parentNode.id=='questionDiv')return;
+    if(lockedAfterDrag && this.parentNode.parentNode.id=='quizquestionDiv')return;
     dragContentDiv.style.left = e.clientX  + Math.max(document.documentElement.scrollLeft,document.body.scrollLeft) + 'px';
     dragContentDiv.style.top = e.clientY  + Math.max(document.documentElement.scrollTop,document.body.scrollTop) + 'px';
     dragSource = this;
@@ -125,11 +125,11 @@ function dragDropMove(e)
         var width = destinationObjArray[no]['width'];
         var height = destinationObjArray[no]['height'];
         
-        destinationObjArray[no]['obj'].className = 'destinationBox';
+        destinationObjArray[no]['obj'].className = 'quizdestinationBox';
         var subs = destinationObjArray[no]['obj'].getElementsByTagName('DIV');
         if(!objFound && subs.length==0){
             if(mouseX < (left/1 + width/1) && (mouseX + dragWidth/1) >left && mouseY < (top/1 + height/1) && (mouseY + dragHeight/1) >top){
-                destinationObjArray[no]['obj'].className='dragContentOver';
+                destinationObjArray[no]['obj'].className='quizdragContentOver';
                 destination = destinationObjArray[no]['obj'];					
                 objFound = true;
             }		
@@ -146,7 +146,7 @@ function dragDropMove(e)
                     
         if(mouseX < (left/1 + width/1) && (mouseX + dragWidth/1) >left && mouseY < (top/1 + height/1) && (mouseY + dragHeight/1) >top){
             destination = sourceObjectArray['obj'];
-            sourceObjectArray['obj'].className='dragContentOver';
+            sourceObjectArray['obj'].className='quizdragContentOver';
         }
     }
     return false;
@@ -163,7 +163,7 @@ function dragDropEnd()
     sourceObjectArray['obj'].style.backgroundColor = '#FFF';
     if(destination){
         destination.appendChild(dragSource);
-        destination.className='destinationBox';
+        destination.className='quizdestinationBox';
         
         // Check if position is correct, i.e. correct answer to the question
         
@@ -174,15 +174,15 @@ function dragDropEnd()
             var numericIdSource = dragSource.id.replace(/[^0-9]/g,'');
             
             if(numericId==numericIdSource){
-                dragSource.className='correctAnswer';
+                dragSource.className='quizcorrectAnswer';
                 checkAllAnswers();	
             }
             else
-                dragSource.className='wrongAnswer';				
+                dragSource.className='quizwrongAnswer';				
         }
         
-        if(destination.id && destination.id=='answerDiv'){
-            dragSource.className='dragDropSmallBox';
+        if(destination.id && destination.id=='quizanswerDiv'){
+            dragSource.className='quizdragDropSmallBox';
         }
         
     }else{
@@ -203,7 +203,7 @@ function checkAllAnswers()
         var sub = arrayOfEmptyBoxes[no].getElementsByTagName('DIV');
         if(sub.length==0)return;
         
-        if(sub[0].className!='correctAnswer'){
+        if(sub[0].className!='quizcorrectAnswer'){
             return;
         }	
         
@@ -232,15 +232,15 @@ function resetPositions()
 
 function initDragDropScript()
 {
-    dragContentDiv = document.getElementById('dragContent');
+    dragContentDiv = document.getElementById('quizdragContent');
     
-    answerDiv = document.getElementById('answerDiv');
+    answerDiv = document.getElementById('quizanswerDiv');
     answerDiv.onselectstart = cancelEvent;
     var divs = answerDiv.getElementsByTagName('DIV');
     var answers = new Array();
     
     for(var no=0;no<divs.length;no++){
-        if(divs[no].className=='dragDropSmallBox'){
+        if(divs[no].className=='quizdragDropSmallBox'){
             divs[no].onmousedown = initDragDrop;
             answers[answers.length] = divs[no];
             arrayOfAnswers[arrayOfAnswers.length] = divs[no];
@@ -262,7 +262,7 @@ function initDragDropScript()
     sourceObjectArray['height'] = answerDiv.offsetHeight;
     
     
-    questionDiv = document.getElementById('questionDiv');
+    questionDiv = document.getElementById('quizquestionDiv');
     
     questionDiv.onselectstart = cancelEvent;
     var divs = questionDiv.getElementsByTagName('DIV');
@@ -272,7 +272,7 @@ function initDragDropScript()
     
 
     for(var no=0;no<divs.length;no++){
-        if(divs[no].className=='destinationBox'){
+        if(divs[no].className=='quizdestinationBox'){
             var index = destinationObjArray.length;
             destinationObjArray[index] = new Array();
             destinationObjArray[index]['obj'] = divs[no];
@@ -283,7 +283,7 @@ function initDragDropScript()
             questionsOpenBoxes[questionsOpenBoxes.length] = divs[no];
             arrayOfEmptyBoxes[arrayOfEmptyBoxes.length] = divs[no];
         }
-        if(divs[no].className=='dragDropSmallBox'){
+        if(divs[no].className=='quizdragDropSmallBox'){
             questions[questions.length] = divs[no];
         }
             
@@ -321,7 +321,7 @@ function initDragDropScript()
 function dragDropResetForm()
 {
     for(var no=0;no<arrayOfAnswers.length;no++){
-        arrayOfAnswers[no].className='dragDropSmallBox'
+        arrayOfAnswers[no].className='quizdragDropSmallBox'
         answerDiv.appendChild(arrayOfAnswers[no]);			
     }	
 }

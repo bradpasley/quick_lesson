@@ -1,4 +1,4 @@
-#dragScriptContainer{	/* BIG DIV containing HTML needed for the entire script */
+#quizdragScriptContainer{	/* BIG DIV containing HTML needed for the entire script */
     width:1400px;
     margin:0 auto;
     border:1px solid #000;
@@ -8,14 +8,14 @@
     -moz-user-select:no;
 }
 
-#questionDiv{	/* Big div for all the questions */
+#quizquestionDiv{	/* Big div for all the questions */
     float:left;
     height:100%;
     width:850px;
     border:1px solid #000;
     padding:2px;
 }
-#answerDiv{	/* Big div for all the answers */
+#quizanswerDiv{	/* Big div for all the answers */
     float:right;
     height:100%;
     width:450px;
@@ -23,7 +23,7 @@
     padding:2px;	
 }
 
-#questionDiv div,#answerDiv div,#dragContent div{	/* General rules for small divs - i.e. specific questions and answers */
+#quizquestionDiv div,#quizanswerDiv div,#quizdragContent div{	/* General rules for small divs - i.e. specific questions and answers */
     width:380px;
     height:40px;
     line-height:30px;		
@@ -33,59 +33,59 @@
     text-align:center;
 }
 
-#dragContent div{	/* Drag content div - i.e. specific answers when they are beeing dragged */
+#quizdragContent div{	/* Drag content div - i.e. specific answers when they are beeing dragged */
     border:1px solid #000;
 }
 
-#answerDiv .dragDropSmallBox{	/* Small answer divs */
+#quizanswerDiv .dragDropSmallBox{	/* Small answer divs */
     border:1px solid #000;
     cursor:pointer;
 }
 
-#questionDiv .dragDropSmallBox{	/* Small answer divs */
+#quizquestionDiv .dragDropSmallBox{	/* Small answer divs */
     border:1px solid #000;
     cursor:pointer;
     background-color:#E2EBED; /* Light blue background color */
 }
 
-#questionDiv div div{	/* DIV after it has been dragged from right to left box */
+#quizquestionDiv div div{	/* DIV after it has been dragged from right to left box */
     margin:0px;
     border:0px;
     padding:0px;
     background-color:#FFF;
 }
-#questionDiv .destinationBox{	/* Small empty boxes for the questions - i.e. where answers could be dragged */
+#quizquestionDiv .quizdestinationBox{	/* Small empty boxes for the questions - i.e. where answers could be dragged */
     border:0px;
     background-color:#DDD;
     width:400px;
     height:50px;
     
 }
-#questionDiv .correctAnswer{	/* CSS indicating correct answer */
+#quizquestionDiv .quizcorrectAnswer{	/* CSS indicating correct answer */
     background-color:green;
     color:#fff;
     border:1px solid #000;
 }
-#questionDiv .wrongAnswer{	/* CSS indicating wrong answer */
+#quizquestionDiv .quizwrongAnswer{	/* CSS indicating wrong answer */
     background-color:red;
     color:#fff;
     border:1px solid #000;
 }
 
-#dragContent div{
+#quizdragContent div{
     background-color:#FFF;
 }
 
-#questionDiv .dragContentOver{	/* Mouse over question boxes - i.e. indicating where dragged element will be appended if mouse button is relased */
+#quizquestionDiv .quizdragContentOver{	/* Mouse over question boxes - i.e. indicating where dragged element will be appended if mouse button is relased */
     border:1px solid #F00;
 }
 
-#answerDiv.dragContentOver{	/* Mouse over answer box - i.e. indicating where dragged element will be appended if mouse button is relased */
+#quizanswerDiv.quizdragContentOver{	/* Mouse over answer box - i.e. indicating where dragged element will be appended if mouse button is relased */
     border:1px solid #F00;
 }
 
 /* NEVER CHANGE THIS */
-#dragContent{
+#quizdragContent{
     position:absolute;
     display:none;
 }	
