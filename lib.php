@@ -40,6 +40,8 @@ function printHTMLHeader(string $HTMLPageTitle) {
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
     $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
     $flipCardCSSURL      = "flipper.css";
+    $quizCSSURL          = "quiz.css";
+    $quizJsURL           = "dragdrop.js";
     println('<!doctype html>');
     println('<html lang="en">');
     println('<head>');
@@ -51,6 +53,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('<title>'.$HTMLPageTitle.'</title>');
     println('<!-- Bootstrap CSS -->');
     println('<script src="'.$javascriptBundleURL.'"></script>');
+    println('<script src="'.$quizJsURL.'"></script>');
     println('</head>');
 }
 
