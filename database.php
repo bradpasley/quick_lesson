@@ -116,26 +116,19 @@ class QuickDatabase {
      }
 
     public function getLessonTitle(int $lessonID, int $moduleID=0, int $conceptID=0) {
-        println("<h5>getLessonTitle($lessonID, $moduleID, $conceptID) Connection? ".$this->DBConnectionStatus."</h5>");
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
-        println("<h5>Connection? ".$this->DBConnectionStatus."</h5>");
         $sqlQueryTitle = "";
         
         if($moduleID==0 && $conceptID==0) {//Lesson title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonID='$lessonID' AND moduleID=0 AND conceptID=0";
-            println("<h5>Title Query? ".$sqlQueryTitle."</h5>");                    
-            
         } else if($conceptID==0) {//Module title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID=0";
-            println("<h5>Module Query? ".$sqlQueryTitle."</h5>");                    
         } else {//concept title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID='$conceptID'";
-            println("<h5>Concept Query? ".$sqlQueryTitle."</h5>");                    
         }
-        println("<h5>Query? ".$sqlQueryTitle."</h5>");
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryTitle)) {
             $row = $queryResult->fetch_row();
@@ -150,28 +143,17 @@ class QuickDatabase {
         
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
-        $hashedPassword = password_hash($password);
-
         $sqlQueryContent = "";
 
         if($moduleID==0 && $conceptID==0) {//Lesson content
-            $sqlQueryContent = "SELECT content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
-                            ."WHERE lessonID='%s' AND moduleID=0 AND conceptID=0";
-            $sqlQueryContent = sprintf($sqlQueryLessonTitle, 
-                                    mysqli_real_escape_string($this->DBConnection, $lessonID));
+            $sqlQueryContent = "SELECT content FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
+                            ."WHERE lessonID='$lessonID' AND moduleID=0 AND conceptID=0";
         } else if($conceptID==0) {//Module content
             $sqlQueryContent = "SELECT content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
-            ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID=0";
-            $sqlQueryContent = sprintf($sqlQueryLessonTitle, 
-                    mysqli_real_escape_string($this->DBConnection, $lessonID),
-                    mysqli_real_escape_string($this->DBConnection, $moduleID));
+                            ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID=0";
         } else {//concept content
             $sqlQueryContent = "SELECT content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
-            ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID='%s'";
-            $sqlQueryContent = sprintf($sqlQueryLessonTitle, 
-                    mysqli_real_escape_string($this->DBConnection, $lessonID),
-                    mysqli_real_escape_string($this->DBConnection, $moduleID),
-                    mysqli_real_escape_string($this->DBConnection, $conceptID));
+            ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID='$conceptID'";
         }
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryContent)) {
