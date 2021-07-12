@@ -37,7 +37,7 @@ class QuickDatabase {
     
     //QuickDatabase Variables
     private $DBConnection;
-    private $DBConnectionStatus; //turns 'true' if the connectToDatabase() function is called, 'false' if closeDatabase() called.
+    private $DBConnectionStatus = false; //turns 'true' if the connectToDatabase() function is called, 'false' if closeDatabase() called.
 
     public function __construct(bool $connectToDatabaseNow=false) {
         $this->DBConnectionStatus = false;
@@ -113,7 +113,7 @@ class QuickDatabase {
     public function getLessonTitle(int $lessonID, int $moduleID=0, int $conceptID=0) {
         println("<h5>getLessonTitle($lessonID, $moduleID, $conceptID) Connection? ".$this->DBConnectionStatus."</h5>");
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
-
+        println("<h5>Connection? ".$this->DBConnectionStatus."</h5>");
         $sqlQueryTitle = "";
         
         if($moduleID==0 && $conceptID==0) {//Lesson title
