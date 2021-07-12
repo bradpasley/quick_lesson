@@ -122,19 +122,19 @@ class QuickDatabase {
         $sqlQueryTitle = "";
         
         if($moduleID==0 && $conceptID==0) {//Lesson title
-            $sqlQueryTitle = "SELECT title FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
+            $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonID='%s' AND moduleID=0 AND conceptID=0";
             $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
                                     mysqli_real_escape_string($this->DBConnection, $lessonID));
         } else if($conceptID==0) {//Module title
-            $sqlQueryTitle = "SELECT title FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
-            ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID=0";
+            $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
+                            ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID=0";
             $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
                     mysqli_real_escape_string($this->DBConnection, $lessonID),
                     mysqli_real_escape_string($this->DBConnection, $moduleID));
         } else {//concept title
-            $sqlQueryTitle = "SELECT title FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
-            ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID='%s'";
+            $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
+                            ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID='%s'";
             $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
                     mysqli_real_escape_string($this->DBConnection, $lessonID),
                     mysqli_real_escape_string($this->DBConnection, $moduleID),
