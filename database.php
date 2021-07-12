@@ -123,25 +123,17 @@ class QuickDatabase {
         
         if($moduleID==0 && $conceptID==0) {//Lesson title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
-                            ."WHERE lessonID='%s' AND moduleID=0 AND conceptID=0";
+                            ."WHERE lessonID='$lessonID' AND moduleID=0 AND conceptID=0";
             println("<h5>Title Query? ".$sqlQueryTitle."</h5>");                    
-            $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
-                                 intval(mysqli_real_escape_string($this->DBConnection, $lessonID)));
+            
         } else if($conceptID==0) {//Module title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
-                            ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID=0";
+                            ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID=0";
             println("<h5>Module Query? ".$sqlQueryTitle."</h5>");                    
-            $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
-                                intval(mysqli_real_escape_string($this->DBConnection, $lessonID)),
-                                intval(mysqli_real_escape_string($this->DBConnection, $moduleID)));
         } else {//concept title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
-                            ."WHERE lessonID='%s' AND moduleID='%s' AND conceptID='%s'";
+                            ."WHERE lessonID='$lessonID' AND moduleID='$moduleID' AND conceptID='$conceptID'";
             println("<h5>Concept Query? ".$sqlQueryTitle."</h5>");                    
-            $sqlQueryTitle = sprintf($sqlQueryLessonTitle, 
-                                intval(mysqli_real_escape_string($this->DBConnection, $lessonID)),
-                                intval(mysqli_real_escape_string($this->DBConnection, $moduleID)),
-                                intval(mysqli_real_escape_string($this->DBConnection, $conceptID)));
         }
         println("<h5>Query? ".$sqlQueryTitle."</h5>");
         
