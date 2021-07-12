@@ -290,21 +290,23 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
     $middleText = "";
     println('<p>printRight?</p>');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
-        if($moduleID!=0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
+        if($moduleID>0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
     }
-    println("<p>printRight: screntype: $screenType, mid text: $middleText </p>");
-    if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {    
+    println("<p>printRight: screentype: $screenType, mid text: $middleText </p>");
+    if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
+        println("<p>printRight is quickDatabase set? ".isset($quickDatabase)."</p>");        
         $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
+        println("<p>printRight Count: $conceptCount</p>");  
         if($conceptID>0 && $conceptID<$conceptCount) {
             $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
-            println("<p>printRight:: $middleText</p>");
-            println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
-            println('  <input type="hidden" name="screen" value="'.$screenType.'">');
-            println($middleText);
-            println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
-            println('</form>');
         } //don't print right button for last concept.
     }
+    println("<p>printRight:: $middleText</p>");
+    println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
+    println('  <input type="hidden" name="screen" value="'.$screenType.'">');
+    println($middleText);
+    println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
+    println('</form>');
 }
 
 function printLeftArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonID=0, int $moduleID=0, int $conceptID=0) {
