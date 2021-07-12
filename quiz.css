@@ -1,32 +1,32 @@
 #dragScriptContainer{	/* BIG DIV containing HTML needed for the entire script */
-    width:400px;
+    width:1400px;
     margin:0 auto;
     border:1px solid #000;
     height:400px;
     margin-top:20px;
     padding:3px;
-    /*-moz-user-select:no;*/
+    -moz-user-select:no;
 }
 
 #questionDiv{	/* Big div for all the questions */
     float:left;
     height:100%;
-    width:100px;
+    width:850px;
     border:1px solid #000;
     padding:2px;
 }
 #answerDiv{	/* Big div for all the answers */
     float:right;
     height:100%;
-    width:50px;
+    width:450px;
     border:1px solid #000;
     padding:2px;	
 }
 
 #questionDiv div,#answerDiv div,#dragContent div{	/* General rules for small divs - i.e. specific questions and answers */
-    width:45px;
-    height:20px;
-    line-height:20px;		
+    width:380px;
+    height:40px;
+    line-height:30px;		
     float:left;
     margin-right:2px;
     margin-bottom:2px;
@@ -57,10 +57,8 @@
 #questionDiv .destinationBox{	/* Small empty boxes for the questions - i.e. where answers could be dragged */
     border:0px;
     background-color:#DDD;
-    width:47px;
-    height:22px;
-    
-
+    width:400px;
+    height:50px;
     
 }
 #questionDiv .correctAnswer{	/* CSS indicating correct answer */
