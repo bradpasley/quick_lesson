@@ -176,7 +176,7 @@ function printModulePage(int $moduleID, int $conceptID=0) {
     println('<p>Module ID:  '.$moduleID.'</p>');
     println('<p>Concept ID: '.$conceptID.'</p>');
     
-    if($moduleID!=0 && $conceptID!=0) {
+    if($moduleID>0 && $conceptID>0) {
         $conceptID--;
         $buttonName = "Previous";
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
@@ -184,8 +184,9 @@ function printModulePage(int $moduleID, int $conceptID=0) {
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
-    } else if($moduleID!=0) {
+    } else if($moduleID>0) {
         $conceptID = 1;
+        $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
     } else {
         $buttonName = "Main Menu";
@@ -231,6 +232,7 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
     } else if($moduleID!=0) {
         $conceptID = 1;
+        $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
     } else {
         $buttonName = "Main Menu";
@@ -276,6 +278,7 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
     } else if($moduleID!=0) {
         $conceptID = 1;
+        $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
     } else {
         $buttonName = "Main Menu";
