@@ -272,8 +272,7 @@ function printQuizPage(int $moduleID) { //int $conceptID=0
         $quizQuestionsHTML = '<div id="questionDiv">';//start of questionDiv div tag
         for($conceptID=1; $conceptID<=$conceptCount; $conceptID++) {
             $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
-            $quizQuestionsHTML .= '<div class="dragDropSmallBox" id="q'.$conceptID.'">'.$conceptTitle.'</div>'
-                                    .'<div class="destinationBox"></div>';
+            $quizQuestionsHTML .= '<div class="dragDropSmallBox" id="q'.$conceptID.'">'.$conceptTitle.'</div>';
         }
         $quizQuestionsHTML .= '</div>';//end of questionDiv div tag
 
