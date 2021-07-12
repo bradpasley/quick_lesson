@@ -150,7 +150,7 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
 function printModulePage(int $moduleID, int $conceptID=0) {
     global $quickDatabase;
     if(isset($quickDatabase)) {
-        println("<h4>Database connected</h4>");
+        println("<h4>printModulePage($moduleID, $conceptID) Database connected</h4>");
         $tempLessonID = 1;
         $moduleTitle = $quickDatabase->getLessonTitle($tempLessonID, $moduleID, $conceptID);
         $moduleWelcomeMessage = $quickDatabase->getLessonContent($tempLessonID, $conceptID);
