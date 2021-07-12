@@ -1,5 +1,11 @@
 <?php
 /**
+ * Quick Lesson
+ * @copyright  2021 Brad Pasley <brad.pasley@gmail.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/**
  * Quick Lesson is a dynamic webpage which produces a quick training
  * The sample teaching content will be the Korean alphabet, and each character's pronunciation
  * 
@@ -26,7 +32,7 @@
 include_once('constants.php');
 include('auth.php');
 include('lib.php');
-
+include_once('database.php');
 
 printHTMLHeader(SITENAME);
 printHTMLBodyStart(SITENAME, LESSONNAME);
@@ -38,6 +44,7 @@ if(!isSessionValid()) {
     }
 } else {//authenticated user & session valid
     println("<h3>CHECK Screen: $screen</h3>");
+    $quickDatabase = new QuickDatabase();
     switch($screen) {
         case SCREENMAINMENU:
             println('<div class="row">');

@@ -1,5 +1,11 @@
 <?php
 /**
+ * Quick Lesson
+ * @copyright  2021 Brad Pasley <brad.pasley@gmail.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/**
  * Quick Lesson is a dynamic webpage which produces a quick training
  * The sample teaching content will be the Korean alphabet, and each character's pronunciation
  * 

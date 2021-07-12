@@ -1,5 +1,11 @@
 <?php
 /**
+ * Quick Lesson
+ * @copyright  2021 Brad Pasley <brad.pasley@gmail.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/**
  * Quick Lesson is a dynamic webpage which produces a quick training
  * The sample teaching content will be the Korean alphabet, and each character's pronunciation
  * 
@@ -24,6 +30,8 @@
  */
 
 include_once('constants.php');
+
+$quickDatabase;
 
 function printHTMLHeader(string $HTMLPageTitle) {
     $bootstrapURL        = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css";
@@ -105,7 +113,7 @@ function printLogin() {
     println('</div></form>');
 }
 
-function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=SCREENEXIT, int $moduleID=-1, int $conceptID=-1) {
+function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=SCREENEXIT, int $moduleID=0, int $conceptID=0) {
 
     $cardColWidth = 2;
     
@@ -125,9 +133,9 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
     println('  <h4 class="card-title">'.$cardTitle.'</h4>');
     println('  <p class="card-text">'.$cardContent.'</p>');
     println('  <p class="card-text"><b>menuScreen:</b>'.$menuScreen.'</p>');
-    if($moduleID!=-1 && $conceptID!=-1) {
+    if($moduleID!=0 && $conceptID!=0) {
         printRightArrowButton($cardTitle, $menuScreen, $buttonName, $moduleID, $conceptID);
-    } else if($moduleID!=-1) {
+    } else if($moduleID!=0) {
         printRightArrowButton($cardTitle, $menuScreen, $buttonName, $moduleID);
     } else {
         printRightArrowButton($cardTitle, $menuScreen, $buttonName);
@@ -138,25 +146,41 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
     //println('</div>');//row
 }
 
-function printModulePage(int $moduleID, int $conceptID=-1) {
-    $moduleTitle = "Demo Module Title";
-    $moduleWelcomeMessage = "In this module you will learn about ".$moduleTitle;
+function printModulePage(int $moduleID, int $conceptID=0) {
+    global $quickDatabase;
+    if(isset($quickDatabase)) {
+        $tempLessonID = 1;
+        $moduleTitle = $quickDatabase->getLessonTitle($tempLessonID, $moduleID, $conceptID);
+        $moduleWelcomeMessage = $quickDatabase->getLessonContent($tempLessonID, $conceptID);
+    } else {//when database not active
+        $moduleTitle = "Demo Module Title";
+        $moduleWelcomeMessage = "In this module you will learn about ".$moduleTitle;
+    }
     $buttonName = "Learn";
     println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
-    if($conceptID==-1) { //just print main page
+    if($conceptID==0) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
     } else {//print concept page
-        $conceptTitle = "Demo Concept Title";
+        if(isset($quickDatabase)) {
+            $tempLessonID = 1;
+            $conceptTitle = $quickDatabase->getLessonTitle($tempLessonID, $moduleID, $conceptID);
+            $conceptContent = $quickDatabase->getLessonContent($tempLessonID, $conceptID);
+        } else {
+            $conceptTitle = "Demo Concept Title";
+            $conceptContent = "Insert content here";
+        }    
         println('<h4 class="lead text-primary" style="font-size: 1.4em">'.$conceptTitle.'</h4>');
+        println('<p>'.$conceptContent.'</p>');
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
     println("<h3>CHECK ModuleID: $moduleID ConceptID: $conceptID</h3>");
-    if($moduleID!=-1 && $conceptID!=-1) {
+    if($moduleID!=0 && $conceptID!=0) {
+        //insert database concept count check here
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $moduleID, $conceptID);
-    } else if($moduleID!=-1) {
+    } else if($moduleID!=0) {
         $conceptID = 1;
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $moduleID, $conceptID);
     } else {
@@ -165,12 +189,19 @@ function printModulePage(int $moduleID, int $conceptID=-1) {
     }
 }
 
-function printReviewPage(int $moduleID, int $conceptID=-1) {
-    $moduleTitle = "Demo Module Title";
-    $moduleWelcomeMessage = "This module was about ".$moduleTitle.".";
+function printReviewPage(int $moduleID, int $conceptID=0) {
+    global $quickDatabase;
+    if(isset($quickDatabase)) {
+        $tempLessonID = 1;
+        $moduleTitle = $quickDatabase->getLessonTitle($tempLessonID, $moduleID, $conceptID);
+        $moduleWelcomeMessage = $quickDatabase->getLessonContent($tempLessonID, $conceptID);
+    } else {//when database not active
+        $moduleTitle = "Demo Review Title";
+        $moduleWelcomeMessage = "In this module you will learn about ".$moduleTitle;
+    }
     $buttonName = "Review";
     println('<h3 class="display-4 text-secondary">Review '.$moduleTitle.'</h3>');
-    if($conceptID==-1) { //just print main page
+    if($conceptID==0) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
     } else {
         $conceptTitle = "Demo Concept Title";
@@ -178,11 +209,11 @@ function printReviewPage(int $moduleID, int $conceptID=-1) {
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
-    if($moduleID!=-1 && $conceptID!=-1) {
+    if($moduleID!=0 && $conceptID!=0) {
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $moduleID, $conceptID);
-    } else if($moduleID!=-1) {
+    } else if($moduleID!=0) {
         $conceptID = 1;
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $moduleID, $conceptID);
     } else {
@@ -191,12 +222,12 @@ function printReviewPage(int $moduleID, int $conceptID=-1) {
     }
 }
 
-function printQuizPage(int $moduleID, int $conceptID=-1) {
+function printQuizPage(int $moduleID, int $conceptID=0) {
     $moduleTitle = "Demo Module Title";
     $moduleWelcomeMessage = "Are you ready to check your knowledge on ".$moduleTitle."?";
     $buttonName = "Test";
     println('<h3 class="display-4 text-secondary">Quiz '.$moduleTitle.'</h3>');
-    if($conceptID==-1) { //just print main page
+    if($conceptID==0) { //just print main page
         println('<p>'.$moduleWelcomeMessage.'</p>');
     } else {
         $conceptTitle = "Demo Concept Title";
@@ -204,11 +235,11 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
         println('<p>Module ID:  '.$moduleID.'</p>');
         println('<p>Concept ID: '.$conceptID.'</p>');
     }
-    if($moduleID!=-1 && $conceptID!=-1) {
+    if($moduleID!=0 && $conceptID!=0) {
         $conceptID++;
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $moduleID, $conceptID);
-    } else if($moduleID!=-1) {
+    } else if($moduleID!=0) {
         $conceptID = 1;
         printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $moduleID, $conceptID);
     } else {
@@ -217,14 +248,14 @@ function printQuizPage(int $moduleID, int $conceptID=-1) {
     }
 }
 
-function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $moduleID=-1, int $conceptID=-1) {
+function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $moduleID=0, int $conceptID=0) {
     println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
     println('  <input type="hidden" name="screen" value="'.$screenType.'">');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
-        if($moduleID!=-1) println('  <input type="hidden" name="moduleID" value="'.$moduleID.'">');
+        if($moduleID!=0) println('  <input type="hidden" name="moduleID" value="'.$moduleID.'">');
     }
     if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
-        if($conceptID!=-1) println('  <input type="hidden" name="conceptID" value="'.$conceptID.'">');
+        if($conceptID!=0) println('  <input type="hidden" name="conceptID" value="'.$conceptID.'">');
     }
     println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
     println('</form>');
@@ -245,6 +276,10 @@ function printMainMenuButton() {
 
 function println(string $string) {
     print($string.PHP_EOL);
+}
+
+function printlnError(string $input) {
+    print(PHP_EOL.'<h4 class="text-danger">Error: '.$input.'</h4>'.PHP_EOL);
 }
 
 ?>
