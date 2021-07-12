@@ -41,7 +41,7 @@ out of the box on hover (remove perspective if you don't want the 3D effect */
   
   /* Style the back side */
   .flip-card-back {
-    background-color: dodgerblue;
-    color: white;
+    background-color: #E6E3FF;
+    color: black;
     transform: rotateY(180deg);
   }
