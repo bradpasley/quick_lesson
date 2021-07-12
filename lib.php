@@ -321,6 +321,8 @@ function printQuizPage(int $moduleID) { //int $conceptID=0
 function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonID=0, int $moduleID=0, int $conceptID=0) {
     global $quickDatabase;
     $middleText = "";
+    $isNextButton = false;
+    if($conceptID>0) $isNextButton = true;
     $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
     //println("<p>printRight Count: $conceptCount</p>");  
     if($conceptID<$conceptCount) {//don't print right button for last concept.
@@ -331,13 +333,13 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
         if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
             $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
         } 
-        println('<div class="col-sm-4 col-md-3 col-lg-2">');//start of col
+        if($isNextButton) println('<div class="col-sm-4 col-md-3 col-lg-2">');//start of col
         println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
         println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
         println('</form>');
-        println('</div>');//end of col
+        if($isNextButton) println('</div>');//end of col
     }
 }
 
