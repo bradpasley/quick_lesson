@@ -300,6 +300,7 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
     $middleText = "";
     if($conceptID>0) {//don't display for first concept
         $conceptID--; //change to the value of previous screen
+        if($conceptID==0) $screenType = $screenType-5; //bring back to main type of page
         if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
             if($moduleID>0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
         }
