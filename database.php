@@ -46,11 +46,10 @@ class QuickDatabase {
 
     //Database connection/close functions
     private function connectToDatabase() {
-        println("<h5>connectToDatabase()</h5>");
+        
         try {
             $this->DBConnection = new mysqli(QuickConfig::DATABASE_HOST,QuickConfig::DATABASE_USERNAME,QuickConfig::DATABASE_PASSWORD);
 
-            println("<h5>connection object created...</h5>");
             /* check connection */
             if (mysqli_connect_errno()) {
                 //$mysqlError = mysqli_connect_error(); //don't include in error to keep the error message cleaner
@@ -58,21 +57,15 @@ class QuickDatabase {
                 printlnError("Failed to connect to database host.".PHP_EOL." The server appears to be out of reach.");
                 exit();
             }
-            println("<h5>connection ok...</h5>");
-
+        
             if($this->DBConnection === false) {
                 println();
                 printlnError("Could not connect to database host");
                 $this->DBConnectionStatus = false;
                 exit();
             }
-            println("<h5>connection ok...x2</h5>");
             $this->DBConnection->set_charset("utf8mb4");
-            println("<h5>connection set charset...ok...</h5>");
-            //$this->DBConnection->mysqli_query('SET NAMES utf8mb4');
-            //println("<h5>connection set names...ok...</h5>");
             $this->DBConnectionStatus = true;
-            println("<h5>connection ok...xc Connection?".$this->DBConnectionStatus."</h5>");
         } catch (mysqli_sql_exception $e) {
             printlnError("We apologise there appears to be a database issue.");
             throw $e;

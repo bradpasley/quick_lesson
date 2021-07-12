@@ -152,7 +152,7 @@ function printModulePage(int $moduleID, int $conceptID=0) {
     $lessonID = 1; //only one lesson currently
     if(isset($quickDatabase)) {
         $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
-        $moduleContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+        $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
     } else {//when database not active
         $moduleTitle = "Demo Module Title";
         $moduleContent = "In this module you will learn about ".$moduleTitle;
@@ -165,7 +165,7 @@ function printModulePage(int $moduleID, int $conceptID=0) {
         if(isset($quickDatabase)) {
             $lessonID = 1;
             $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
-            $conceptContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+            $conceptContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
         } else {
             $conceptTitle = "Demo Concept Title";
             $conceptContent = "Insert content here";
@@ -195,7 +195,7 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
     $lessonID = 1; //only one lesson currently
     if(isset($quickDatabase)) {
         $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
-        //$moduleContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+        //$quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
     } else {//when database not active
         $moduleTitle = "Demo Review Title";
     }
@@ -208,7 +208,7 @@ function printReviewPage(int $moduleID, int $conceptID=0) {
         if(isset($quickDatabase)) {
             $lessonID = 1;
             $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
-            $conceptContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+            $conceptContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
         } else {
             $conceptTitle = "Demo Concept Review Title";
             $conceptContent = "Insert content here";
@@ -236,7 +236,7 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
     $lessonID = 1; //only one lesson currently
     if(isset($quickDatabase)) {
         $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
-        //$moduleContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+        //$moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
     } else {//when database not active
         $moduleTitle = "Demo Quiz Title";
     }
@@ -249,7 +249,7 @@ function printQuizPage(int $moduleID, int $conceptID=0) {
         if(isset($quickDatabase)) {
             $lessonID = 1;
             $conceptTitle = $quickDatabase->getLessonTitle($lessonID, $moduleID, $conceptID);
-            $conceptContent = $quickDatabase->getLessonContent($lessonID, $conceptID);
+            $conceptContent = $quickDatabase->getLessonContent($lessonID, $moduleID, $conceptID);
         } else {
             $conceptTitle = "Demo Concept Review Title";
             $conceptContent = "Insert content here";
