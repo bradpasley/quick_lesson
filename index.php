@@ -58,7 +58,7 @@ if(!isSessionValid()) {
             break;
         case SCREENMODULE:
             //println('<h4>screen module...</h4>');
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
                 $moduleID = $_POST['moduleID'];
                 //println('<h4>module id: '.$moduleID.'</h4>');
                 //main menu of Module
@@ -66,8 +66,8 @@ if(!isSessionValid()) {
             }
             break;
         case SCREENMODULECONCEPT:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
-                if(isset($_POST['conceptID']) && $_POST['conceptID']!=-1) {//concept screen of module
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
+                if(isset($_POST['conceptID']) && $_POST['conceptID']!=0) {//concept screen of module
                     $moduleID = $_POST['moduleID'];
                     $conceptID = $_POST['conceptID'];
                     printModulePage($moduleID, $conceptID);
@@ -77,15 +77,15 @@ if(!isSessionValid()) {
             }
             break;
         case SCREENREVIEW:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
                 $moduleID = $_POST['moduleID'];
                 //main menu of Review
                 printReviewPage($moduleID);
             }
             break;
         case SCREENREVIEWCONCEPT:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
-                if(isset($_POST['conceptID']) && $_POST['conceptID']!=-1) {//concept screen of module
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
+                if(isset($_POST['conceptID']) && $_POST['conceptID']!=0) {//concept screen of module
                     $moduleID = $_POST['moduleID'];
                     $conceptID = $_POST['conceptID'];
                     printReviewPage($moduleID, $conceptID);
@@ -95,15 +95,15 @@ if(!isSessionValid()) {
             }
             break;
         case SCREENQUIZ:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
                 $moduleID = $_POST['moduleID'];
                 //main menu of Quiz
                 printQuizPage($moduleID);
             }
             break;
         case SCREENQUIZCONCEPT:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=-1) {
-                if(isset($_POST['conceptID']) && $_POST['conceptID']!=-1) {//concept screen of module
+            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
+                if(isset($_POST['conceptID']) && $_POST['conceptID']!=0) {//concept screen of module
                     $moduleID = $_POST['moduleID'];
                     $conceptID = $_POST['conceptID'];
                     printQuizPage($moduleID, $conceptID);
