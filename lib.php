@@ -290,12 +290,12 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
     $middleText = "";
     println('<p>printRight?</p>');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
-        if($moduleID!=0) $middleText += '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
+        if($moduleID!=0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
     }
     println("<p>printRight: $middleText</p>");
     if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {    
         if($conceptID>0 && $conceptID < $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID)) {
-            $middleText += '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
+            $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
         } else return; //don't print right button for last concept.
     }
     println("<p>printRight:: $middleText</p>");
@@ -310,10 +310,10 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
     $middleText = "";
     println('<p>printLeft?</p>');
     if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
-        if($moduleID>0) $middleText += '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
+        if($moduleID>0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
     }
     if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
-        if($conceptID>0) $middleText += '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
+        if($conceptID>0) $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
         else return; //don't print left button for first concept.
     }
     println('<form id="leftArrowButton_'.$pageTitle.'" method="post">');
