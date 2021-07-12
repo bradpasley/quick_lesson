@@ -50,6 +50,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('<link rel="stylesheet" href="'.$bootstrapURL.'">');
     println('<link rel="stylesheet" href="'.$bootstrapIconURL.'">');
     println('<link rel="stylesheet" href="'.$flipCardCSSURL.'">');
+    println('<link rel="stylesheet" href="'.$quizCSSURL.'">');
     println('<title>'.$HTMLPageTitle.'</title>');
     println('<!-- Bootstrap CSS -->');
     println('<script src="'.$javascriptBundleURL.'"></script>');
