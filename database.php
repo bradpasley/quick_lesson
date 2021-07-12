@@ -89,7 +89,7 @@ class QuickDatabase {
      */
 
     public function createNewUser(string $email, string $password, string $firstname, string $surname) {
-        $this->connectToDatabase();
+        
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
         $hashedPassword = password_hash($password);
@@ -111,12 +111,11 @@ class QuickDatabase {
      }
 
     public function getLessonTitle(int $lessonID, int $moduleID=0, int $conceptID=0) {
-        $this->connectToDatabase();
+        println("<h5>getLessonTitle($lessonID, $moduleID, $conceptID)</h5>");
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
         $sqlQueryTitle = "";
-        println("<h5>getLessonTitle($lessonID, $moduleID, $conceptID)</h5>");
-
+        
         if($moduleID==0 && $conceptID==0) {//Lesson title
             $sqlQueryTitle = "SELECT title FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
                             ."WHERE lessonID='%s' AND moduleID=0 AND conceptID=0";
@@ -147,7 +146,7 @@ class QuickDatabase {
      }
      
     public function getLessonContent(int $lessonID, int $moduleID=0, int $conceptID=0) {
-        $this->connectToDatabase();
+        
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
         $hashedPassword = password_hash($password);
