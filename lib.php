@@ -86,6 +86,7 @@ function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
 function printHTMLFooter() {
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
     $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
+    println('<br><br><br>');
     println('<!-- end of container -->');
     println('</div>');
     println('<!-- Bootstrap Bundle with Popper -->');
@@ -133,7 +134,7 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
     println('<div class="card-body">');
     println('  <h4 class="card-title">'.$cardTitle.'</h4>');
     println('  <p class="card-text">'.$cardContent.'</p>');
-    println('  <p class="card-text"><b>menuScreen:</b>'.$menuScreen.'</p>');
+    //println('  <p class="card-text"><b>menuScreen:</b>'.$menuScreen.'</p>');
     if($moduleID!=0 && $conceptID!=0) {
         printRightArrowButton($cardTitle, $menuScreen, $buttonName, $lessonID, $moduleID, $conceptID);
     } else if($moduleID!=0) {
@@ -178,9 +179,11 @@ function printModulePage(int $moduleID, int $conceptID=0) {
     
     if($moduleID>0 && $conceptID>0) {
         $buttonName = "Previous";
+        println('<div class="row">');
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
+        println('</div>');
     } else if($moduleID>0) {
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonID, $moduleID, $conceptID);
@@ -287,11 +290,13 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
         if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
             $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
         } 
+        println('<div class="col-sm-2">');//start of col
         println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
         println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
         println('</form>');
+        println('</div">');//end of col
     }
 }
 
@@ -307,11 +312,13 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
         if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
                 $middleText .= '  <input type="hidden" name="conceptID" value="'.$conceptID.'">';
         }
+        println('<div class="col-sm-2">');//start of col
         println('<form id="leftArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
         println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="leftArrowButton_'.$pageTitle.'">'.PREVBUTTONICON.'&nbsp;'.$buttonText.'</button>');
         println('</form>');
+        println('</div">');//end of col
     }
 }
 
