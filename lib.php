@@ -407,10 +407,6 @@ function printMainMenuButton() {
 
 function printLessonButton(string $lessonTitle, int $lessonid) {
     
-    println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">');
-        println('<button class="btn rounded-pill bg-secondary text-light lead '.LESSONBUTTONSTYLE.'" pointer-event="none" aria-disabled="true">&nbsp;'.$lessonTitle.'&nbsp;</button>');
-        println('</span>');
-        
     println('<form id="Lesson-'.$lessonTitle.'" method="post">');
     println('  <input type="hidden" name="screen" value="'.SCREENLESSONMENU.'">');
     println('  <input type="hidden" name="lessonID" value="'.$lessonid.'">');
