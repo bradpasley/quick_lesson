@@ -154,8 +154,8 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
         
 
     //println('<div class="row">');
-    println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
-    println('<div class="card-body '.$backgroundClass.'">');
+    println('<div class="col-lg-2 col-md-4 col-sm-6 card '.$backgroundClass.'">');
+    println('<div class="card-body">');
     println('  <h4 class="card-title">'.$cardTitle.'</h4>');
     println('  <p class="card-text">'.$cardContent.'</p>');
     //println('  <p class="card-text"><b>menuScreen:</b>'.$menuScreen.'</p>');
