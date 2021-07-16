@@ -50,6 +50,7 @@ const LESSONBACKGROUNDSTYLE = 'quick-lesson-background';
 const MODULEBACKGROUNDSTYLE = 'quick-module-background';
 const QUIZBACKGROUNDSTYLE = 'quick-quiz-background';
 const REVIEWBACKGROUNDSTYLE = 'quick-review-background';
+const LESSONBUTTONSTYLE = 'quick-lesson-button';
 const NEXTBUTTONICON = '<i class="bi bi-arrow-right-circle"></i>';
 const PREVBUTTONICON = '<i class="bi bi-arrow-left-circle"></i>';
 const MAINMENUBUTTONICON = '<i class="bi bi-house-door"></i>';
