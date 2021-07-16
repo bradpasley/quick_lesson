@@ -44,10 +44,12 @@ const SCREENQUIZCONCEPT = 55;
 const SCREENACCOUNTEDIT = 90;
 const SCREENEXIT = -100;
 
-//const MAINBACKGROUNDSTYLE = 'background-color: #FFE6E3';
-//const LESSONBACKGROUNDSTYLE = 'background-color: #FFE6E3';
-//const LESSONBACKGROUNDSTYLE = 'background-color: #FFE6E3';
-//const LESSONBACKGROUNDSTYLE = 'background-color: #FFE6E3';
+const WHITEBACKGROUNDSTYLE = 'quick-white-background';
+const MAINBACKGROUNDSTYLE = 'quick-main-background';
+const LESSONBACKGROUNDSTYLE = 'quick-lesson-background';
+const MODULEBACKGROUNDSTYLE = 'quick-module-background';
+const QUIZBACKGROUNDSTYLE = 'quick-quiz-background';
+const REVIEWBACKGROUNDSTYLE = 'quick-review-background';
 const NEXTBUTTONICON = '<i class="bi bi-arrow-right-circle"></i>';
 const PREVBUTTONICON = '<i class="bi bi-arrow-left-circle"></i>';
 const MAINMENUBUTTONICON = '<i class="bi bi-house-door"></i>';

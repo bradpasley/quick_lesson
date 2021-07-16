@@ -72,7 +72,7 @@ function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
         $isHome=false;
     }
     
-    println('<div class="container col-sm-11 quick-main-background">');
+    println('<div class="container col-sm-11 '.MAINBACKGROUNDSTYLE.'">');
     println('<div class="jumbotron py-3 px-lg-3">');
     println('<div class="row justify-content-center">');
     println('<h3 class="col-sm-8 display-3 text-secondary" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check"></i>'.$pageTitle.'</h1>');
@@ -131,18 +131,31 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
     $cardColWidth = 2;
     
     $buttonName = "Go!";
-    if(in_array($menuScreen, array(SCREENMODULE, SCREENMODULECONCEPT)))
+    $backgroundClass = WHITEBACKGROUNDSTYLE;
+    if(in_array($menuScreen, array(SCREENLESSONMENU))) {
+        $buttonName = "Go!";
+        $backgroundClass = LESSONBACKGROUNDSTYLE;
+    }
+    if(in_array($menuScreen, array(SCREENMODULE, SCREENMODULECONCEPT))) {
         $buttonName = "Learn";
-    if(in_array($menuScreen, array(SCREENREVIEW, SCREENREVIEWCONCEPT)))
+        $backgroundClass = MODULEBACKGROUNDSTYLE;
+    }
+    if(in_array($menuScreen, array(SCREENREVIEW, SCREENREVIEWCONCEPT))) {
         $buttonName = "Revise";
-    if(in_array($menuScreen, array(SCREENQUIZ, SCREENQUIZCONCEPT)))
+        $backgroundClass = REVIEWBACKGROUNDSTYLE;
+    }
+    if(in_array($menuScreen, array(SCREENQUIZ, SCREENQUIZCONCEPT))) {
         $buttonName = "Test";
-    if(in_array($menuScreen, array(SCREENACCOUNTEDIT)))
+        $backgroundClass = QUIZBACKGROUNDSTYLE;
+    }
+    if(in_array($menuScreen, array(SCREENACCOUNTEDIT))) {
         $buttonName = "Edit";
+    }
+        
 
     //println('<div class="row">');
     println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
-    println('<div class="card-body">');
+    println('<div class="card-body '.$backgroundClass.'">');
     println('  <h4 class="card-title">'.$cardTitle.'</h4>');
     println('  <p class="card-text">'.$cardContent.'</p>');
     //println('  <p class="card-text"><b>menuScreen:</b>'.$menuScreen.'</p>');
