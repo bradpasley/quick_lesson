@@ -45,13 +45,15 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
 } else {//authenticated user & session valid
     $screen = $_POST['screen'];
     println("<h3>CHECK Screen: $screen</h3>");
-    println("<h4>CHECK post: ".var_dump($_POST)."</h3>"); 
+    println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
     $quickDatabase = new QuickDatabase();
     $lessonID = 0;
     $moduleID = 0;
     $conceptID = 0;
 
     //print website heading without or with lesson title depending on if it's the main menu or not
+    println("<p>CHECK lessonid set? ".isset($_POST['lessonID'])."</p>");
+    println("<p>CHECK lessonid value? ".$_POST['lessonID']."</p>");
     if($screen==SCREENMAINMENU) {
         printHTMLBodyStart(SITENAME);
     } else if(isset($_POST['lessonID']) && $_POST['lessonID']!=0) {
