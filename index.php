@@ -45,20 +45,20 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
 } else {//authenticated user & session valid
     $screen = $_REQUEST['screen'];
     $quickDatabase = new QuickDatabase();
-    $lessonID = 0;
-    $moduleID = 0;
-    $conceptID = 0;
+    $lessonid = 0;
+    $moduleid = 0;
+    $conceptid = 0;
 
     //print website heading without or with lesson title depending on if it's the main menu or not
     if($screen==SCREENMAINMENU) {
         printHTMLBodyStart(SITENAME);
         //println("<h3>CHECK Screen: $screen</h3>");
         //println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
-    } else if(isset($_POST['lessonID']) && $_POST['lessonID']!=0) {
-        $lessonID = $_POST['lessonID'];
-        printHTMLBodyStart(SITENAME, $lessonID);
-        //println("<p>CHECK lessonid set? ".isset($_POST['lessonID'])."</p>");
-        //println("<p>CHECK lessonid value? ".$_POST['lessonID']."</p>");
+    } else if(isset($_POST['lessonid']) && $_POST['lessonid']!=0) {
+        $lessonid = $_POST['lessonid'];
+        printHTMLBodyStart(SITENAME, $lessonid);
+        //println("<p>CHECK lessonid set? ".isset($_POST['lessonid'])."</p>");
+        //println("<p>CHECK lessonid value? ".$_POST['lessonid']."</p>");
         //println("<h3>CHECK Screen: $screen</h3>");
         //println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
     } else { //default to non-lesson title menu
@@ -80,21 +80,21 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
             break;
         case SCREENLESSONMENU: 
             println('<div class="row">');
-            $numberOfModules = $quickDatabase->getNumberOfModulesInLesson($lessonID);
+            $numberOfModules = $quickDatabase->getNumberOfModulesInLesson($lessonid);
             for($moduleNumber=1; $moduleNumber<=$numberOfModules; $moduleNumber++) {
-                $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
-                $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
-                printMenuCard($moduleTitle, $moduleContent, SCREENMODULE, $lessonID, $moduleNumber);
+                $moduleTitle = $quickDatabase->getLessonTitle($lessonid, $moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($lessonid, $moduleNumber);
+                printMenuCard($moduleTitle, $moduleContent, SCREENMODULE, $lessonid, $moduleNumber);
             }
             for($moduleNumber=1; $moduleNumber<=$numberOfModules; $moduleNumber++) {
-                $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
-                $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
-                printMenuCard("Review - ".$moduleTitle, $moduleContent, SCREENREVIEW, $lessonID, $moduleNumber);
+                $moduleTitle = $quickDatabase->getLessonTitle($lessonid, $moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($lessonid, $moduleNumber);
+                printMenuCard("Review - ".$moduleTitle, $moduleContent, SCREENREVIEW, $lessonid, $moduleNumber);
             }
             for($moduleNumber=1; $moduleNumber<=$numberOfModules; $moduleNumber++) {
-                $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
-                $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
-                printMenuCard("Quiz for ".$moduleTitle, $moduleContent, SCREENQUIZ, $lessonID, $moduleNumber);
+                $moduleTitle = $quickDatabase->getLessonTitle($lessonid, $moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($lessonid, $moduleNumber);
+                printMenuCard("Quiz for ".$moduleTitle, $moduleContent, SCREENQUIZ, $lessonid, $moduleNumber);
             }
             printMenuCard("Account", "Change your username or password.", SCREENACCOUNTEDIT); //need to add
             printMenuCard("Logout", "Exit ".SITENAME.".", SCREENEXIT); //need to add
@@ -102,57 +102,64 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
             break;
         case SCREENMODULE:
             //println('<h4>screen module...</h4>');
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
-                $moduleID = $_POST['moduleID'];
-                //println('<h4>module id: '.$moduleID.'</h4>');
+            if( ((isset($_POST['moduleid']) && $_POST['moduleid']!=0))
+                &&(isset($_POST['lessonid']) && $_POST['lessonid']!=0) ) {
+                $lessonid = $_POST['lessonid'];
+                $moduleid = $_POST['moduleid'];
+                //println('<h4>module id: '.$moduleid.'</h4>');
                 //main menu of Module
-                printModulePage($moduleID);
+                printModulePage($lessonid, $moduleid);
             }
             break;
         case SCREENMODULECONCEPT:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
-                if(isset($_POST['conceptID']) && $_POST['conceptID']!=0) {//concept screen of module
-                    $moduleID = $_POST['moduleID'];
-                    $conceptID = $_POST['conceptID'];
-                    printModulePage($moduleID, $conceptID);
+            if( ((isset($_POST['moduleid']) && $_POST['moduleid']!=0))
+                &&(isset($_POST['lessonid']) && $_POST['lessonid']!=0) )  {
+                if(isset($_POST['conceptid']) && $_POST['conceptid']!=0) {//concept screen of module
+                    $moduleid = $_POST['moduleid'];
+                    $conceptid = $_POST['conceptid'];
+                    printModulePage($lessonid, $moduleid, $conceptid);
                 } else {//main menu of Module
-                    printModulePage($moduleID);
+                    printModulePage($lessonid, $moduleid);
                 }
             }
             break;
         case SCREENREVIEW:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
-                $moduleID = $_POST['moduleID'];
+            if( ((isset($_POST['moduleid']) && $_POST['moduleid']!=0))
+                &&(isset($_POST['lessonid']) && $_POST['lessonid']!=0) ) {
+                
+                $moduleid = $_POST['moduleid'];
                 //main menu of Review
-                printReviewPage($moduleID);
+                printReviewPage($lessonid, $moduleid);
             }
             break;
         case SCREENREVIEWCONCEPT:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
-                if(isset($_POST['conceptID']) && $_POST['conceptID']!=0) {//concept screen of module
-                    $moduleID = $_POST['moduleID'];
-                    $conceptID = $_POST['conceptID'];
-                    printReviewPage($moduleID, $conceptID);
+            if( ((isset($_POST['moduleid']) && $_POST['moduleid']!=0))
+                &&(isset($_POST['lessonid']) && $_POST['lessonid']!=0) ) {
+                if(isset($_POST['conceptid']) && $_POST['conceptid']!=0) {//concept screen of module
+                    $moduleid = $_POST['moduleid'];
+                    $conceptid = $_POST['conceptid'];
+                    printReviewPage($lessonid, $moduleid, $conceptid);
                 } else {//main menu of Module
-                    printReviewPage($moduleID);
+                    printReviewPage($lessonid, $moduleid);
                 }
             }
             break;
         case SCREENQUIZ:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
-                $moduleID = $_POST['moduleID'];
+            if( ((isset($_POST['moduleid']) && $_POST['moduleid']!=0))
+                &&(isset($_POST['lessonid']) && $_POST['lessonid']!=0) ) {
+                $moduleid = $_POST['moduleid'];
                 //main menu of Quiz
-                printQuizPage($moduleID);
+                printQuizPage($lessonid, $moduleid);
             }
             break;
         /*case SCREENQUIZCONCEPT:
-            if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
-                if(isset($_POST['conceptID']) && $_POST['conceptID']!=0) {//concept screen of module
-                    $moduleID = $_POST['moduleID'];
-                    $conceptID = $_POST['conceptID'];
-                    printQuizPage($moduleID, $conceptID);
+            if(isset($_POST['moduleid']) && $_POST['moduleid']!=0) {
+                if(isset($_POST['conceptid']) && $_POST['conceptid']!=0) {//concept screen of module
+                    $moduleid = $_POST['moduleid'];
+                    $conceptid = $_POST['conceptid'];
+                    printQuizPage($moduleid, $conceptid);
                 } else {//main menu of Module
-                    printQuizPage($moduleID);
+                    printQuizPage($moduleid);
                 }
             }
             break;*/
