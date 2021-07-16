@@ -58,7 +58,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('</head>');
 }
 
-function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
+function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
 
     $isHome = true;
     if(!isSessionValid() || !isset($_REQUEST['screen']) || $_REQUEST['screen']==SCREENMAINMENU) {
@@ -75,16 +75,17 @@ function printHTMLBodyStart(string $pageTitle, string $lessonTitle="") {
     println('</div>');//row
     println('<br>');
     println('<div class="row justify-content-center">');
-    if(!$isHome) {//print the home button except when already home
+    if(!$isHome && $lessonid>0) {//print the home button except when already home + print Lesson bubble title when in submenu/lesson page
+        $lessonTitle = $quickDatabase->getLessonTitle($lessonID);
         //println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
         printMainMenuButton();
-        //println('</div>'); //col    
-    }
-    //println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
-    println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">');
-    println('<button class="btn rounded-pill bg-secondary text-light lead" pointer-event="none" aria-disabled="true" style="font-size: 1.4em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</button>');
-    println('</span>');
-    //println('</div>'); //col
+        //println('</div>'); //col
+        //println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
+        println('<span class="btn rounded-pill lh-lg bg-secondary shadow-lg justify-content-center" pointer-event="none" aria-disabled="true">');
+        println('<button class="btn rounded-pill bg-secondary text-light lead" pointer-event="none" aria-disabled="true" style="font-size: 1.4em; text-align: center">&nbsp;'.$lessonTitle.'&nbsp;</button>');
+        println('</span>');
+        //println('</div>'); //col
+    } 
     println('</div>');//row
     println('</div>');//jumbotron
 }

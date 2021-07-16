@@ -1,0 +1,308 @@
+[
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 0,
+		"title" : "Consonants",
+		"content" : "Learn to read and pronounce the Vietnamese consonants",
+		"dateCreated" : "2021-07-16 17:27:25",
+		"dateUpdated" : "2021-07-16 17:27:25"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 1,
+		"title" : "b",
+		"content" : "/ɓ/ Similar to the first 'b' in \"bubble\", but stronger",
+		"dateCreated" : "2021-07-16 17:27:25",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 2,
+		"title" : "c",
+		"content" : "/k/ Similar to  the 'k' in \"kick\"",
+		"dateCreated" : "2021-07-16 17:27:25",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 3,
+		"title" : "ch (Northern)",
+		"content" : "/tɕ/ Similar to 'ch' in \"chew\", but softer",
+		"dateCreated" : "2021-07-16 17:27:25",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 4,
+		"title" : "ch (Southern)",
+		"content" : "/c/ Similar to  the 'kyu' if \"yuck\" is said quickly several times, \"yuckyuckyuck\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 5,
+		"title" : "d (Northern)",
+		"content" : "/z/ Similar to the 'z' in \"zoo\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 6,
+		"title" : "d (Southern)",
+		"content" : "/j/ Similar to the 'y' in \"yellow\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 7,
+		"title" : "đ",
+		"content" : "/ɗ/ Similar to the Jamaican pronunciation of 'd' in \"dem\" (\"them\")",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 8,
+		"title" : "g",
+		"content" : "/ɣ/ Similar to a Greek soft gutteral pronuncation of the 'g' in \"gala\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 9,
+		"title" : "gh",
+		"content" : "/ɣ/ Similar to a Greek soft gutteral pronuncation of the 'g' in \"gala\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 10,
+		"title" : "gi (Northern)",
+		"content" : "/z/ Similar to the 'z' in \"zoo\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 11,
+		"title" : "gi (Southern)",
+		"content" : "/j/ Similar to the 'y' in \"yellow\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 12,
+		"title" : "h",
+		"content" : "/h/ Similar to the 'h' in \"high\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 13,
+		"title" : "k",
+		"content" : "/k/ Similar to the 'k' in \"kick\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 14,
+		"title" : "kh",
+		"content" : "/x/ Similar to the Scottish pronunciation of 'ch' in \"loch\"",
+		"dateCreated" : "2021-07-16 17:27:26",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 15,
+		"title" : "l",
+		"content" : "/l/ Similar to the 'll' in \"tell\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 16,
+		"title" : "m",
+		"content" : "/m/ Similar to the 'm' in \"mouse\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 17,
+		"title" : "n",
+		"content" : "/n/ Similar to the 'n' in  \"nice\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 18,
+		"title" : "ng",
+		"content" : "/ŋ/ Similar to the 'ng' in \"sing\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 19,
+		"title" : "ngh",
+		"content" : "/ŋ/ Similar to the 'ng' in \"sing\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 20,
+		"title" : "nh",
+		"content" : "/ɲ/ Similar to the \"nya\" sound if \"Can yabbies\" is spoken as one word.",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 21,
+		"title" : "p",
+		"content" : "/p/ Similar to the 'p' in \"pack\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:56"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 22,
+		"title" : "ph",
+		"content" : "/f/ Similar to the 'f' in \"fill\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 23,
+		"title" : "qu",
+		"content" : "/kʷ/ Similar to the 'qu' in \"quack\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 24,
+		"title" : "r (Northern)",
+		"content" : "/z/ Similar to the 'z' in \"zoo\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 25,
+		"title" : "r (Southern)",
+		"content" : "/r/ Similar to the rolling Scottish 'r' in \"right\"",
+		"dateCreated" : "2021-07-16 17:27:27",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 26,
+		"title" : "s (Northern)",
+		"content" : "/s/ Similar to the 's' in \"sand\"",
+		"dateCreated" : "2021-07-16 17:27:28",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 27,
+		"title" : "s (Southern)",
+		"content" : "/ʂ/ Similar to the 'sh' in \"shark\"",
+		"dateCreated" : "2021-07-16 17:27:28",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 28,
+		"title" : "t",
+		"content" : "/t/ Similar to the 't' in \"tank\"",
+		"dateCreated" : "2021-07-16 17:27:28",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 29,
+		"title" : "th",
+		"content" : "/tʰ/ Similar to the 'ta' in \"Tah Mahal\"",
+		"dateCreated" : "2021-07-16 17:27:28",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 30,
+		"title" : "tr (Northern)",
+		"content" : "/tɕ/ Similar to 'ch' in \"chew\", but softer",
+		"dateCreated" : "2021-07-16 17:27:28",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 31,
+		"title" : "tr (Southern)",
+		"content" : "/tʰ/ Similar to an Indian pronunciation of 't' in \"time\"",
+		"dateCreated" : "2021-07-16 17:27:28",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 32,
+		"title" : "v",
+		"content" : "/v/ Similar to the 'v's in \"valve\"",
+		"dateCreated" : "2021-07-16 17:27:28",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 3,
+		"conceptid" : 33,
+		"title" : "x",
+		"content" : "/s/ Similar to the 's' in \"sand\"",
+		"dateCreated" : "2021-07-16 17:27:28",
+		"dateUpdated" : "2021-07-16 17:32:57"
+	}
+]

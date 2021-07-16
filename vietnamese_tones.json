@@ -1,0 +1,92 @@
+[
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 0,
+		"title" : "Tone marks",
+		"content" : "Learn the tone marks and how to make their sound.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 1,
+		"title" : "(unmarked)",
+		"content" : "/˧/ mid level tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 2,
+		"title" : "à",
+		"content" : "/˨˩/ low falling tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 3,
+		"title" : "ả (Northern)",
+		"content" : "/˧˩/ mid falling tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 4,
+		"title" : "ả (Southern)",
+		"content" : "/˨˩˥/ dipping tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 5,
+		"title" : "ã (Northern)",
+		"content" : "/˧˥ˀ/ glottalised rising tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 6,
+		"title" : "ã (Southern)",
+		"content" : "/˨˩˥/ slightly lengthened tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 7,
+		"title" : "á",
+		"content" : "/˧˥/ rising high tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 8,
+		"title" : "ạ (Northern)",
+		"content" : "/˧˨ˀ/ glottalized falling tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 1,
+		"conceptid" : 9,
+		"title" : "ạ (Southern)",
+		"content" : "/˩˧/ low rising tone.",
+		"dateCreated" : "2021-07-14 18:30:29",
+		"dateUpdated" : "2021-07-14 18:30:29"
+	}
+]

@@ -35,9 +35,9 @@ include('lib.php');
 include_once('database.php');
 
 printHTMLHeader(SITENAME);
-printHTMLBodyStart(SITENAME, LESSONNAME);
  
 if(!isSessionValid()) {
+    printHTMLBodyStart(SITENAME); //print site heading without lesson title
     printLogin();
     if(isLoginAttempt()) { //if login attempted but session not valid
         println('<p class="text-danger">username/password incorrect.</p>');
@@ -45,13 +45,50 @@ if(!isSessionValid()) {
 } else {//authenticated user & session valid
     //println("<h3>CHECK Screen: $screen</h3>");
     $quickDatabase = new QuickDatabase();
+    $lessonID = 0;
+    $moduleID = 0;
+    $conceptID = 0;
+
+    //print website heading without or with lesson title depending on if it's the main menu or not
+    if($screen==SCREENMAINMENU) {
+        printHTMLBodyStart(SITENAME);
+    } else if(isset($_POST['lessonID']) && $_POST['lessonID']!=0) {
+        $lessonID = $_POST['moduleID'];
+        printHTMLBodyStart(SITENAME, $lessonID);
+    } else { //default to non-lesson title menu
+        printHTMLBodyStart(SITENAME);
+    }
+
     switch($screen) {
         case SCREENMAINMENU:
             println('<div class="row">');
-            printMenuCard("Consonants", "Learn how to identify and say the Korean consonants.", SCREENMODULE, 1, 1);
-            printMenuCard("Vowels", "Learn how to identify and say the Korean vowels.", SCREENMODULE, 1, 2);
-            printMenuCard("Review", "Get a summary of the key points.", SCREENREVIEW, 1, 1); //need to add module list  screen if moduleid left blank
-            printMenuCard("Quizzes", "Check what you've learnt.", SCREENQUIZ, 1, 1);   //need to add module list  screen if moduleid left blank
+            $numberOfLessons = $quickDatabase->getNumberOfLessons();
+            for($lessonNumber=1; $lessonNumber<=$numberOfLessons; $lessonNumber++) {
+                $lessonTitle = $quickDatabase->getLessonTitle($lessonNumber);
+                $lessonContent = $quickDatabase->getLessonContent($lessonNumber);
+                printMenuCard($lessonTitle, $lessonContent, SCREENLESSONMENU, $lessonNumber);
+            }
+            printMenuCard("Account", "Change your username or password.", SCREENACCOUNTEDIT); //need to add
+            printMenuCard("Logout", "Exit ".SITENAME.".", SCREENEXIT); //need to add
+            println('</div>');
+            break;
+        case SCREENLESSONMENU: 
+            println('<div class="row">');
+            for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
+                $moduleTitle = $quickDatabase->getLessonTitle($moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($moduleNumber);
+                printMenuCard($moduleTitle, $moduleContent, SCREENMODULE, $lessonID, $moduleNumber);
+            }
+            for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
+                $moduleTitle = $quickDatabase->getLessonTitle($moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($moduleNumber);
+                printMenuCard("Review - ".$moduleTitle, $moduleContent, SCREENREVIEW, $lessonID, $moduleNumber);
+            }
+            for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
+                $moduleTitle = $quickDatabase->getLessonTitle($moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($moduleNumber);
+                printMenuCard("Quiz for ".$moduleTitle, $moduleContent, SCREENQUIZ, $lessonID, $moduleNumber);
+            }
             printMenuCard("Account", "Change your username or password.", SCREENACCOUNTEDIT); //need to add
             printMenuCard("Logout", "Exit ".SITENAME.".", SCREENEXIT); //need to add
             println('</div>');
@@ -101,7 +138,7 @@ if(!isSessionValid()) {
                 printQuizPage($moduleID);
             }
             break;
-        case SCREENQUIZCONCEPT:
+        /*case SCREENQUIZCONCEPT:
             if(isset($_POST['moduleID']) && $_POST['moduleID']!=0) {
                 if(isset($_POST['conceptID']) && $_POST['conceptID']!=0) {//concept screen of module
                     $moduleID = $_POST['moduleID'];
@@ -111,7 +148,7 @@ if(!isSessionValid()) {
                     printQuizPage($moduleID);
                 }
             }
-            break;
+            break;*/
         default:
             printLogin();
     }

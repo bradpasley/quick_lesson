@@ -1,0 +1,200 @@
+[
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 0,
+		"title" : "Vowels",
+		"content" : "Learn how to identify and say the Korean vowels.",
+		"dateCreated" : "2021-07-12 20:49:31",
+		"dateUpdated" : "2021-07-12 20:49:31"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 1,
+		"title" : "ㅏ",
+		"content" : "/a/ Similar to the 'ar' in “father”",
+		"dateCreated" : "2021-07-12 20:49:31",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 2,
+		"title" : "ㅓ",
+		"content" : "/ʌ/ Similar to the 'u' in \"sun\"",
+		"dateCreated" : "2021-07-12 20:49:31",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 3,
+		"title" : "ㅗ",
+		"content" : "/o/ Similar to the 'o' in \"clock\"",
+		"dateCreated" : "2021-07-12 20:49:31",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 4,
+		"title" : "ㅜ",
+		"content" : "/u/ Similar to the 'oo' in \"boot\"",
+		"dateCreated" : "2021-07-12 20:49:31",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 5,
+		"title" : "ㅣ",
+		"content" : "/i/ Similar to the 'i' in \"pick\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 6,
+		"title" : "ㅡ",
+		"content" : "/ɯ/ Similar to the 'le' in \"treacle\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 7,
+		"title" : "ㅐ",
+		"content" : "/ɛ/ Similar to the 'ey' in \"hey\"'",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 8,
+		"title" : "ㅔ",
+		"content" : "/e/ Similar to the 'ai' in \"air\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 9,
+		"title" : "ㅚ",
+		"content" : "/ø/ Similar to the sound of \"ware\" in \"software\" ",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 10,
+		"title" : "ㅟ",
+		"content" : "/y/ Similar to the sound of \"ouie\" in \"Louie\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 11,
+		"title" : "ㅑ",
+		"content" : "/ja/ Similar to the sound of \"ya\" in \"yahoo\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 12,
+		"title" : "ㅕ",
+		"content" : "/jʌ/ Similar to the sound of \"io\" in \"onion\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 13,
+		"title" : "ㅛ",
+		"content" : "/jo/ Similar to the sound of \"yo\" in \"Yohanne\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 14,
+		"title" : "ㅠ",
+		"content" : "/ju/ Similar to the sound of the word \"you\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 15,
+		"title" : "ㅒ",
+		"content" : "/jɛ/ Similar to the sound of \"ya\" as in the \"yay\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 16,
+		"title" : "ㅖ",
+		"content" : "/je/ Similar to the sound of \"ye\" in \"yes\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 17,
+		"title" : "ㅘ",
+		"content" : "/wa/ Similar to the \"wha\" in \"whack\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 18,
+		"title" : "ㅙ",
+		"content" : "/wɛ/ Similar to the sound of \"whe\" in \"where\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 19,
+		"title" : "ㅝ",
+		"content" : "/wʌ/ Similar to the sound of \"wha\" in \"what\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 20,
+		"title" : "ㅞ",
+		"content" : "/we/ Similar to the sound of \"whe\" in \"when\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 2,
+		"conceptid" : 21,
+		"title" : "ㅢ",
+		"content" : "/ɰi/ Similar to the sound of \"ue\" in \"Bluey\"",
+		"dateCreated" : "2021-07-14 17:55:13",
+		"dateUpdated" : "2021-07-14 17:55:13"
+	}
+]

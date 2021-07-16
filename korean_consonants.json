@@ -1,0 +1,173 @@
+[
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 0,
+		"title" : "Consonants",
+		"content" : "Learn how to identify and say the Korean consonants.",
+		"dateCreated" : "2021-07-12 20:37:40",
+		"dateUpdated" : "2021-07-12 20:37:40"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 1,
+		"title" : "ㄱ",
+		"content" : "/k/ Similar to the soft 'ch' sound in \"anarchy”",
+		"dateCreated" : "2021-07-12 20:39:15",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 2,
+		"title" : "ㄴ",
+		"content" : "/n/ Similar to the 'n' in “no”",
+		"dateCreated" : "2021-07-12 20:45:29",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 3,
+		"title" : "ㄷ",
+		"content" : "/t/ Similar to the 'd' in “day”",
+		"dateCreated" : "2021-07-12 20:45:29",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 4,
+		"title" : "ㄹ",
+		"content" : "/ɾ/ Similar to a Scottish soft rolling 'r' in \"radio\". Although when it appears at the end of a syllable, the sound is /ɭ/; similiar to 'l' in \"bell\"",
+		"dateCreated" : "2021-07-12 20:45:29",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 5,
+		"title" : "ㅁ",
+		"content" : "/m/ Similar to the 'm' in \"mouse\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 6,
+		"title" : "ㅂ",
+		"content" : "/p/ Similar to the soft 'p' in \"pack\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 7,
+		"title" : "ㅃ",
+		"content" : "/pp/ Similar to a harshly spoken 'b' in \"brave\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 8,
+		"title" : "ㅍ",
+		"content" : "/pʰ/ Similar to the 'p' in \"pie\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 9,
+		"title" : "ㄸ",
+		"content" : "/tt/ Similar to a harshly spoken 'd' in \"double\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 10,
+		"title" : "ㅌ",
+		"content" : "/tʰ/ Similiar to the 't' in \"task\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 11,
+		"title" : "ㅅ",
+		"content" : "/ʃ/ Similar to the 'sh' \"flesh\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 12,
+		"title" : "ㅆ",
+		"content" : "/ss/ Similar to the 's' in \"send\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 13,
+		"title" : "ㅈ",
+		"content" : "/tɕ/ Similar to the 'ch' in \"chew\", but softer",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-16 14:40:26"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 14,
+		"title" : "ㅉ",
+		"content" : "/t͈ɕ/ Similar to the 'j' in \"jigsaw\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 15,
+		"title" : "ㅊ",
+		"content" : "/tɕʰ/ Simliar to the 'ch' in \"children\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 16,
+		"title" : "ㅋ",
+		"content" : "/kʰ/ Similiar to the 'k' in \"kick\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 17,
+		"title" : "ㅎ",
+		"content" : "/h/ Similiar to the 'h' in \"hello\"",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	},
+	{
+		"lessonid" : 1,
+		"moduleid" : 1,
+		"conceptid" : 18,
+		"title" : "ㅇ",
+		"content" : "/ŋ/ Similiar to the 'ng' in \"sing\". Although when it appears at the beginning of a syllable, it is not pronounced (no sound)",
+		"dateCreated" : "2021-07-14 17:03:52",
+		"dateUpdated" : "2021-07-14 17:03:52"
+	}
+]

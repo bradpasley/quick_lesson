@@ -1,0 +1,101 @@
+[
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 0,
+		"title" : "Vowels",
+		"content" : "Learn to read and pronounce the Vietnamese vowels",
+		"dateCreated" : "2021-07-16 17:19:40",
+		"dateUpdated" : "2021-07-16 17:19:40"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 1,
+		"title" : "a",
+		"content" : "/aː/ Similar to the 'a' in \"hat\"",
+		"dateCreated" : "2021-07-16 17:19:40",
+		"dateUpdated" : "2021-07-16 17:21:26"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 2,
+		"title" : "e",
+		"content" : "/ɛ˧/ Similar to  the 'ai' in \"air\", but shorter",
+		"dateCreated" : "2021-07-16 17:19:40",
+		"dateUpdated" : "2021-07-16 17:21:26"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 3,
+		"title" : "ê",
+		"content" : "/ə̆j/ Similar to 'i' in \"hi\" but shorter. Sometimes pronounced as /ə̯/ as in the 'e' in \"dress\"",
+		"dateCreated" : "2021-07-16 17:19:40",
+		"dateUpdated" : "2021-07-16 17:21:26"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 4,
+		"title" : "i",
+		"content" : "/i/ Similar to the 'ea' in \"seat\"\", or after any vowel letter /j/ as in the 'y' in \"\"yellow\"\"\"",
+		"dateCreated" : "2021-07-16 17:19:41",
+		"dateUpdated" : "2021-07-16 17:19:41"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 5,
+		"title" : "o",
+		"content" : "/ɔ/ Similar to 'o' in \"clock\", except before 'ng' /ăw/, and /w/ when combined with some other vowels",
+		"dateCreated" : "2021-07-16 17:19:41",
+		"dateUpdated" : "2021-07-16 17:21:26"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 6,
+		"title" : "ô",
+		"content" : "/o/ Similar to the 'aw' in \"yawn\", or  /ə̆w/ before ng and c, or  /ə̯/ in uô",
+		"dateCreated" : "2021-07-16 17:19:41",
+		"dateUpdated" : "2021-07-16 17:21:26"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 7,
+		"title" : "ơ",
+		"content" : "/ə/ Similar to the last 'a' in \"Camera\", or /ə̯/ in ươ",
+		"dateCreated" : "2021-07-16 17:19:41",
+		"dateUpdated" : "2021-07-16 17:23:34"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 8,
+		"title" : "u",
+		"content" : "/u/ Similar to the 'oo' in \"book\", or /w/ after 'q' or with some vowel combinations",
+		"dateCreated" : "2021-07-16 17:19:41",
+		"dateUpdated" : "2021-07-16 17:21:26"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 9,
+		"title" : "ư",
+		"content" : "/ɨ/ Similar to the 'oo' in \"loo\"",
+		"dateCreated" : "2021-07-16 17:19:41",
+		"dateUpdated" : "2021-07-16 17:23:34"
+	},
+	{
+		"lessonid" : 2,
+		"moduleid" : 2,
+		"conceptid" : 10,
+		"title" : "y",
+		"content" : "/i/ Similar to the 'ea' in \"seat\", or after any vowel letter /j/ as in the 'y' in \"yellow\"",
+		"dateCreated" : "2021-07-16 17:19:41",
+		"dateUpdated" : "2021-07-16 17:21:26"
+	}
+]

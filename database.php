@@ -158,6 +158,20 @@ class QuickDatabase {
         }
     }
 
+    function getNumberOfLessons() {
+        if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
+
+        $sqlCountQuery = "SELECT COUNT(DISTINCT(lessonid)) FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE;
+        
+        if($queryResult = mysqli_query($this->DBConnection,$sqlCountQuery)) {
+            $row = $queryResult->fetch_row();
+            $content = $row[0];
+            return $content;
+        } else {
+            return 0;
+        }
+    }
+
     function getNumberOfModulesInLesson(int $lessonID) {
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 
@@ -169,7 +183,7 @@ class QuickDatabase {
             $content = $row[0];
             return $content;
         } else {
-            return "{unknown}";
+            return 0;
         }
     }
 
@@ -186,7 +200,7 @@ class QuickDatabase {
             //println("getNumberConcepts: $count");
             return $count;
         } else {
-            return "-1";
+            return 0;
         }
     }
 
