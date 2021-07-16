@@ -323,10 +323,14 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
     global $quickDatabase;
     $middleText = "";
     $isNextButton = false;
-    if($conceptID>0) $isNextButton = true;
+    $isMainMenuButton = false;
+    if($moduleID==0 && $conceptID==0) {
+        $isNextButton = false;
+        $isMainMenuButton = true;
+    } else if($conceptID>0) $isNextButton = true;
     $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
-    //println("<p>printRight Count: $conceptCount</p>");  
-    if($conceptID<$conceptCount) {//don't print right button for last concept.
+    //println("<p>printRight next? $isNextButton main? $isMainMenuButton les:$lessonID, mod:$moduleID con:$conceptID Count: $conceptCount</p>");  
+    if($isMainMenuButton || $conceptID<$conceptCount) {//don't print right button for last concept.
         $conceptID++; //change to the value of next screen
         if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
             if($moduleID>0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
