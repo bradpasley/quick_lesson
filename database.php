@@ -111,7 +111,7 @@ class QuickDatabase {
     public function getLessonTitle(int $lessonID, int $moduleID=0, int $conceptID=0) {
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
         $sqlQueryTitle = "";
-        println("<h5>getLessonTitle($lessonID, $moduleID, $conceptID) Database? $DBConnectionStatus</h5>");
+        //println("<h5>getLessonTitle($lessonID, $moduleID, $conceptID) Database? $DBConnectionStatus</h5>");
         if($moduleID==0 && $conceptID==0) {//Lesson title
             $sqlQueryTitle = "SELECT title FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonid='$lessonID' AND moduleid=0 AND conceptid=0";

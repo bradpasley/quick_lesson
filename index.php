@@ -80,17 +80,18 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
             break;
         case SCREENLESSONMENU: 
             println('<div class="row">');
-            for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
+            $numberOfModules = $quickDatabase->getNumberOfModulesInLesson($lessonID);
+            for($moduleNumber=1; $moduleNumber<=$numberOfModules; $moduleNumber++) {
                 $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
                 $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
                 printMenuCard($moduleTitle, $moduleContent, SCREENMODULE, $lessonID, $moduleNumber);
             }
-            for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
+            for($moduleNumber=1; $moduleNumber<=$numberOfModules; $moduleNumber++) {
                 $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
                 $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
                 printMenuCard("Review - ".$moduleTitle, $moduleContent, SCREENREVIEW, $lessonID, $moduleNumber);
             }
-            for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
+            for($moduleNumber=1; $moduleNumber<=$numberOfModules; $moduleNumber++) {
                 $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
                 $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
                 printMenuCard("Quiz for ".$moduleTitle, $moduleContent, SCREENQUIZ, $lessonID, $moduleNumber);
