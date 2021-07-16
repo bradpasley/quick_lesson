@@ -201,7 +201,7 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
     
     if($moduleid>0 && $conceptid>0) {
         $buttonName = "Previous";
-        println('<div class="d-flex justify-content-sm-between">');//start flex
+        println('<div class="d-flex justify-content-sm-start">');//start flex
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         $buttonName = "Next";
         println('<div class="p2">&nbsp;</div>');//gap between buttons
