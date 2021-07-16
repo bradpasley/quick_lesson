@@ -55,7 +55,7 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
         println("<h3>CHECK Screen: $screen</h3>");
         println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
     } else if(isset($_POST['lessonID']) && $_POST['lessonID']!=0) {
-        $lessonID = $_POST['moduleID'];
+        $lessonID = $_POST['lessonID'];
         printHTMLBodyStart(SITENAME, $lessonID);
         println("<p>CHECK lessonid set? ".isset($_POST['lessonID'])."</p>");
         println("<p>CHECK lessonid value? ".$_POST['lessonID']."</p>");
