@@ -61,7 +61,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
 function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
     
     println('<body>');
-    println('<h1> print HTML lessonid: '.$lessonid.'</h1>');
+    //println('<h1> print HTML lessonid: '.$lessonid.'</h1>');
     
     $isHome = true;
     if(!isSessionValid() || !isset($_REQUEST['screen']) || $_REQUEST['screen']==SCREENMAINMENU) {
@@ -79,7 +79,7 @@ function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
     println('<div class="row justify-content-center">');
     if(!$isHome && $lessonid>0) {//print the home button except when already home + print Lesson bubble title when in submenu/lesson page
         println("<h4>Attempt to get lesson title</h4>");
-        $lessonTitle = $quickDatabase->getLessonTitle($lessonID);
+        $lessonTitle = $quickDatabase->getLessonTitle($lessonid);
         println("<h4>lesson title: $lessonTitle</h4>");
         //println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
         printMainMenuButton();
