@@ -346,6 +346,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
     } else if($conceptid==0) {
         $isLessonButton = true;
     } else if($conceptid>0) {
+        $isNextButton = true;
         $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonid, $moduleid);
     }
     //println("<p>printRight next? $isNextButton main? $isMainMenuButton les:$lessonid, mod:$moduleid con:$conceptid Count: $conceptCount</p>");  
