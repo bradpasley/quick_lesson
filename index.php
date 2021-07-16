@@ -52,11 +52,11 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
     $conceptID = 0;
 
     //print website heading without or with lesson title depending on if it's the main menu or not
-    println("<p>CHECK lessonid set? ".isset($_POST['lessonID'])."</p>");
-    println("<p>CHECK lessonid value? ".$_POST['lessonID']."</p>");
     if($screen==SCREENMAINMENU) {
         printHTMLBodyStart(SITENAME);
     } else if(isset($_POST['lessonID']) && $_POST['lessonID']!=0) {
+        println("<p>CHECK lessonid set? ".isset($_POST['lessonID'])."</p>");
+        println("<p>CHECK lessonid value? ".$_POST['lessonID']."</p>");
         $lessonID = $_POST['moduleID'];
         printHTMLBodyStart(SITENAME, $lessonID);
     } else { //default to non-lesson title menu
