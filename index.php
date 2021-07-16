@@ -36,14 +36,16 @@ include_once('database.php');
 
 printHTMLHeader(SITENAME);
  
-if(!isSessionValid()) {
+if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
     printHTMLBodyStart(SITENAME); //print site heading without lesson title
     printLogin();
     if(isLoginAttempt()) { //if login attempted but session not valid
         println('<p class="text-danger">username/password incorrect.</p>');
     }
 } else {//authenticated user & session valid
-    //println("<h3>CHECK Screen: $screen</h3>");
+    $screen = $_POST['screen'];
+    println("<h3>CHECK Screen: $screen</h3>");
+    println("<h4>CHECK post: ".var_dump($_POST)."</h3>"); 
     $quickDatabase = new QuickDatabase();
     $lessonID = 0;
     $moduleID = 0;
