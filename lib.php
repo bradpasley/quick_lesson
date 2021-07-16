@@ -329,11 +329,11 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
         $isMainMenuButton = true;
     } else if($conceptID>0) $isNextButton = true;
     $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonID, $moduleID);
-    //println("<p>printRight next? $isNextButton main? $isMainMenuButton les:$lessonID, mod:$moduleID con:$conceptID Count: $conceptCount</p>");  
+    println("<p>printRight page: $pageTitle screenType: $screenType next? $isNextButton main? $isMainMenuButton les:$lessonID, mod:$moduleID con:$conceptID Count: $conceptCount</p>");  
     if($isMainMenuButton || $conceptID<$conceptCount) {//don't print right button for last concept.
         $conceptID++; //change to the value of next screen
         if(in_array($screenType, array(SCREENLESSONMENU, SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
-            if($moduleID>0) $middleText .= '  <input type="hidden" name="lessonID" value="'.$lessonID.'">';
+            if($lessonID>0) $middleText .= '  <input type="hidden" name="lessonID" value="'.$lessonID.'">';
         }
         if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
             if($moduleID>0) $middleText .= '  <input type="hidden" name="moduleID" value="'.$moduleID.'">';
