@@ -378,6 +378,9 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
     if($conceptid>0) {//don't display for first concept
         $conceptid--; //change to the value of previous screen
         if($conceptid==0) $screenType = $screenType-5; //bring back to main type of page
+        if(in_array($screenType, array(SCREENLESSONMENU, SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
+            if($lessonid>0) $middleText .= '  <input type="hidden" name="lessonid" value="'.$lessonid.'">';
+        }
         if(in_array($screenType, array(SCREENMODULE, SCREENMODULECONCEPT, SCREENREVIEW, SCREENREVIEWCONCEPT, SCREENQUIZ, SCREENQUIZCONCEPT))) {
             if($moduleid>0) $middleText .= '  <input type="hidden" name="moduleid" value="'.$moduleid.'">';
         }
