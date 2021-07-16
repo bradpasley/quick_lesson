@@ -42,6 +42,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     $flipCardCSSURL      = "flipper.css";
     $quizCSSURL          = "quiz.css";
     $quizJsURL           = "dragdrop.js";
+    $siteCSSURL          = "quick.css";
     println('<!doctype html>');
     println('<html lang="en">');
     println('<head>');
@@ -70,7 +71,7 @@ function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
         $isHome=false;
     }
     
-    println('<div class="container col-sm-11" style="'.MAINBACKGROUNDSTYLE.'">');
+    println('<div class="container col-sm-11 main-background">');
     println('<div class="jumbotron py-3 px-lg-3">');
     println('<div class="row justify-content-center">');
     println('<h3 class="col-sm-8 display-3 text-secondary" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check"></i>'.$pageTitle.'</h1>');
