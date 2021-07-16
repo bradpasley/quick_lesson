@@ -44,8 +44,6 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
     }
 } else {//authenticated user & session valid
     $screen = $_REQUEST['screen'];
-    println("<h3>CHECK Screen: $screen</h3>");
-    println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
     $quickDatabase = new QuickDatabase();
     $lessonID = 0;
     $moduleID = 0;
@@ -54,11 +52,15 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
     //print website heading without or with lesson title depending on if it's the main menu or not
     if($screen==SCREENMAINMENU) {
         printHTMLBodyStart(SITENAME);
+        println("<h3>CHECK Screen: $screen</h3>");
+        println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
     } else if(isset($_POST['lessonID']) && $_POST['lessonID']!=0) {
         println("<p>CHECK lessonid set? ".isset($_POST['lessonID'])."</p>");
         println("<p>CHECK lessonid value? ".$_POST['lessonID']."</p>");
         $lessonID = $_POST['moduleID'];
         printHTMLBodyStart(SITENAME, $lessonID);
+        println("<h3>CHECK Screen: $screen</h3>");
+        println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
     } else { //default to non-lesson title menu
         printHTMLBodyStart(SITENAME);
     }

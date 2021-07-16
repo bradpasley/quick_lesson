@@ -76,7 +76,9 @@ function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
     println('<br>');
     println('<div class="row justify-content-center">');
     if(!$isHome && $lessonid>0) {//print the home button except when already home + print Lesson bubble title when in submenu/lesson page
+        println("<h4>Attempt to get lesson title</h4>");
         $lessonTitle = $quickDatabase->getLessonTitle($lessonID);
+        println("<h4>lesson title: $lessonTitle</h4>");
         //println('<div class="col-lg-2 col-md-4 col-sm-6 card">');
         printMainMenuButton();
         //println('</div>'); //col
