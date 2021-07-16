@@ -52,15 +52,15 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
     //print website heading without or with lesson title depending on if it's the main menu or not
     if($screen==SCREENMAINMENU) {
         printHTMLBodyStart(SITENAME);
-        println("<h3>CHECK Screen: $screen</h3>");
-        println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
+        //println("<h3>CHECK Screen: $screen</h3>");
+        //println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
     } else if(isset($_POST['lessonID']) && $_POST['lessonID']!=0) {
         $lessonID = $_POST['lessonID'];
         printHTMLBodyStart(SITENAME, $lessonID);
-        println("<p>CHECK lessonid set? ".isset($_POST['lessonID'])."</p>");
-        println("<p>CHECK lessonid value? ".$_POST['lessonID']."</p>");
-        println("<h3>CHECK Screen: $screen</h3>");
-        println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
+        //println("<p>CHECK lessonid set? ".isset($_POST['lessonID'])."</p>");
+        //println("<p>CHECK lessonid value? ".$_POST['lessonID']."</p>");
+        //println("<h3>CHECK Screen: $screen</h3>");
+        //println("<h4>CHECK post: ".var_dump($_POST)."</h4>"); 
     } else { //default to non-lesson title menu
         printHTMLBodyStart(SITENAME);
     }
@@ -81,18 +81,18 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
         case SCREENLESSONMENU: 
             println('<div class="row">');
             for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
-                $moduleTitle = $quickDatabase->getLessonTitle($moduleNumber);
-                $moduleContent = $quickDatabase->getLessonContent($moduleNumber);
+                $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
                 printMenuCard($moduleTitle, $moduleContent, SCREENMODULE, $lessonID, $moduleNumber);
             }
             for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
-                $moduleTitle = $quickDatabase->getLessonTitle($moduleNumber);
-                $moduleContent = $quickDatabase->getLessonContent($moduleNumber);
+                $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
                 printMenuCard("Review - ".$moduleTitle, $moduleContent, SCREENREVIEW, $lessonID, $moduleNumber);
             }
             for($moduleNumber=1; $moduleNumber<=$numberOfLessons; $moduleNumber++) {
-                $moduleTitle = $quickDatabase->getLessonTitle($moduleNumber);
-                $moduleContent = $quickDatabase->getLessonContent($moduleNumber);
+                $moduleTitle = $quickDatabase->getLessonTitle($lessonID, $moduleNumber);
+                $moduleContent = $quickDatabase->getLessonContent($lessonID, $moduleNumber);
                 printMenuCard("Quiz for ".$moduleTitle, $moduleContent, SCREENQUIZ, $lessonID, $moduleNumber);
             }
             printMenuCard("Account", "Change your username or password.", SCREENACCOUNTEDIT); //need to add
