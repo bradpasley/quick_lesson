@@ -204,6 +204,7 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
         println('<div class="d-flex justify-content-sm-between">');//start flex
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         $buttonName = "Next";
+        println('<div class="p2">&nbsp;</div>');//gap between buttons
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         println('</div>');//end flex
     } else if($moduleid>0) {
