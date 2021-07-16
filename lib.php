@@ -153,7 +153,7 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
 
     //println('<div class="row">');
     println('<div class="col-lg-2 col-md-4 col-sm-6 card '.$backgroundClass.'">');
-    println('<div class="card-body d-flex flex-column justify-content-between">');
+    println('<div class="card-body d-flex flex-column justify-content-sm-between">');
     println('  <h4 class="card-title">'.$cardTitle.'</h4>');
     println('  <p class="card-text">'.$cardContent.'</p>');
     //println('  <p class="card-text"><b>menuScreen:</b>'.$menuScreen.'</p>');
@@ -201,11 +201,11 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
     
     if($moduleid>0 && $conceptid>0) {
         $buttonName = "Previous";
-        println('<div class="row">');//start row
+        println('<div class="d-flex justify-content-sm-between">');//start flex
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
-        println('</div>');//end row
+        println('</div>');//end flex
     } else if($moduleid>0) {
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
@@ -361,13 +361,13 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
         if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
             $middleText .= '  <input type="hidden" name="conceptid" value="'.$conceptid.'">';
         } 
-        if($isNextButton) println('<div class="col-sm-4 col-md-3 col-lg-2">');//start of col
+        if($isNextButton) println('<div class="p2">');//start of padding
         println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
         println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
         println('</form>');
-        if($isNextButton) println('</div>');//end of col
+        if($isNextButton) println('</div>');//end of padding
     }
 }
 
@@ -383,13 +383,13 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
         if(in_array($screenType, array(SCREENMODULECONCEPT, SCREENREVIEWCONCEPT, SCREENQUIZCONCEPT))) {
                 $middleText .= '  <input type="hidden" name="conceptid" value="'.$conceptid.'">';
         }
-        println('<div class="col-sm-4 col-md-3 col-lg-2">');//start of col
+        println('<div class="p2">');//start of padding
         println('<form id="leftArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
         println('  <button type="submit" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" name="leftArrowButton_'.$pageTitle.'">'.PREVBUTTONICON.'&nbsp;'.$buttonText.'</button>');
         println('</form>');
-        println('</div>');//end of col
+        println('</div>');//end of padding
     }
 }
 
