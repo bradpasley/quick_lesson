@@ -59,7 +59,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
 }
 
 function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
-    
+    global $quickDatabase;
     println('<body>');
     //println('<h1> print HTML lessonid: '.$lessonid.'</h1>');
     
