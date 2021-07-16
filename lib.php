@@ -68,6 +68,7 @@ function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
     }
 
     println('<body>');
+    println('<h1> print HTML lessonid: '.$lessonid);
     println('<div class="container col-sm-11" style="'.MAINBACKGROUNDSTYLE.'">');
     println('<div class="jumbotron py-3 px-lg-3">');
     println('<div class="row justify-content-center">');
