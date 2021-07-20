@@ -367,7 +367,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('   if(conceptid>0) {');
     println('        document.getElementById("conceptTitle").innerHTML = moduleJSON[conceptid].title;');
     println('   else {'); //hide concept title on Module title page.
-    println('        document.getElementById("conceptTitle").innerHTML = "";');
+    println('        document.getElementById("conceptTitle").innerHTML = \'\';');
     println('   }');
     println('   document.getElementById("content").innerHTML = moduleJSON[conceptid].content;');
     println('   showNavigationButtons();');
