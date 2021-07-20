@@ -364,7 +364,11 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('}');
     println('function previousConcept() {');
     println('   conceptid--;');
-    println('   document.getElementById("conceptTitle").innerHTML = moduleJSON[conceptid].title;');
+    println('   if(conceptid>0) {');
+    println('        document.getElementById("conceptTitle").innerHTML = moduleJSON[conceptid].title;');
+    println('   else {'); //hide concept title on Module title page.
+    println('        document.getElementById("conceptTitle").innerHTML = "";');
+    println('   }');
     println('   document.getElementById("content").innerHTML = moduleJSON[conceptid].content;');
     println('   showNavigationButtons();');
     println('}');
