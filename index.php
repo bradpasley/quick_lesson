@@ -102,6 +102,7 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
             println("<br><br>");
             println("<h3>Testing Json Lesson</h3>");
             println("<p>".getLessonJSON($lessonid)."</p>");
+            printJSHTMLLessonJSON($lessonid);
             break;
         case SCREENMODULE:
             //println('<h4>screen module...</h4>');

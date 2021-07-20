@@ -327,6 +327,17 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
   * if moduleid is not included or equals 0, the lesson metadata will be returned
   */
 
+function printJSHTMLLessonJSON(int $lessonid) {
+    println('<p id="JSONLessonTitle"></p>');
+    println('<p id="JSONLessonContent"></p>');
+    println("<script>");
+    println("const lessonJSON = '".getLessonJSON($lessonid)."';");
+    println("const lessonObj = JSON.parse(lessonJSON);");
+    println('document.getElementById("JSONLessonTitle").innerHTML = myObj.title;');
+    println('document.getElementById("JSONLessonContent").innerHTML = myObj.content;');
+    println("</script>");
+}
+
 function getLessonJSON(int $lessonid) {
     return getJSON($lessonid);
 }
