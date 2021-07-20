@@ -351,9 +351,13 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     
     println('function nextConcept() {');
     println('   ++conceptid;');
+    println('   document.getElementById("ConceptTitle").innerHTML = "JSON Concept Title: " + moduleObj[conceptid].title;');
+    println('   document.getElementById("Content").innerHTML = "JSON Content("+conceptid+"): " + moduleObj[conceptid].content;');
     println('}');
     println('function previousConcept() {');
     println('   --conceptid;');
+    println('   document.getElementById("ConceptTitle").innerHTML = "JSON Concept Title: " + moduleObj[conceptid].title;');
+    println('   document.getElementById("Content").innerHTML = "JSON Content("+conceptid+"): " + moduleObj[conceptid].content;');
     println('}');
     println("</script>");
 }
