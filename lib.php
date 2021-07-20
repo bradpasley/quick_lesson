@@ -341,8 +341,8 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
     //println('document.getElementById("conceptID").innerHTML = "JSON Content ID ("+conceptid+")";');
     println('document.getElementById("moduleTitle").innerHTML = moduleJSON["0"].title;');
-    println('document.getElementById("conceptTitle").innerHTML = moduleJSON["1"].title;');
-    println('document.getElementById("content").innerHTML = moduleJSON["1"].content;');
+    //println('document.getElementById("conceptTitle").innerHTML = moduleJSON["1"].title;');
+    println('document.getElementById("content").innerHTML = moduleJSON["0"].content;');
     println('showNavigationButtons();');
     println('function showNavigationButtons() {');
     println('   var navButtons = "";');
