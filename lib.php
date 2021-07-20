@@ -333,7 +333,7 @@ function printJSHTMLLessonJSON(int $lessonid) {
     println("<script>");
     println("const lessonJSON = '".getLessonJSON($lessonid)."';");
     println("const lessonObj = JSON.parse(lessonJSON);");
-    println('document.getElementById("JSONLessonTitle").innerHTML = myObj.title;');
+    println('document.getElementById("JSONLessonTitle").innerHTML = lessonObj.title;');
     //println('document.getElementById("JSONLessonContent").innerHTML = myObj.content;');
     println("</script>");
 }
