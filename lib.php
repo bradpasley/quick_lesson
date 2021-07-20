@@ -347,7 +347,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('function showNavigationButtons() {');
     println('   var navButtons = "";');
     println('   var numberOfConcepts = Object.keys(moduleJSON).length-1;');
-    println('   document.getElementById("testOutput").innerHTML = "Page "+conceptid;');
+    println('   document.getElementById("pageNumber").innerHTML = "Page "+conceptid;');
     println('   if(conceptid>0) {  //left button limit');
     println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lgname="leftArrowButton_JSON">Previous</button>\n\';');
     println('   }');
