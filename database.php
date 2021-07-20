@@ -174,7 +174,7 @@ class QuickDatabase {
         }
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryContent)) {
-            println($sqlQueryContent);
+            //println($sqlQueryContent);
             //print("<p>result fields: ".$queryResult->field_count."</p>");
             //print("<p>result rows: ".$queryResult->num_rows."</p>");
             $table = $queryResult->fetch_all(MYSQLI_BOTH);
