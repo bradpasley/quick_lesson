@@ -112,7 +112,8 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
                 $moduleid = $_POST['moduleid'];
                 //println('<h4>module id: '.$moduleid.'</h4>');
                 //main menu of Module
-                printModulePage($lessonid, $moduleid);
+                //printModulePage($lessonid, $moduleid);
+                printJSONModulePage($lessonid, $moduleid);
                 //println("<br><br>");
                 //println("<h3>Testing Json Module</h3>");
                 //println("<p>".getModuleJSON($lessonid, $moduleid)."</p>");
