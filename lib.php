@@ -343,11 +343,11 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println("<script>");
     println("var conceptid = $conceptid;");
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
-    println("const moduleObj = JSON.parse(moduleJSON);");
+    //println("const moduleObj = JSON.parse(moduleJSON);");
     //println('document.getElementById("ConceptID").innerHTML = "JSON Content("+conceptid+")";');
     //println('document.getElementById("ModuleTitle").innerHTML = "JSON Module Title: " + moduleObj[0].title;');
-    println('document.getElementById("conceptTitle").innerHTML = moduleObj["0"].title;');
-    println('document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleObj["1"].content;');
+    println('document.getElementById("conceptTitle").innerHTML = moduleJSON["0"].title;');
+    println('document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON["1"].content;');
     /*
     println('function nextConcept() {');
     println('   ++conceptid;');
