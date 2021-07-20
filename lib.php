@@ -340,9 +340,9 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println("var conceptid = $conceptid;");
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
     //println('document.getElementById("conceptID").innerHTML = "JSON Content("+conceptid+")";');
-    println('document.getElementById("moduleTitle").innerHTML = moduleJSON["'.$moduleid.'"].title;');
+    println('document.getElementById("moduleTitle").innerHTML = moduleJSON["0"].title;'); //0 is the module metadata conceptid
     //println('document.getElementById("conceptTitle").innerHTML = moduleJSON["'.$moduleid.'"].title;');
-    println('document.getElementById("content").innerHTML = moduleJSON["'.$moduleid.'"].content;');
+    println('document.getElementById("content").innerHTML = moduleJSON["0"].content;'); //0 is the module metadata conceptid
     println('showNavigationButtons();');
     println('function showNavigationButtons() {');
     println('   var navButtons = "";');
@@ -358,14 +358,14 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('}');
     println('function nextConcept() {');
     println('   conceptid++;');
-    println('   document.getElementById("conceptTitle").innerHTML = "JSON Concept Title: " + moduleJSON[conceptid].title;');
-    println('   document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON[conceptid].content;');
+    println('   document.getElementById("conceptTitle").innerHTML = moduleJSON[conceptid].title;');
+    println('   document.getElementById("content").innerHTML = moduleJSON[conceptid].content;');
     println('   showNavigationButtons();');
     println('}');
     println('function previousConcept() {');
     println('   conceptid--;');
-    println('   document.getElementById("conceptTitle").innerHTML = "JSON Concept Title: " + moduleJSON[conceptid].title;');
-    println('   document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON[conceptid].content;');
+    println('   document.getElementById("conceptTitle").innerHTML = moduleJSON[conceptid].title;');
+    println('   document.getElementById("content").innerHTML = moduleJSON[conceptid].content;');
     println('   showNavigationButtons();');
     println('}');
     println("</script>");
