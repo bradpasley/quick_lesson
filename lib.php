@@ -340,7 +340,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
             .'name="rightArrowButton_JSON">Next&nbsp;'.NEXTBUTTONICON.'</button>');
     println('</div>');
     println("<script>");
-    println("const moduleJSON = '".getModuleJSON($lessonid, $moduleid)."';");
+    println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
     println("const moduleObj = JSON.parse(moduleJSON);");
     println("var conceptid = 0;");
     println('document.getElementById("ModuleTitle").innerHTML = "JSON Title: " + moduleObj.0;');
