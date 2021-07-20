@@ -177,14 +177,10 @@ class QuickDatabase {
             println($sqlQueryContent);
             print("<p>result fieldss: ".$queryResult->field_count."</p>");
             print("<p>result rows: ".$queryResult->num_rows."</p>");
-            $row = array();
-            $tableArray = array();
-            while($row = $queryResult->mysqli_fetch_array(MYSQLI_BOTH)) {
-                print("<p>row: ");
-                var_dump($row);
-                print("</p>");
-                array_push($tableArray, $row);//appending each row array as an array element in resultArray
-            }
+            $table = $queryResult->mysqli_fetch_all(MYSQLI_BOTH);
+            print("<p>table: ");
+            var_dump($table);
+            print("</p>");
             $resultJson = json_encode($resultArray, JSON_FORCE_OBJECT);
             return $resultJson;
         } else {
