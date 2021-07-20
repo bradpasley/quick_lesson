@@ -330,35 +330,34 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
 function printJSONModulePage(int $lessonid, int $moduleid) {
     global $quickDatabase;
     $conceptid = 0;
-    //println('<h3 id="ModuleTitle" class="display-4 text-secondary"></h3>');
+    println('<h3 id="moduleTitle" class="display-4 text-secondary"></h3>');
     println('<h4 id="conceptTitle" class="lead text-primary" style="font-weight:bolder; font-size: 1.4em"></h4>');
     println('<p id="content" style="font-size: 1.3em"></p>');
-    //println('<p id="ConceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
-    //println('<div id="modNavButtons">');
-    //println('  <button onClick="previousConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
-    //        .'name="leftArrowButton_JSON">'.PREVBUTTONICON.'&nbsp;Previous</button>');
-    //println('  <button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
-    //        .'name="rightArrowButton_JSON">Next&nbsp;'.NEXTBUTTONICON.'</button>');
-    //println('</div>');
+    println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
+    println('<div id="modNavButtons">');
+    println('  <button onClick="previousConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
+            .'name="leftArrowButton_JSON">'.PREVBUTTONICON.'&nbsp;Previous</button>');
+    println('  <button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
+            .'name="rightArrowButton_JSON">Next&nbsp;'.NEXTBUTTONICON.'</button>');
+    println('</div>');
     println("<script>");
     println("var conceptid = $conceptid;");
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
-    //println("const moduleObj = JSON.parse(moduleJSON);");
-    //println('document.getElementById("ConceptID").innerHTML = "JSON Content("+conceptid+")";');
-    //println('document.getElementById("ModuleTitle").innerHTML = "JSON Module Title: " + moduleObj[0].title;');
+    println('document.getElementById("conceptID").innerHTML = "JSON Content("+conceptid+")";');
+    println('document.getElementById("moduleTitle").innerHTML = "JSON Module Title: " + moduleJSON[0].title;');
     println('document.getElementById("conceptTitle").innerHTML = moduleJSON["0"].title;');
     println('document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON["1"].content;');
-    /*
+    
     println('function nextConcept() {');
     println('   ++conceptid;');
-    println('   document.getElementById("ConceptTitle").innerHTML = "JSON Concept Title: " + moduleObj[conceptid].title;');
-    println('   document.getElementById("Content").innerHTML = "JSON Content("+conceptid+"): " + moduleObj[conceptid].content;');
+    println('   document.getElementById("conceptTitle").innerHTML = "JSON Concept Title: " + moduleJSON[conceptid].title;');
+    println('   document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON[conceptid].content;');
     println('}');
     println('function previousConcept() {');
     println('   --conceptid;');
-    println('   document.getElementById("ConceptTitle").innerHTML = "JSON Concept Title: " + moduleObj[conceptid].title;');
-    println('   document.getElementById("Content").innerHTML = "JSON Content("+conceptid+"): " + moduleObj[conceptid].content;');
-    println('}');*/
+    println('   document.getElementById("conceptTitle").innerHTML = "JSON Concept Title: " + moduleJSON[conceptid].title;');
+    println('   document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON[conceptid].content;');
+    println('}');
     println("</script>");
 }
 
