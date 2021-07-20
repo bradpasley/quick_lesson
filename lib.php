@@ -330,9 +330,9 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
 function printJSONModulePage(int $lessonid, int $moduleid) {
     global $quickDatabase;
     println('<h3 id="ModuleTitle" class="display-4 text-secondary"></h3>');
-    println('<p ></p>');
     println('<h4 id="ConceptTitle" class="lead text-primary" style="font-weight:bolder; font-size: 1.4em"></h4>');
     println('<p id="Content" style="font-size: 1.3em"></p>');
+    println('<p id="ConceptID" style="font-size: 1.3em"></p>');
     println('<div id="modNavButtons">');
     println('  <button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
             .'name="leftArrowButton_JSON">'.PREVBUTTONICON.'&nbsp;Previous</button>');
@@ -346,6 +346,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('document.getElementById("ModuleTitle").innerHTML = "JSON Module Title: " + moduleObj[0].title;');
     println('document.getElementById("ConceptTitle").innerHTML = "JSON Concept Title: " + moduleObj[conceptid].title;');
     println('document.getElementById("Content").innerHTML = "JSON Content("+conceptid+"): " + moduleObj[conceptid].content;');
+    println('document.getElementById("ConceptID").innerHTML = "JSON Content("+conceptid+"): ";');
     println('function nextConcept() {');
     println('   ++conceptid;');
     println('}');
