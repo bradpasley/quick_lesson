@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Creating an Object from a JSON Literal</h2>
+<h3 id="moduleTitle"></h3>
+<h4 id="conceptTitle" style="font-weight:bolder; font-size: 1.4em"></h4>
+<p id="content" style="font-size: 1.3em"></p>
+<p id="conceptID" style="font-size: 1.3em"></p>
+<p id="testOutput"></p>
+<div id="modNavButtons"></div>
+
+<script>
+
+var conceptid = 0;
+const moduleJSON = {"0":{"0":"0","conceptid":"0","1":"Consonants","title":"Consonants","2":"Learn how to identify and say the Korean consonants.","content":"Learn how to identify and say the Korean consonants."},"1":{"0":"1","conceptid":"1","1":"\u3131","title":"\u3131","2":"\/k\/ Similar to the soft 'ch' sound in \"anarchy\u201d","content":"\/k\/ Similar to the soft 'ch' sound in \"anarchy\u201d"},"2":{"0":"2","conceptid":"2","1":"\u3134","title":"\u3134","2":"\/n\/ Similar to the 'n' in \u201cno\u201d","content":"\/n\/ Similar to the 'n' in \u201cno\u201d"},"3":{"0":"3","conceptid":"3","1":"\u3137","title":"\u3137","2":"\/t\/ Similar to the 'd' in \u201cday\u201d","content":"\/t\/ Similar to the 'd' in \u201cday\u201d"},"4":{"0":"4","conceptid":"4","1":"\u3139","title":"\u3139","2":"\/\u027e\/ Similar to a Scottish soft rolling 'r' in \"radio\". Although when it appears at the end of a syllable, the sound is \/\u026d\/; similiar to 'l' in \"bell\"","content":"\/\u027e\/ Similar to a Scottish soft rolling 'r' in \"radio\". Although when it appears at the end of a syllable, the sound is \/\u026d\/; similiar to 'l' in \"bell\""},"5":{"0":"5","conceptid":"5","1":"\u3141","title":"\u3141","2":"\/m\/ Similar to the 'm' in \"mouse\"","content":"\/m\/ Similar to the 'm' in \"mouse\""},"6":{"0":"6","conceptid":"6","1":"\u3142","title":"\u3142","2":"\/p\/ Similar to the soft 'p' in \"pack\"","content":"\/p\/ Similar to the soft 'p' in \"pack\""},"7":{"0":"7","conceptid":"7","1":"\u3143","title":"\u3143","2":"\/pp\/ Similar to a harshly spoken 'b' in \"brave\"","content":"\/pp\/ Similar to a harshly spoken 'b' in \"brave\""},"8":{"0":"8","conceptid":"8","1":"\u314d","title":"\u314d","2":"\/p\u02b0\/ Similar to the 'p' in \"pie\"","content":"\/p\u02b0\/ Similar to the 'p' in \"pie\""},"9":{"0":"9","conceptid":"9","1":"\u3138","title":"\u3138","2":"\/tt\/ Similar to a harshly spoken 'd' in \"double\"","content":"\/tt\/ Similar to a harshly spoken 'd' in \"double\""},"10":{"0":"10","conceptid":"10","1":"\u314c","title":"\u314c","2":"\/t\u02b0\/ Similiar to the 't' in \"task\"","content":"\/t\u02b0\/ Similiar to the 't' in \"task\""},"11":{"0":"11","conceptid":"11","1":"\u3145","title":"\u3145","2":"\/\u0283\/ Similar to the 'sh' \"flesh\"","content":"\/\u0283\/ Similar to the 'sh' \"flesh\""},"12":{"0":"12","conceptid":"12","1":"\u3146","title":"\u3146","2":"\/ss\/ Similar to the 's' in \"send\"","content":"\/ss\/ Similar to the 's' in \"send\""},"13":{"0":"13","conceptid":"13","1":"\u3148","title":"\u3148","2":"\/t\u0255\/ Similar to the 'ch' in \"chew\", but softer","content":"\/t\u0255\/ Similar to the 'ch' in \"chew\", but softer"},"14":{"0":"14","conceptid":"14","1":"\u3149","title":"\u3149","2":"\/t\u0348\u0255\/ Similar to the 'j' in \"jigsaw\"","content":"\/t\u0348\u0255\/ Similar to the 'j' in \"jigsaw\""},"15":{"0":"15","conceptid":"15","1":"\u314a","title":"\u314a","2":"\/t\u0255\u02b0\/ Simliar to the 'ch' in \"children\"","content":"\/t\u0255\u02b0\/ Simliar to the 'ch' in \"children\""},"16":{"0":"16","conceptid":"16","1":"\u314b","title":"\u314b","2":"\/k\u02b0\/ Similiar to the 'k' in \"kick\"","content":"\/k\u02b0\/ Similiar to the 'k' in \"kick\""},"17":{"0":"17","conceptid":"17","1":"\u314e","title":"\u314e","2":"\/h\/ Similiar to the 'h' in \"hello\"","content":"\/h\/ Similiar to the 'h' in \"hello\""},"18":{"0":"18","conceptid":"18","1":"\u3147","title":"\u3147","2":"\/\u014b\/ Similiar to the 'ng' in \"sing\". Although when it appears at the beginning of a syllable, it is not pronounced (no sound)","content":"\/\u014b\/ Similiar to the 'ng' in \"sing\". Although when it appears at the beginning of a syllable, it is not pronounced (no sound)"}};
+document.getElementById("conceptID").innerHTML = "JSON Content("+conceptid+")";
+document.getElementById("moduleTitle").innerHTML = moduleJSON["0"].title;
+document.getElementById("conceptTitle").innerHTML = moduleJSON["1"].title;
+document.getElementById("content").innerHTML = moduleJSON["0"].content;
+showNavigationButtons();
+function showNavigationButtons() {
+   var navButtons = "";
+   var numberOfConcepts = Object.keys(moduleJSON).length-1;
+   document.getElementById("testOutput").innerHTML = "Page "+conceptid;
+   if(conceptid>0) {  //left button limit
+       navButtons += '<button onClick="previousConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lgname="leftArrowButton_JSON">Previous</button>\n';
+   }
+   if(conceptid<numberOfConcepts) { //right button limit
+       navButtons += '<button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lgname="rightArrowButton_JSON">Next</button>\n';
+   }
+   document.getElementById("modNavButtons").innerHTML = navButtons;
+}
+function nextConcept() {
+   conceptid++;
+   document.getElementById("conceptTitle").innerHTML = "JSON Concept Title: " + moduleJSON[conceptid].title;
+   document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON[conceptid].content;
+   showNavigationButtons();
+}
+function previousConcept() {
+   conceptid--;
+   document.getElementById("conceptTitle").innerHTML = "JSON Concept Title: " + moduleJSON[conceptid].title;
+   document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON[conceptid].content;
+   showNavigationButtons();
+}
+
+</script>
+
+</body>
+</html>
