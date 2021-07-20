@@ -334,12 +334,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('<h4 id="conceptTitle" class="lead text-primary" style="font-weight:bolder; font-size: 1.4em"></h4>');
     println('<p id="content" style="font-size: 1.3em"></p>');
     println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
-    println('<div id="modNavButtons">');
-    println('  <button onClick="previousConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
-            .'name="leftArrowButton_JSON">'.PREVBUTTONICON.'&nbsp;Previous</button>');
-    println('  <button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
-            .'name="rightArrowButton_JSON">Next&nbsp;'.NEXTBUTTONICON.'</button>');
-    println('</div>');
+    println('<div id="modNavButtons"></div>');
     println("<script>");
     println("var conceptid = $conceptid;");
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
@@ -347,7 +342,22 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('document.getElementById("moduleTitle").innerHTML = "JSON Module Title: " + moduleJSON[0].title;');
     println('document.getElementById("conceptTitle").innerHTML = moduleJSON["0"].title;');
     println('document.getElementById("content").innerHTML = "JSON Content("+conceptid+"): " + moduleJSON["1"].content;');
-    
+    println('function showNavigationButtons() {');
+    println('   var navButtons = "";');
+    println('   if(conceptid>0) { //left button limit');
+    println('       navButtons += '
+                    .'<button onClick="previousConcept()" '
+                            .'class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg'
+                            .'name="rightArrowButton_JSON">Next&nbsp;'.NEXTBUTTONICON.'</button>');
+    println('   }');
+    println('   if(conceptid<moduleJSON.length) { //right button limit');
+    println('       navButtons += '
+                    .'<button onClick="nextConcept()" '
+                            .'class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg'
+                            .'name="leftArrowButton_JSON">'.PREVBUTTONICON.'&nbsp;Previous</button>');
+    println('   }');
+    println('   document.getElementById("modNavButtons").innerHTML = navButtons');
+    println('}');
     println('function nextConcept() {');
     println('   ++conceptid;');
     println('   document.getElementById("conceptTitle").innerHTML = "JSON Concept Title: " + moduleJSON[conceptid].title;');
