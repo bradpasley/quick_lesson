@@ -125,6 +125,7 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
                     $moduleid = $_POST['moduleid'];
                     $conceptid = $_POST['conceptid'];
                     printModulePage($lessonid, $moduleid, $conceptid);
+                    printJSONModulePage($lessonid, $moduleid);
                 } else {//main menu of Module
                     printModulePage($lessonid, $moduleid);
                 }

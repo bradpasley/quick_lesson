@@ -327,6 +327,34 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
   * if moduleid is not included or equals 0, the lesson metadata will be returned
   */
 
+function printJSONModulePage(int $lessonid, int $moduleid) {
+    global $quickDatabase;
+    println('<h3 class="display-4 text-secondary" id="ModuleTitle"></h3>');
+    println('<p ></p>');
+    println('<h4 class="lead text-primary" id="ConceptTitle" style="font-weight:bolder; font-size: 1.4em"></h4>');
+    println('<p style="font-size: 1.3em" id="Content"></p>');
+    println('<div id="modNavButtons">');
+    println('  <button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
+            .'name="leftArrowButton_JSON">Previous&nbsp;'.PREVBUTTONICON.'</button>');
+    println('  <button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
+            .'name="rightArrowButton_JSON">'.NEXTBUTTONICON.'&nbsp;Next</button>');
+    println('</div>');
+    println("<script>");
+    println("const moduleJSON = '".getModuleJSON($lessonid, $moduleid)."';");
+    println("const moduleObj = JSON.parse(moduleJSON);");
+    println("var conceptid = 0;");
+    println('document.getElementById("ModuleTitle").innerHTML = "JSON Title: " + moduleObj.0;');
+    println('document.getElementById("ConceptTitle").innerHTML = "JSON Title: " + moduleObj.1;');
+    println('document.getElementById("LessonContent").innerHTML = "JSON Content("+conceptid+"): " + moduleObj.2;');
+    println('function nextConcept() {');
+    println('   ++conceptid;');
+    println('}');
+    println('function previousConcept() {');
+    println('   --conceptid;');
+    println('}');
+    println("</script>");
+}
+
 function printJSHTMLLessonJSON(int $lessonid) {
     println('<p id="LessonTitle"></p>');
     println('<p id="LessonContent"></p>');
