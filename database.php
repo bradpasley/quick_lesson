@@ -176,7 +176,7 @@ class QuickDatabase {
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryContent)) {
             println($sqlQueryContent);
             while($row = $queryResult->mysqli_fetch_array(MYSQLI_BOTH)) {
-                println($row);
+                println("<p>row: $row</p>");
                 array_push($resultArray, $row);//appending each row array as an array element in resultArray
             }
             $resultJson = json_encode($resultArray, JSON_FORCE_OBJECT);
