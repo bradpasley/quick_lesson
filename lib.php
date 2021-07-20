@@ -329,15 +329,15 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
 
 function printJSONModulePage(int $lessonid, int $moduleid) {
     global $quickDatabase;
-    println('<h3 class="display-4 text-secondary" id="ModuleTitle"></h3>');
+    println('<h3 id="ModuleTitle" class="display-4 text-secondary"></h3>');
     println('<p ></p>');
-    println('<h4 class="lead text-primary" id="ConceptTitle" style="font-weight:bolder; font-size: 1.4em"></h4>');
-    println('<p style="font-size: 1.3em" id="Content"></p>');
+    println('<h4 id="ConceptTitle" class="lead text-primary" style="font-weight:bolder; font-size: 1.4em"></h4>');
+    println('<p id="Content" style="font-size: 1.3em"></p>');
     println('<div id="modNavButtons">');
     println('  <button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
-            .'name="leftArrowButton_JSON">Previous&nbsp;'.PREVBUTTONICON.'</button>');
+            .'name="leftArrowButton_JSON">'.PREVBUTTONICON.'&nbsp;Previous</button>');
     println('  <button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lg" '
-            .'name="rightArrowButton_JSON">'.NEXTBUTTONICON.'&nbsp;Next</button>');
+            .'name="rightArrowButton_JSON">Next&nbsp;'.NEXTBUTTONICON.'</button>');
     println('</div>');
     println("<script>");
     println("const moduleJSON = '".getModuleJSON($lessonid, $moduleid)."';");
@@ -345,7 +345,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println("var conceptid = 0;");
     println('document.getElementById("ModuleTitle").innerHTML = "JSON Title: " + moduleObj.0;');
     println('document.getElementById("ConceptTitle").innerHTML = "JSON Title: " + moduleObj.1;');
-    println('document.getElementById("LessonContent").innerHTML = "JSON Content("+conceptid+"): " + moduleObj.2;');
+    println('document.getElementById("Content").innerHTML = "JSON Content("+conceptid+"): " + moduleObj;');
     println('function nextConcept() {');
     println('   ++conceptid;');
     println('}');

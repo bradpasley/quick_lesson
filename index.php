@@ -128,7 +128,11 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
                     printJSONModulePage($lessonid, $moduleid);
                 } else {//main menu of Module
                     printModulePage($lessonid, $moduleid);
+
                 }
+                println("<br><br>");
+                println("<h3>Testing Json Module Content</h3>");
+                println("<p>".getModuleJSON($lessonid, $moduleid)."</p>");
             }
             break;
         case SCREENREVIEW:
