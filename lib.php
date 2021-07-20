@@ -43,7 +43,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     $bootStrapJSBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
     $flipCardCSSURL       = "flipper.css";
     $quizCSSURL           = "quiz.css";
-    $quizJsURL            = "dragdrop.js";
+    $quizJsURL            = "dragdropquiz.js";
     $siteCSSURL           = "quick.css";
     println('<!doctype html>');
     println('<html lang="en">');
