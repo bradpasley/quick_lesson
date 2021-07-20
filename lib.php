@@ -35,14 +35,16 @@ include_once('database.php');
 $quickDatabase;
 
 function printHTMLHeader(string $HTMLPageTitle) {
-    $bootstrapURL        = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css";
-    $bootstrapIconURL    = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css";
+    
+    $bootstrapURL         = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css";
+    $bootstrapIconURL     = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css";
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
-    $javascriptBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
-    $flipCardCSSURL      = "flipper.css";
-    $quizCSSURL          = "quiz.css";
-    $quizJsURL           = "dragdrop.js";
-    $siteCSSURL          = "quick.css";
+    $jQueryURL            = "https://code.jquery.com/jquery-3.5.1.slim.min.js";
+    $bootStrapJSBundleURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js";
+    $flipCardCSSURL       = "flipper.css";
+    $quizCSSURL           = "quiz.css";
+    $quizJsURL            = "dragdrop.js";
+    $siteCSSURL           = "quick.css";
     println('<!doctype html>');
     println('<html lang="en">');
     println('<head>');
@@ -55,7 +57,8 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('<link rel="stylesheet" href="'.$siteCSSURL.'">');
     println('<title>'.$HTMLPageTitle.'</title>');
     println('<!-- Bootstrap CSS -->');
-    println('<script src="'.$javascriptBundleURL.'"></script>');
+    println('<script src="'.$jQueryURL.'"></script>');
+    println('<script src="'.$bootStrapJSBundleURL.'"></script>');
     println('<script src="'.$quizJsURL.'"></script>');
     println('</head>');
 }
