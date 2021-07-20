@@ -328,13 +328,13 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
   */
 
 function printJSHTMLLessonJSON(int $lessonid) {
-    println('<p id="JSONLessonTitle"></p>');
-    //println('<p id="JSONLessonContent"></p>');
+    println('<p id="LessonTitle"></p>');
+    println('<p id="LessonContent"></p>');
     println("<script>");
     println("const lessonJSON = '".getLessonJSON($lessonid)."';");
     println("const lessonObj = JSON.parse(lessonJSON);");
-    println('document.getElementById("JSONLessonTitle").innerHTML = "JSON Title" + lessonObj.title;');
-    //println('document.getElementById("JSONLessonContent").innerHTML = myObj.content;');
+    println('document.getElementById("LessonTitle").innerHTML = "JSON Title: " + lessonObj.title;');
+    println('document.getElementById("LessonContent").innerHTML = "JSON Content: " + lessonObj.content;');
     println("</script>");
 }
 
