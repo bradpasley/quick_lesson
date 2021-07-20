@@ -99,6 +99,9 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
             printMenuCard("Account", "Change your username or password.", SCREENACCOUNTEDIT); //need to add
             printMenuCard("Logout", "Exit ".SITENAME.".", SCREENEXIT); //need to add
             println('</div>');
+            println("<br><br>");
+            println("<h3>Testing Json Lesson</h3>");
+            println("<p>".getLessonJSON($lessonid)."</p>");
             break;
         case SCREENMODULE:
             //println('<h4>screen module...</h4>');
@@ -109,6 +112,9 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
                 //println('<h4>module id: '.$moduleid.'</h4>');
                 //main menu of Module
                 printModulePage($lessonid, $moduleid);
+                println("<br><br>");
+                println("<h3>Testing Json Module</h3>");
+                println("<p>".getModuleJSON($lessonid, $moduleid)."</p>");
             }
             break;
         case SCREENMODULECONCEPT:

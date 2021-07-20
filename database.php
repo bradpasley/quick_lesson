@@ -158,6 +158,31 @@ class QuickDatabase {
         }
     }
 
+
+    public function getJSONLesson(int $lessonID, int $moduleID=0) {
+        
+        if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
+
+        $sqlQueryContent = "";
+
+        if($moduleID==0) {//Lesson content (just Lesson metadata)
+            $sqlQueryContent = "SELECT title, content FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
+                            ."WHERE lessonid='$lessonID' AND moduleid=0 AND conceptid=0";
+        } else {//Module content (Module metadata and each concept)
+            $sqlQueryContent = "SELECT title, content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
+                            ."WHERE lessonid='$lessonID' AND moduleid='$moduleID'";
+        }
+        
+        if($queryResult = mysqli_query($this->DBConnection,$sqlQueryContent)) {
+            $resultArray = $queryResult->fetch_array();
+            $resultJson = json_encode($resultArray);
+            return $resultJson;
+        } else {
+            return "{error:unknown_error}";
+        }
+    }
+    
+
     function getNumberOfLessons() {
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.
 

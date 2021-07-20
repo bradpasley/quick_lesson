@@ -315,25 +315,34 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
         println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');    
     }    
     println('<br><br>');
-    //println('<p>Module ID:  '.$moduleid.'</p>');
-    //println('<p>Concept ID: '.$conceptid.'</p>');
-    
-    /*
-    if($moduleid>0 && $conceptid>0) {
-        $buttonName = "Previous";
-        println('<div class="row">');//start row
-        printLeftArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
-        $buttonName = "Next";
-        printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
-        println('</div>');//end row
-    } else if($moduleid>0) {
-        $buttonName = "Next";
-        printRightArrowButton($moduleTitle, SCREENQUIZCONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
-    } else {
-        $buttonName = "Main Menu";
-        printRightArrowButton($moduleTitle, SCREENMAINMENU, $buttonName, $lessonid);
-    }*/
 }
+
+/**
+ * Json version module/review/quiz functions
+ */
+
+ /**
+  * getModuleJSON() - retrieves all concepts for one module
+  * returns a JSON formatted string to be used in a Javascript function.
+  * if moduleid is not included or equals 0, the lesson metadata will be returned
+  */
+
+function getLessonJSON(int $lessonid) {
+    return getJSON($lessonid);
+}
+
+function getModuleJSON(int $lessonid, int $moduleid) {
+    return getJSON($lessonid, $moduleid);
+}
+
+function getJSON(int $lessonid, int $moduleid=0) {
+    global $quickDatabase;
+    return $quickDatabase->getJSONLesson($lessonid, $moduleid);
+}
+
+/**
+ * Right and Left navigation buttons
+ */
 
 function printRightArrowButton(string $pageTitle, int $screenType, string $buttonText="", int $lessonid=0, int $moduleid=0, int $conceptid=0) {
     global $quickDatabase;
