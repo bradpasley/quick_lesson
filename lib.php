@@ -334,6 +334,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('<h4 id="conceptTitle" class="lead text-primary" style="font-weight:bolder; font-size: 1.4em"></h4>');
     println('<p id="content" style="font-size: 1.3em"></p>');
     println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
+    println('<p id="testOutput"></p>');
     println('<div id="modNavButtons"></div>');
     println("<script>");
     println("var conceptid = $conceptid;");
