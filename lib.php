@@ -333,7 +333,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('<h3 id="moduleTitle" class="display-5 text-secondary"></h3>');
     println('<h4 id="conceptTitle" class="display-4 text-primary"></h4>');
     println('<p id="content" style="font-size: 1.3em"></p>');
-    //println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
+    println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
     println('<p id="pageNumber"></p>');
     println('<div id="modNavButtons"></div>');
     println("<script>");
