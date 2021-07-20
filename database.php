@@ -174,8 +174,10 @@ class QuickDatabase {
         }
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryContent)) {
-            $resultArray = $queryResult->fetch_array();
-            $resultJson = json_encode($resultArray);
+            while($row = $queryResult->fetch_array()) {
+                array_push($resultArray, $row);//appending each row array as an array element in resultArray
+            }
+            $resultJson = json_encode($resultArray, JSON_FORCE_OBJECT);
             return $resultJson;
         } else {
             return "{error:unknown_error}";
