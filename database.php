@@ -169,7 +169,7 @@ class QuickDatabase {
             $sqlQueryContent = "SELECT title, content FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonid='$lessonID' AND moduleid=0 AND conceptid=0";
         } else {//Module content (Module metadata and each concept)
-            $sqlQueryContent = "SELECT title, content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
+            $sqlQueryContent = "SELECT conceptid, title, content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
                             ."WHERE lessonid='$lessonID' AND moduleid='$moduleID'";
         }
         
