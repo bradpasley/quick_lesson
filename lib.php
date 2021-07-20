@@ -344,10 +344,11 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
     println("const moduleObj = JSON.parse(moduleJSON);");
     println("var conceptid = $conceptid;");
+    println('document.getElementById("ConceptID").innerHTML = "JSON Content("+conceptid+")";');
     println('document.getElementById("ModuleTitle").innerHTML = "JSON Module Title: " + moduleObj[0].title;');
     println('document.getElementById("ConceptTitle").innerHTML = "JSON Concept Title: " + moduleObj[conceptid].title;');
     println('document.getElementById("Content").innerHTML = "JSON Content("+conceptid+"): " + moduleObj[conceptid].content;');
-    println('document.getElementById("ConceptID").innerHTML = "JSON Content("+conceptid+"): ";');
+    
     println('function nextConcept() {');
     println('   ++conceptid;');
     println('}');
