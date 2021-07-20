@@ -330,11 +330,11 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
 function printJSONModulePage(int $lessonid, int $moduleid) {
     global $quickDatabase;
     $conceptid = 0;
-    println('<h3 id="moduleTitle" class="display-4 text-secondary"></h3>');
-    println('<h4 id="conceptTitle" class="lead text-primary" style="font-weight:bolder; font-size: 1.4em"></h4>');
+    println('<h3 id="moduleTitle" class="display-5 text-secondary"></h3>');
+    println('<h4 id="conceptTitle" class="display-4 text-primary"></h4>');
     println('<p id="content" style="font-size: 1.3em"></p>');
-    println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
-    println('<p id="testOutput"></p>');
+    //println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
+    println('<p id="pageNumber"></p>');
     println('<div id="modNavButtons"></div>');
     println("<script>");
     println("var conceptid = $conceptid;");
@@ -347,7 +347,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('function showNavigationButtons() {');
     println('   var navButtons = "";');
     println('   var numberOfConcepts = Object.keys(moduleJSON).length-1;');
-    println('   document.getElementById("testOutput").innerHTML = "showNav: "+conceptid;');
+    println('   document.getElementById("testOutput").innerHTML = "Page "+conceptid;');
     println('   if(conceptid>0) {  //left button limit');
     println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lgname="leftArrowButton_JSON">Previous</button>\n\';');
     println('   }');
