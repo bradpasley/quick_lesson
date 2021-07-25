@@ -200,11 +200,18 @@ class QuickDatabase {
      * 'content' is used in JSON/Javascript to display to web
      */
     private function convert_lesson_array(array $table) {
+        println("<p>convert_lesson_array()");
         foreach($table as $rowID => $row) {
+            println("<p>row($rowID):");
+            var_dump($row);
                 if(!isset($row['contentHTML']) || $row['contentHTML']=='') { //contentHTML has no content, so convert plain content to HTML friendly output
+                    println("<p>content cell($rowID): ".$table[$rowID]['content']);
                     $table[$rowID]['content'] = text_to_html($table[$rowID]['content']);
-                } else 
-                $table[$rowID]['content'] = $table[$rowID]['contentHTML'];
+                } else {
+                    println("<p>content cell($rowID): ".$table[$rowID]['contentHTML']);
+                    $table[$rowID]['content'] = $table[$rowID]['contentHTML'];
+                }
+                
         }
         return $table;
     }
