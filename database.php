@@ -174,14 +174,14 @@ class QuickDatabase {
         }
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryContent)) {
-            println($sqlQueryContent);
-            println("<p>result fields: ".$queryResult->field_count."</p>");
-            println("<p>result rows: ".$queryResult->num_rows."</p>");
+            //println($sqlQueryContent);
+            //println("<p>result fields: ".$queryResult->field_count."</p>");
+            //println("<p>result rows: ".$queryResult->num_rows."</p>");
             $table = $queryResult->fetch_all(MYSQLI_BOTH);
-            println("<p>table preconvert: (not displayed intentionally)");
+            //println("<p>table preconvert: (not displayed intentionally)");
             //var_dump($table);
             $table = $this->convert_lesson_array($table); //convert plain text to HTML friendly text.
-            println("<p>table after convert: (not displayed intentionally)");
+            //println("<p>table after convert: (not displayed intentionally)");
            // var_dump($table);
             //print("</p>");
             $resultJson = json_encode($table, JSON_FORCE_OBJECT);
@@ -200,19 +200,19 @@ class QuickDatabase {
      * 'content' is used in JSON/Javascript to display to web
      */
     private function convert_lesson_array(array $table) {
-        println("<p>convert_lesson_array()");
+        //println("<p>convert_lesson_array()");
         foreach($table as $rowID => $row) {
-            println("<p>row($rowID):");
+            //println("<p>row($rowID):");
             //var_dump($row);
             $plainTextContent = $table[$rowID]['content'];
-            println("<p>content cell($rowID): ".$table[$rowID]['content']);
+            //println("<p>content cell($rowID): ".$table[$rowID]['content']);
             if(!isset($row['contentHTML']) || $row['contentHTML']=='') { //contentHTML has no content, so convert plain content to HTML friendly output
                 $htmlContent = text_to_html($plainTextContent);//convert plaintext to html
-                println("<p>content plain to HTML cell($rowID): ".$htmlContent);
+                //println("<p>content plain to HTML cell($rowID): ".$htmlContent);
             } else {
                 $plainTextContent = $table[$rowID]['content'];
                 $htmlContent = $table[$rowID]['contentHTML'];//change 'content' values to 'contentHTML' values
-                println("<p>content HTML cell($rowID): ".$table[$rowID]['contentHTML']);
+                //println("<p>content HTML cell($rowID): ".$table[$rowID]['contentHTML']);
             }
             foreach($row as $cellID => $cell) {//change each cell that has the 'content' value (i.e. both number and text key)
                 if($table[$rowID][$cellID]==$plainTextContent)
