@@ -178,9 +178,9 @@ class QuickDatabase {
             println("<p>result fields: ".$queryResult->field_count."</p>");
             println("<p>result rows: ".$queryResult->num_rows."</p>");
             $table = $queryResult->fetch_all(MYSQLI_BOTH);
-            println("<p>table preconvert: (not displayed intentionally");
+            println("<p>table preconvert: (not displayed intentionally)");
             //var_dump($table);
-            $table = convert_lesson_array($table); //convert plain text to HTML friendly text.
+            $table = $this->convert_lesson_array($table); //convert plain text to HTML friendly text.
             println("<p>table after convert: ");
             var_dump($table);
             //print("</p>");
@@ -199,7 +199,7 @@ class QuickDatabase {
      * if contentHTML has content, then output the 'content' cell with the contentHTML value.
      * 'content' is used in JSON/Javascript to display to web
      */
-    function convert_lesson_array(array $table) {
+    private function convert_lesson_array(array $table) {
         println("<p>convert_lesson_array()");
         foreach($table as $rowID => $row) {
             println("<p>row($rowID):");
