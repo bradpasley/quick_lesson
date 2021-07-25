@@ -174,13 +174,15 @@ class QuickDatabase {
         }
         
         if($queryResult = mysqli_query($this->DBConnection,$sqlQueryContent)) {
-            //println($sqlQueryContent);
-            //print("<p>result fields: ".$queryResult->field_count."</p>");
-            //print("<p>result rows: ".$queryResult->num_rows."</p>");
+            println($sqlQueryContent);
+            print("<p>result fields: ".$queryResult->field_count."</p>");
+            print("<p>result rows: ".$queryResult->num_rows."</p>");
             $table = $queryResult->fetch_all(MYSQLI_BOTH);
+            print("<p>table preconvert: ");
+            var_dump($table);
             $table = convert_lesson_array($table); //convert plain text to HTML friendly text.
-            //print("<p>table: ");
-            //var_dump($table);
+            print("<p>table after convert: ");
+            var_dump($table);
             //print("</p>");
             $resultJson = json_encode($table, JSON_FORCE_OBJECT);
 	    //print("<p>resultJson: $resultJson</p>");
