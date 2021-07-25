@@ -166,7 +166,7 @@ class QuickDatabase {
         $sqlQueryContent = "";
 
         if($moduleID==0) {//Lesson content (just Lesson metadata)
-            $sqlQueryContent = "SELECT title, content FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
+            $sqlQueryContent = "SELECT title, content, contentHTML FROM ".QuickConfig::DATABASE_SCHEMA.".".QuickConfig::LESSON_TABLE." "
                             ."WHERE lessonid='$lessonID' AND moduleid=0 AND conceptid=0";
         } else {//Module content (Module metadata and each concept)
             $sqlQueryContent = "SELECT conceptid, title, content FROM `".QuickConfig::DATABASE_SCHEMA."`.`".QuickConfig::LESSON_TABLE."` "
@@ -178,6 +178,7 @@ class QuickDatabase {
             //print("<p>result fields: ".$queryResult->field_count."</p>");
             //print("<p>result rows: ".$queryResult->num_rows."</p>");
             $table = $queryResult->fetch_all(MYSQLI_BOTH);
+            $table = convert_lesson_array($table); //convert plain text to HTML friendly text.
             //print("<p>table: ");
             //var_dump($table);
             //print("</p>");
@@ -188,7 +189,23 @@ class QuickDatabase {
             return "{error:unknown_error}";
         }
     }
-    
+
+    /**
+     * convert content
+     * array - should be an array of arrays - rows containing cell elements
+     * if contentHTML is empty/null, then convert "content" cell to HTML friendly text
+     * if contentHTML has content, then output the 'content' cell with the contentHTML value.
+     * 'content' is used in JSON/Javascript to display to web
+     */
+    private function convert_lesson_array(array $table) {
+        foreach($table as $rowID => $row) {
+                if(!isset($row['contentHTML']) || $row['contentHTML']=='') { //contentHTML has no content, so convert plain content to HTML friendly output
+                    $table[$rowID]['content'] = text_to_html($table[$rowID]['content']);
+                } else 
+                $table[$rowID]['content'] = $table[$rowID]['contentHTML'];
+        }
+        return $table;
+    }
 
     function getNumberOfLessons() {
         if(!$this->DBConnectionStatus) $this->connectToDatabase(); //to ensure database connection made first.

@@ -503,4 +503,57 @@ function printlnError(string $input) {
     print(PHP_EOL.'<h4 class="text-danger">Error: '.$input.'</h4>'.PHP_EOL);
 }
 
+/**
+ * Text format functions
+ */
+
+ /** converts plain text to HTML 
+  * $newlines parameter - if false, new line characters will NOT be changed to <br> tags.
+ */
+ function text_to_html(string $plaintext, $newlines = true) {
+    // Remove any whitespace that may be between HTML tags.
+    $text = preg_replace("~>([[:space:]]+)<~i", "><", $plaintext);
+
+    // Remove any returns that precede or follow HTML tags.
+    $text = preg_replace("~([\n\r])<~i", " <", $text);
+    $text = preg_replace("~>([\n\r])~i", "> ", $text);
+
+    // Make returns into HTML newlines.
+    if ($newlines) {
+        $text = nl2br($text);
+    }
+
+    return $text;
+ }
+
+ /** convert html into plain text 
+  * allowed tags: 
+  * <br> (new line) 
+  * <p> (paragraph)
+  * <iframe> (embed a website)
+  * <table> (table)
+  * <thead> (table heading)
+  * <tbody> (table body)
+  * <tfoot> (table footer)
+  * <tr> (table row)
+  * <th> (table heading cell)
+  * <td> (table cell)
+  * <b> (bold)
+  * <i> (italics)
+  * <u> (underline)
+  * <ol> (ordered list)
+  * <ul> (unordered list)
+  * <li> (list item)
+ */
+ function html_to_quickhtml(string $htmltext) {
+    $acceptabletags = '<br><p><iframe><table><thead><tbody><tfoot><tr><th><td><b><i><u><ol><ul><li>';
+    $convertedtext = strip_tags($htmltext, $acceptabletags);
+    return $convertedtext;
+ }
+
+ function html_to_plaintext(string $htmltext) {
+    $convertedtext = strip_tags($htmltext, '');
+    return $convertedtext;
+ }
+
 ?>

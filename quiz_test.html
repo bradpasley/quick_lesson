@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .borderedQuestion {
+            width: 100px; height: 60px; padding: 10px; border: 2px solid black; background-color: lightcyan;
+        }
+        .borderedAnswer {
+            width: 90px; height: 30px; padding: 5px; border: 1px solid darkred; background-color: lightgoldenrodyellow;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+          ev.preventDefault();
+        }
+        
+        function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var questionID = ev.target.id;
+          var answerID = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(answerID));
+          document.getElementById("testing1").innerHTML = "QuestionID: " +questionID + " answerID: " +answerID;
+          
+          if(isCorrect(questionID, answerID)) {
+            //ev.target.style.backgroundColor = "#66FFCC";
+            document.getElementById(ev.target.id).style.backgroundColor = "#66FFCC";
+          } else {
+            //ev.target.style.backgroundColor = "#FF66AA";
+            document.getElementById(ev.target.id).style.backgroundColor = "#FF66AA";
+          }
+            
+        }
+
+        function isCorrect(qID, aID) {
+            document.getElementById("testing2").innerHTML = "qID sub: " + qID.substring(1) + " aID sub: " +aID.substring(1);  
+            if(qID.substring(1)==aID.substring(1))
+             return true;
+            else return false;
+        }
+        </script>
+</head>
+<body>
+
+<h2>Creating an Object from a JSON Literal</h2>
+<h3 id="moduleTitle"></h3>
+<h4 id="conceptTitle" style="font-weight:bolder; font-size: 1.4em"></h4>
+<h4 id="testing1"></h4>
+<h4 id="testing2"></h4>
+<div id="q1" class="borderedQuestion" ondrop="drop(event)" ondragover="allowDrop(event)">Question 1</div>
+<div id="q2" class="borderedQuestion" ondrop="drop(event)" ondragover="allowDrop(event)">Question 2</div>
+<div id="q3" class="borderedQuestion" ondrop="drop(event)" ondragover="allowDrop(event)">Question 3</div>
+<div id="q4" class="borderedQuestion" ondrop="drop(event)" ondragover="allowDrop(event)">Question 4</div>
+<div id="a1" class="borderedAnswer" draggable="true" ondragstart="drag(event)">Answer 1</div>
+<div id="a2" class="borderedAnswer" draggable="true" ondragstart="drag(event)">Answer 2</div>
+<div id="a3" class="borderedAnswer" draggable="true" ondragstart="drag(event)">Answer 3</div>
+<div id="a4" class="borderedAnswer" draggable="true" ondragstart="drag(event)">Answer 4</div>
+
+</body>
