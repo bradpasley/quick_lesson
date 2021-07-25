@@ -181,8 +181,8 @@ class QuickDatabase {
             println("<p>table preconvert: (not displayed intentionally)");
             //var_dump($table);
             $table = $this->convert_lesson_array($table); //convert plain text to HTML friendly text.
-            println("<p>table after convert: ");
-            var_dump($table);
+            println("<p>table after convert: (not displayed intentionally)");
+           // var_dump($table);
             //print("</p>");
             $resultJson = json_encode($table, JSON_FORCE_OBJECT);
 	    //print("<p>resultJson: $resultJson</p>");
@@ -203,7 +203,7 @@ class QuickDatabase {
         println("<p>convert_lesson_array()");
         foreach($table as $rowID => $row) {
             println("<p>row($rowID):");
-            var_dump($row);
+            //var_dump($row);
             $plainTextContent = $table[$rowID]['content'];
             println("<p>content cell($rowID): ".$table[$rowID]['content']);
             if(!isset($row['contentHTML']) || $row['contentHTML']=='') { //contentHTML has no content, so convert plain content to HTML friendly output
