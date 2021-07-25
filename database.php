@@ -204,14 +204,20 @@ class QuickDatabase {
         foreach($table as $rowID => $row) {
             println("<p>row($rowID):");
             var_dump($row);
-                if(!isset($row['contentHTML']) || $row['contentHTML']=='') { //contentHTML has no content, so convert plain content to HTML friendly output
-                    println("<p>content cell($rowID): ".$table[$rowID]['content']);
-                    $table[$rowID]['content'] = text_to_html($table[$rowID]['content']);
-                } else {
-                    println("<p>content cell($rowID): ".$table[$rowID]['contentHTML']);
-                    $table[$rowID]['content'] = $table[$rowID]['contentHTML'];
-                }
-                
+            $plainTextContent = $table[$rowID]['content'];
+            println("<p>content cell($rowID): ".$table[$rowID]['content']);
+            if(!isset($row['contentHTML']) || $row['contentHTML']=='') { //contentHTML has no content, so convert plain content to HTML friendly output
+                $htmlContent = text_to_html($plainTextContent);//convert plaintext to html
+                println("<p>content plain to HTML cell($rowID): ".$htmlContent);
+            } else {
+                $plainTextContent = $table[$rowID]['content'];
+                $htmlContent = $table[$rowID]['contentHTML'];//change 'content' values to 'contentHTML' values
+                println("<p>content HTML cell($rowID): ".$table[$rowID]['contentHTML']);
+            }
+            foreach($row as $cellID => $cell) {//change each cell that has the 'content' value (i.e. both number and text key)
+                if($table[$rowID][$cellID]==$plainTextContent)
+                   $table[$rowID][$cellID] = $htmlContent;
+            }
         }
         return $table;
     }
