@@ -178,8 +178,8 @@ class QuickDatabase {
             println("<p>result fields: ".$queryResult->field_count."</p>");
             println("<p>result rows: ".$queryResult->num_rows."</p>");
             $table = $queryResult->fetch_all(MYSQLI_BOTH);
-            println("<p>table preconvert: ");
-            var_dump($table);
+            println("<p>table preconvert: (not displayed intentionally");
+            //var_dump($table);
             $table = convert_lesson_array($table); //convert plain text to HTML friendly text.
             println("<p>table after convert: ");
             var_dump($table);
