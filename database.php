@@ -199,7 +199,7 @@ class QuickDatabase {
      * if contentHTML has content, then output the 'content' cell with the contentHTML value.
      * 'content' is used in JSON/Javascript to display to web
      */
-    private function convert_lesson_array(array $table) {
+    function convert_lesson_array(array $table) {
         println("<p>convert_lesson_array()");
         foreach($table as $rowID => $row) {
             println("<p>row($rowID):");
