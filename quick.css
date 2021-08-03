@@ -13,6 +13,9 @@
 .quick-main-background {
     background-color: #FFE6E3
 }
+.quick-second-background {
+    background-color: #AAB6B3
+}
 .quick-lesson-background {
     background-color: #E3EBFF
 }
@@ -41,6 +44,9 @@
 }
 .dark-main-background {
     background-color: #322
+}
+.dark-second-background {
+    background-color: #544
 }
 .quick-lesson-background {
     background-color: #001D66

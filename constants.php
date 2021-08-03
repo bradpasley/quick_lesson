@@ -47,6 +47,7 @@ const SCREENEXIT = -100;
 const WHITEBACKGROUNDSTYLE = 'dark-white-background';
 const DEEPBACKGROUNDSTYLE = 'dark-deep-background';
 const MAINBACKGROUNDSTYLE = 'dark-main-background';
+const SECONDBACKGROUNDSTYLE = 'dark-second-background';
 const LESSONBACKGROUNDSTYLE = 'dark-lesson-background';
 const MODULEBACKGROUNDSTYLE = 'dark-module-background';
 const QUIZBACKGROUNDSTYLE = 'dark-quiz-background';
