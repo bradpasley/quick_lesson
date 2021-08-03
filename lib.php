@@ -36,7 +36,6 @@ $quickDatabase;
 
 function printHTMLHeader(string $HTMLPageTitle) {
     
-    $siteSCSSURL           = "quick.scss"; //for customising bootstrap
     $bootstrapURL         = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css";
     $bootstrapIconURL     = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css";
     //$javascriptURL       = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js";
@@ -52,7 +51,6 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('<head>');
     println('<meta charset="utf-8">');
     println('<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">');
-    println('<link rel="stylesheet" href="'.$siteSCSSURL.'">');
     println('<link rel="stylesheet" href="'.$bootstrapURL.'">');
     println('<link rel="stylesheet" href="'.$bootstrapIconURL.'">');
     println('<link rel="stylesheet" href="'.$flipCardCSSURL.'">');
