@@ -357,8 +357,8 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('   if(conceptid<numberOfConcepts) { //right button limit');
     println('       navButtons += \'<button onClick="nextConcept()" class="btn rounded-pill lh-lg col-sm-2 bg-secondary text-light shadow-lg" name="rightArrowButton_JSON">Next</button>\n\';');
     println('   }');
-    println('   if(conceptid<numberOfConcepts) { //final page - hide next button and disable to fill space of next button');
-    println('       navButtons += \'<button class="btn rounded-pill lh-lg col-sm-2 shadow-lg" name="rightArrowButton_JSON" disabled>Next</button>\n\';');
+    println('   if(conceptid==numberOfConcepts) { //final page - hide next button and disable to fill space of next button');
+    println('       navButtons += \'<button class="btn rounded-pill lh-lg col-sm-2 shadow-lg" style="opacity:0" name="rightArrowButton_JSON" disabled>Next</button>\n\';');
     println('   }');
     println('   document.getElementById("modNavButtons").innerHTML = navButtons;');
     println('}');
