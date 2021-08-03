@@ -185,7 +185,7 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
         $moduleContent = "In this module you will learn about ".$moduleTitle;
     }
     $buttonName = "Learn";
-    println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
+    println('<h3 class="display-4 text-warning">'.$moduleTitle.'</h3>');
     if($conceptid==0) { //just print main page
         println('<p>'.$moduleContent.'</p>');
     } else {//print concept page
@@ -196,8 +196,8 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
             $conceptTitle = "Demo Concept Title";
             $conceptContent = "Insert content here";
         }    
-        println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">'.$conceptTitle.'</h4>');
-        println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');
+        println('<h4 class="lead text-info" style="font-weight:bolder; font-size: 1.4em">'.$conceptTitle.'</h4>');
+        println('<p class="text-light" style="font-size: 1.3em">'.$conceptContent.'</p>');
     }
     println('<br><br>');
     //println('<p>Module ID:  '.$moduleid.'</p>');
@@ -231,7 +231,7 @@ function printReviewPage(int $lessonid, int $moduleid, int $conceptid=0) {
     }
     $moduleContent = "In this module you will review ".$moduleTitle;
     $buttonName = "Review";
-    println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
+    println('<h3 class="display-4 text-warning">'.$moduleTitle.'</h3>');
     if($conceptid==0) { //just print main page
         println('<p>'.$moduleContent.'</p>');
     } else {//print concept page
@@ -242,7 +242,7 @@ function printReviewPage(int $lessonid, int $moduleid, int $conceptid=0) {
             $conceptTitle = "Demo Concept Review Title";
             $conceptContent = "Insert content here";
         }    
-        println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">Review '.$conceptTitle.'</h4>');
+        println('<h4 class="lead text-info" style="font-weight:bolder; font-size: 1.4em">Review '.$conceptTitle.'</h4>');
         println('<p style="font-size: 1.3em">Flip the card below to reveal the concept explanation.</p>');
         println('<div class="flip-card">
                     <div class="flip-card-inner">
@@ -284,7 +284,7 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
         $moduleTitle = "Demo Quiz Title";
     }
     $moduleContent = "In this quiz you will be tested on ".$moduleTitle;
-    println('<h3 class="display-4 text-secondary">'.$moduleTitle.'</h3>');
+    println('<h3 class="display-4 text-warning">'.$moduleTitle.'</h3>');
     if(isset($quickDatabase)) {
         $conceptCount = $quickDatabase->getNumberOfConceptsInModule($lessonid, $moduleid);
         
@@ -315,8 +315,8 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
     } else {
         $conceptTitle = "Demo Concept Review Title";
         $conceptContent = "Insert content here";
-        println('<h4 class="lead text-primary" style="font-weight:bolder; font-size: 1.4em">Quiz '.$conceptTitle.'</h4>');
-        println('<p style="font-size: 1.3em">'.$conceptContent.'</p>');    
+        println('<h4 class="lead text-info" style="font-weight:bolder; font-size: 1.4em">Quiz '.$conceptTitle.'</h4>');
+        println('<p class="text-light" style="font-size: 1.3em">'.$conceptContent.'</p>');    
     }    
     println('<br><br>');
 }
