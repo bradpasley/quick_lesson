@@ -334,9 +334,9 @@ function printQuizPage(int $lessonid, int $moduleid) { //int $conceptid=0
 function printJSONModulePage(int $lessonid, int $moduleid) {
     global $quickDatabase;
     $conceptid = 0;
-    println('<h3 id="moduleTitle" class="display-5 text-secondary"></h3>');
-    println('<h4 id="conceptTitle" class="display-4 text-primary"></h4>');
-    println('<p id="content" style="font-size: 1.6em"></p>');
+    println('<h3 id="moduleTitle" class="display-5 text-warning"></h3>');
+    println('<h4 id="conceptTitle" class="display-4 text-info"></h4>');
+    println('<p class="text-light" id="content" style="font-size: 1.6em"></p>');
     //println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
     println('<p id="pageNumber"></p>');
     println('<div class="fixed-bottom d-flex col-sm-11 justify-content-end" style="margin-bottom: 50px" id="modNavButtons"></div>');
