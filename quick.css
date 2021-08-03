@@ -24,6 +24,7 @@
 :root {
     --primary: #3b3c3e;
     --secondary: #1e6111;
+    --bg-secondary: #1e6111;
     --success: #234d7b;
     --info:  #64c3d2;
     --warning: #f5e74a;
