@@ -158,8 +158,8 @@ function printMenuCard(string $cardTitle, string $cardContent, int $menuScreen=S
     //println('<div class="row">');
     println('<div class="col-lg-2 col-md-4 col-sm-6 card '.$backgroundClass.'">');
     println('<div class="card-body d-flex flex-column justify-content-sm-between">');
-    println('  <h4 class="card-title">'.$cardTitle.'</h4>');
-    println('  <p class="card-text">'.$cardContent.'</p>');
+    println('  <h4 class="card-title text-light">'.$cardTitle.'</h4>');
+    println('  <p class="card-text text-light">'.$cardContent.'</p>');
     //println('  <p class="card-text"><b>menuScreen:</b>'.$menuScreen.'</p>');
     if($moduleid!=0 && $conceptid!=0) {
         printRightArrowButton($cardTitle, $menuScreen, $buttonName, $lessonid, $moduleid, $conceptid);
