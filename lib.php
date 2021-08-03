@@ -204,7 +204,7 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
     
     if($moduleid>0 && $conceptid>0) {
         $buttonName = "Previous";
-        println('<div class="d-flex justify-content-sm-start">');//start flex
+        println('<div class="fixed-bottom d-flex justify-content-sm-start">');//start flex
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         $buttonName = "Next";
         println('<div class="p2">&nbsp;</div>');//gap between buttons
@@ -259,7 +259,7 @@ function printReviewPage(int $lessonid, int $moduleid, int $conceptid=0) {
     }
     if($moduleid>0 && $conceptid>0) {
         $buttonName = "Previous";
-        println('<div class="row">');//start row
+        println('<div class="fixed-bottom row">');//start row
         printLeftArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
