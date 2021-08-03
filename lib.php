@@ -204,7 +204,7 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
     
     if($moduleid>0 && $conceptid>0) {
         $buttonName = "Previous";
-        println('<div class="fixed-bottom d-flex justify-content-sm-start">');//start flex
+        println('<div class="d-flex justify-content-sm-start">');//start flex
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         $buttonName = "Next";
         println('<div class="p2">&nbsp;</div>');//gap between buttons
@@ -259,7 +259,7 @@ function printReviewPage(int $lessonid, int $moduleid, int $conceptid=0) {
     }
     if($moduleid>0 && $conceptid>0) {
         $buttonName = "Previous";
-        println('<div class="fixed-bottom row">');//start row
+        println('<div class="row">');//start row
         printLeftArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         $buttonName = "Next";
         printRightArrowButton($moduleTitle, SCREENREVIEWCONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
@@ -338,7 +338,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('<p id="content" style="font-size: 1.6em"></p>');
     //println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
     println('<p id="pageNumber"></p>');
-    println('<div id="modNavButtons"></div>');
+    println('<div class="fixed-bottom" id="modNavButtons"></div>');
     println("<script>");
     println("var conceptid = $conceptid;");
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
