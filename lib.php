@@ -66,7 +66,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
 
 function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
     global $quickDatabase;
-    println('<body>');
+    println('<body class="'.DEEPBACKGROUNDSTYLE.'">');
     //println('<h1> print HTML lessonid: '.$lessonid.'</h1>');
     
     $isHome = true;
@@ -77,7 +77,7 @@ function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
     }
     
     println('<div class="container col-sm-11 '.MAINBACKGROUNDSTYLE.'">');
-    println('<div class="jumbotron py-3 px-lg-3">');
+    println('<div class="jumbotron py-3 px-lg-3 bg-success">');
     println('<div class="row justify-content-center">');
     println('<h3 class="col-sm-8 display-3 text-secondary" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check"></i>'.$pageTitle.'</h1>');
     println('</div>');//row
