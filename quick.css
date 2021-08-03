@@ -1,5 +1,14 @@
+.quick-main-text {
+    color: #fff
+}
+.quick-secondary-text {
+    color: #111
+}
 .quick-white-background {
     background-color: #FFFFFF
+}
+.quick-deep-background {
+    background-color: #FFE6E3
 }
 .quick-main-background {
     background-color: #FFE6E3
@@ -16,17 +25,40 @@
 .quick-review-background {
     background-color: #F4E3FF
 }
+
+/*dark colours*/
+.dark-main-text {
+    color: #fff
+}
+.dark-secondary-text {
+    color: #ecf
+}
+.dark-background {
+    background-color: #111
+}
+.dark-deep-background {
+    background-color: #000
+}
+.dark-main-background {
+    background-color: #322
+}
+.quick-lesson-background {
+    background-color: #001D66
+}
+.quick-module-background {
+    background-color: #F6FFE3
+}
+.quick-quiz-background {
+    background-color: #665700
+}
+.quick-review-background {
+    background-color: #3D0066
+}
+
+
+/*lesson button style*/
 .quick-lesson-button {
     font-size: 1.4em; 
     text-align: center;
 }
 
-:root {
-    --primary: #3b3c3e;
-    --secondary: #1e6111;
-    --bg-secondary: #1e6111;
-    --success: #234d7b;
-    --info:  #64c3d2;
-    --warning: #f5e74a;
-    --danger: #820410;
-}
