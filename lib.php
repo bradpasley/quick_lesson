@@ -45,6 +45,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     $quizCSSURL           = "quiz.css";
     $quizJsURL            = "dragdropquiz.js";
     $siteCSSURL           = "quick.css";
+    $siteSCSSURL           = "quick.scss"; //for customising bootstrap
     println('<!doctype html>');
     println('<html lang="en">');
     println('<head>');
@@ -55,6 +56,7 @@ function printHTMLHeader(string $HTMLPageTitle) {
     println('<link rel="stylesheet" href="'.$flipCardCSSURL.'">');
     println('<link rel="stylesheet" href="'.$quizCSSURL.'">');
     println('<link rel="stylesheet" href="'.$siteCSSURL.'">');
+    println('<link rel="stylesheet" href="'.$siteSCSSURL.'">');
     println('<title>'.$HTMLPageTitle.'</title>');
     println('<!-- Bootstrap CSS -->');
     println('<script src="'.$jQueryURL.'"></script>');
