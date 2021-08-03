@@ -352,6 +352,9 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('   var navButtons = "";');
     println('   var numberOfConcepts = Object.keys(moduleJSON).length-1;');
     println('   document.getElementById("pageNumber").innerHTML = "Page "+conceptid;');
+    println('   if(conceptid==0) {  //first page - hide previous button and disable to fill space of previous button');
+    println('       navButtons += \'<button class="btn rounded-pill lh-lg col-sm-2 shadow-lg" style="opacity:0" name="leftArrowButton_JSON" disabled>Previous</button>\n\';');
+    println('   }');
     println('   if(conceptid>0) {  //left button limit');
     println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg col-sm-2 bg-secondary text-light shadow-lg" name="leftArrowButton_JSON">Previous</button>\n\';');
     println('   }');
