@@ -75,7 +75,7 @@ function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
         $isHome=false;
     }
     
-    println('<div class="container col-sm-11 '.MAINBACKGROUNDSTYLE.'">');
+    println('<div class="container col-sm-11'.MAINBACKGROUNDSTYLE.'">');
     println('<div class="jumbotron py-3 px-lg-3">');
     println('<div class="row justify-content-center">');
     println('<h3 class="col-sm-8 display-3 text-secondary" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check"></i>'.$pageTitle.'</h1>');
@@ -338,7 +338,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('<p id="content" style="font-size: 1.6em"></p>');
     //println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
     println('<p id="pageNumber"></p>');
-    println('<div class="fixed-bottom d-flex justify-content-end" style="margin-bottom: 50px" id="modNavButtons"></div>');
+    println('<div class="fixed-bottom d-flex col-sm-11 justify-content-end" style="margin-bottom: 50px" id="modNavButtons"></div>');
     println("<script>");
     println("var conceptid = $conceptid;");
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
