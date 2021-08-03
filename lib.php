@@ -204,7 +204,7 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
     
     if($moduleid>0 && $conceptid>0) {
         $buttonName = "Previous";
-        println('<div class="d-flex justify-content-sm-start">');//start flex
+        println('<div class="d-flex justify-content-sm-end">');//start flex
         printLeftArrowButton($moduleTitle, SCREENMODULECONCEPT, $buttonName, $lessonid, $moduleid, $conceptid);
         $buttonName = "Next";
         println('<div class="p2">&nbsp;</div>');//gap between buttons
@@ -338,7 +338,7 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('<p id="content" style="font-size: 1.6em"></p>');
     //println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
     println('<p id="pageNumber"></p>');
-    println('<div class="fixed-bottom" id="modNavButtons"></div>');
+    println('<div class="fixed-bottom d-flex justify-content-end" style="margin-bottom: 50px" id="modNavButtons"></div>');
     println("<script>");
     println("var conceptid = $conceptid;");
     println("const moduleJSON = ".getModuleJSON($lessonid, $moduleid).";");
@@ -352,10 +352,10 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('   var numberOfConcepts = Object.keys(moduleJSON).length-1;');
     println('   document.getElementById("pageNumber").innerHTML = "Page "+conceptid;');
     println('   if(conceptid>0) {  //left button limit');
-    println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lgname="leftArrowButton_JSON">Previous</button>\n\';');
+    println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg col-sm-2 bg-secondary text-light shadow-lg" name="leftArrowButton_JSON">Previous</button>\n\';');
     println('   }');
     println('   if(conceptid<numberOfConcepts) { //right button limit');
-    println('       navButtons += \'<button onClick="nextConcept()" class="btn rounded-pill lh-lg bg-secondary text-light shadow-lgname="rightArrowButton_JSON">Next</button>\n\';');
+    println('       navButtons += \'<button onClick="nextConcept()" class="btn rounded-pill lh-lg col-sm-2 bg-secondary text-light shadow-lg" name="rightArrowButton_JSON">Next</button>\n\';');
     println('   }');
     println('   document.getElementById("modNavButtons").innerHTML = navButtons;');
     println('}');
