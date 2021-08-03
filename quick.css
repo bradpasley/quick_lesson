@@ -4,9 +4,6 @@
 .quick-secondary-text {
     color: #111
 }
-.quick-white-background {
-    background-color: #FFFFFF
-}
 .quick-deep-background {
     background-color: #FFE6E3
 }
@@ -15,6 +12,9 @@
 }
 .quick-second-background {
     background-color: #AAB6B3
+}
+.quick-card-background {
+    background-color: #FFFFFF
 }
 .quick-lesson-background {
     background-color: #E3EBFF
@@ -48,16 +48,19 @@
 .dark-second-background {
     background-color: #544
 }
-.quick-lesson-background {
+.dark-card-background {
+    background-color: #FFFFFF
+}
+.dark-lesson-background {
     background-color: #001D66
 }
-.quick-module-background {
-    background-color: #F6FFE3
+.dark-module-background {
+    background-color: #466600
 }
-.quick-quiz-background {
+.dark-quiz-background {
     background-color: #665700
 }
-.quick-review-background {
+.dark-review-background {
     background-color: #3D0066
 }
 
