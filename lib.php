@@ -356,10 +356,10 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('       navButtons += \'<button class="btn rounded-pill lh-lg col-sm-2 shadow-lg" style="opacity:0" name="leftArrowButton_JSON" disabled>Previous</button>\n\';');
     println('   }');
     println('   if(conceptid>0) {  //left button limit');
-    println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg col-sm-2 '.LESSONBUTTONSTYLE.' text-light shadow-lg" name="leftArrowButton_JSON">Previous</button>\n\';');
+    println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg col-sm-2 '.LESSONBUTTONSTYLE.' text-dark shadow-lg" name="leftArrowButton_JSON">Previous</button>\n\';');
     println('   }');
     println('   if(conceptid<numberOfConcepts) { //right button limit');
-    println('       navButtons += \'<button onClick="nextConcept()" class="btn rounded-pill lh-lg col-sm-2 '.LESSONBUTTONSTYLE.' text-light shadow-lg" name="rightArrowButton_JSON">Next</button>\n\';');
+    println('       navButtons += \'<button onClick="nextConcept()" class="btn rounded-pill lh-lg col-sm-2 '.LESSONBUTTONSTYLE.' text-dark shadow-lg" name="rightArrowButton_JSON">Next</button>\n\';');
     println('   }');
     println('   if(conceptid==numberOfConcepts) { //final page - hide next button and disable to fill space of next button');
     println('       navButtons += \'<button class="btn rounded-pill lh-lg col-sm-2 shadow-lg" style="opacity:0" name="rightArrowButton_JSON" disabled>Next</button>\n\';');
@@ -444,7 +444,7 @@ function printRightArrowButton(string $pageTitle, int $screenType, string $butto
         println('<form id="rightArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
-        println('  <button type="submit" class="btn rounded-pill lh-lg text-light shadow-lg '.LESSONBUTTONSTYLE.'" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
+        println('  <button type="submit" class="btn rounded-pill lh-lg text-dark shadow-lg '.LESSONBUTTONSTYLE.'" name="rightArrowButton_'.$pageTitle.'">'.$buttonText.'&nbsp;'.NEXTBUTTONICON.'</button>');
         println('</form>');
         if($isNextButton) println('</div>');//end of padding
     }
@@ -469,7 +469,7 @@ function printLeftArrowButton(string $pageTitle, int $screenType, string $button
         println('<form id="leftArrowButton_'.$pageTitle.'" method="post">');
         println('  <input type="hidden" name="screen" value="'.$screenType.'">');
         println($middleText);
-        println('  <button type="submit" class="btn rounded-pill lh-lg text-light shadow-lg '.LESSONBUTTONSTYLE.'" name="leftArrowButton_'.$pageTitle.'">'.PREVBUTTONICON.'&nbsp;'.$buttonText.'</button>');
+        println('  <button type="submit" class="btn rounded-pill lh-lg text-dark shadow-lg '.LESSONBUTTONSTYLE.'" name="leftArrowButton_'.$pageTitle.'">'.PREVBUTTONICON.'&nbsp;'.$buttonText.'</button>');
         println('</form>');
         println('</div>');//end of padding
     }
@@ -480,7 +480,7 @@ function printMainMenuButton() {
     println('<form id="mainMenu" method="post">');
     println('  <input type="hidden" name="screen" value="'.SCREENMAINMENU.'">');
     println('<span class="btn rounded-pill lh-lg shadow-lg justify-content-center '.LESSONBUTTONSTYLE.'">');
-    println('  <button type="submit" class="btn rounded-pill lh-lg text-light lead '.LESSONBUTTONSTYLE.'" '
+    println('  <button type="submit" class="btn rounded-pill lh-lg text-dark lead '.LESSONBUTTONSTYLE.'" '
             .'style="font-size: 1.4em; text-align: center" name="mainMenu">'
             .MAINMENUBUTTONSVG.'&nbsp;'.$buttonText.'&nbsp;'
             .'</button>');
@@ -494,7 +494,7 @@ function printLessonButton(string $lessonTitle, int $lessonid) {
     println('  <input type="hidden" name="screen" value="'.SCREENLESSONMENU.'">');
     println('  <input type="hidden" name="lessonid" value="'.$lessonid.'">');
     println('<span class="btn rounded-pill lh-lg shadow-lg justify-content-center '.LESSONBUTTONSTYLE.'">');
-    println('  <button type="submit" class="btn rounded-pill lh-lg text-light lead '.LESSONBUTTONSTYLE.'" '
+    println('  <button type="submit" class="btn rounded-pill lh-lg text-dark lead '.LESSONBUTTONSTYLE.'" '
             .' name="ButtonLesson-'.$lessonTitle.'">'
             .'&nbsp;'.$lessonTitle.'&nbsp;'
             .'</button>');
