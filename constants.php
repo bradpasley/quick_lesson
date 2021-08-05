@@ -52,7 +52,7 @@ const LESSONBACKGROUNDSTYLE = 'dark-lesson-background';
 const MODULEBACKGROUNDSTYLE = 'dark-module-background';
 const QUIZBACKGROUNDSTYLE = 'dark-quiz-background';
 const REVIEWBACKGROUNDSTYLE = 'dark-review-background';
-const LESSONBUTTONSTYLE = 'dark-lesson-background';
+const LESSONBACKGROUNDSTYLE = 'dark-lesson-background';
 const NEXTBUTTONICON = '<i class="bi bi-arrow-right-circle"></i>';
 const PREVBUTTONICON = '<i class="bi bi-arrow-left-circle"></i>';
 const MAINMENUBUTTONICON = '<i class="bi bi-house-door"></i>';
