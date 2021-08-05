@@ -9,6 +9,7 @@
 }
 .quick-main-background {
     background-color: #FFE6E3
+    max-height: 100%;
 }
 .quick-second-background {
     background-color: #AAB6B3
@@ -55,7 +56,7 @@
     background-color: #554444
 }
 .dark-lesson-button {
-    background-color: #C6A992
+    background-color: #DCCABC
 }
 .dark-module-background {
     background-color: #555144

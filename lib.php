@@ -77,7 +77,7 @@ function printHTMLBodyStart(string $pageTitle, int $lessonid=0) {
     }
     
     println('<div class="container col-sm-11 '.MAINBACKGROUNDSTYLE.'">');
-    println('<div class="jumbotron py-3 px-lg-3 '.SECONDBACKGROUNDSTYLE.'">');
+    println('<div class="jumbotron py-3 px-3 '.SECONDBACKGROUNDSTYLE.'">');
     println('<div class="row justify-content-center">');
     println('<h3 class="col-sm-8 display-3 text-light" style="font-size: 3.0em; text-align: center"><i class="bi bi-journal-check"></i>'.$pageTitle.'</h1>');
     println('</div>');//row
@@ -185,7 +185,7 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
         $moduleContent = "In this module you will learn about ".$moduleTitle;
     }
     $buttonName = "Learn";
-    println('<h3 class="display-4 text-warning">'.$moduleTitle.'</h3>');
+    println('<h3 class="display-5 text-warning">'.$moduleTitle.'</h3>');
     if($conceptid==0) { //just print main page
         println('<p>'.$moduleContent.'</p>');
     } else {//print concept page
@@ -196,7 +196,7 @@ function printModulePage(int $lessonid, int $moduleid, int $conceptid=0) {
             $conceptTitle = "Demo Concept Title";
             $conceptContent = "Insert content here";
         }    
-        println('<h4 class="lead text-info" style="font-weight:bolder; font-size: 1.4em">'.$conceptTitle.'</h4>');
+        println('<h4 class="display-6 text-info">'.$conceptTitle.'</h4>');
         println('<p class="text-light" style="font-size: 1.3em">'.$conceptContent.'</p>');
     }
     println('<br><br>');
@@ -335,10 +335,10 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     global $quickDatabase;
     $conceptid = 0;
     println('<h3 id="moduleTitle" class="display-5 text-warning"></h3>');
-    println('<h4 id="conceptTitle" class="display-4 text-info"></h4>');
+    println('<h4 id="conceptTitle" class="display-6 text-info"></h4>');
     println('<p class="text-light" id="content" style="font-size: 1.6em"></p>');
     //println('<p id="conceptID" style="font-size: 1.3em">Concept id: '.$conceptid.'</p>');
-    println('<p id="pageNumber"></p>');
+    println('<p class="text-light" id="pageNumber"></p>');
     println('<div class="fixed-bottom d-flex col-sm-11 justify-content-end" style="margin-bottom: 50px" id="modNavButtons"></div>');
     println("<script>");
     println("var conceptid = $conceptid;");
@@ -481,7 +481,7 @@ function printMainMenuButton() {
     println('  <input type="hidden" name="screen" value="'.SCREENMAINMENU.'">');
     println('<span class="btn rounded-pill lh-lg shadow-lg justify-content-center '.LESSONBUTTONSTYLE.'">');
     println('  <button type="submit" class="btn rounded-pill lh-lg text-dark lead '.LESSONBUTTONSTYLE.'" '
-            .'style="font-size: 1.4em; text-align: center" name="mainMenu">'
+            .' name="mainMenu">'
             .MAINMENUBUTTONSVG.'&nbsp;'.$buttonText.'&nbsp;'
             .'</button>');
     println('</span>');
