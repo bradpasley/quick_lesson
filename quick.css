@@ -49,9 +49,12 @@
     background-color: #433
 }
 .dark-card-background {
-    background-color: #514343
+    background-color: #392D2D
 }
 .dark-lesson-background {
+    background-color: #554444
+}
+.dark-lesson-button {
     background-color: #715B5B
 }
 .dark-module-background {
