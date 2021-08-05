@@ -356,10 +356,10 @@ function printJSONModulePage(int $lessonid, int $moduleid) {
     println('       navButtons += \'<button class="btn rounded-pill lh-lg col-sm-2 shadow-lg" style="opacity:0" name="leftArrowButton_JSON" disabled>Previous</button>\n\';');
     println('   }');
     println('   if(conceptid>0) {  //left button limit');
-    println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg col-sm-2 bg-secondary text-light shadow-lg" name="leftArrowButton_JSON">Previous</button>\n\';');
+    println('       navButtons += \'<button onClick="previousConcept()" class="btn rounded-pill lh-lg col-sm-2 '.LESSONBUTTONSTYLE.' text-light shadow-lg" name="leftArrowButton_JSON">Previous</button>\n\';');
     println('   }');
     println('   if(conceptid<numberOfConcepts) { //right button limit');
-    println('       navButtons += \'<button onClick="nextConcept()" class="btn rounded-pill lh-lg col-sm-2 bg-secondary text-light shadow-lg" name="rightArrowButton_JSON">Next</button>\n\';');
+    println('       navButtons += \'<button onClick="nextConcept()" class="btn rounded-pill lh-lg col-sm-2 '.LESSONBUTTONSTYLE.' text-light shadow-lg" name="rightArrowButton_JSON">Next</button>\n\';');
     println('   }');
     println('   if(conceptid==numberOfConcepts) { //final page - hide next button and disable to fill space of next button');
     println('       navButtons += \'<button class="btn rounded-pill lh-lg col-sm-2 shadow-lg" style="opacity:0" name="rightArrowButton_JSON" disabled>Next</button>\n\';');
