@@ -1,15 +1,16 @@
 .quick-main-text {
-    color: #fff
+    color: #fff;
 }
 .quick-secondary-text {
-    color: #111
+    color: #111;
 }
 .quick-deep-background {
-    background-color: #FFE6E3
+    background-color: #FFE6E3;
+    height: 100%;
 }
 .quick-main-background {
     background-color: #FFE6E3;
-    max-height: 100%;
+    height: 95%;
 }
 .quick-second-background {
     background-color: #AAB6B3
