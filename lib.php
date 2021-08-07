@@ -115,13 +115,13 @@ function printLogin() {
     println('<div class"row justify-content-center">');
     println('<div class"col-md-3"></div>');
     println('<div class"col-md">');
-    println('<label>Username:&nbsp;</label><input type="text" name="username" placeholder="username" /></div>');
+    println('<label class="text-light">Username:&nbsp;</label><input type="text" name="username" placeholder="username" /></div>');
     println('<div class"col-md-3"></div>');
     println('</div><br>');
     println('<div class"row justify-content-center">');
     println('<div class"col-md-3"></div>');
     println('<div class"col-md">');
-    println('<label>Password:&nbsp;</label><input type="password" name="password" placeholder="password" /></div>');
+    println('<label class="text-light">Password:&nbsp;</label><input type="password" name="password" placeholder="password" /></div>');
     println('</div><br>');
     println('<div class"row justify-content-md-center">');
     println('<div class"col-md-6"><input class="btn bg-primary text-light" type="submit" name="login" value="Log in"  /></div>');
