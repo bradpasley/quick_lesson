@@ -67,7 +67,7 @@ if(!isSessionValid() || !isset($_POST['screen']) || $_POST['screen']=="") {
 
     switch($screen) {
         case SCREENMAINMENU:
-            println('<div class="row justify-content-center">');
+            println('<div class="row px-3">');
             $numberOfLessons = $quickDatabase->getNumberOfLessons();
             for($lessonNumber=1; $lessonNumber<=$numberOfLessons; $lessonNumber++) {
                 $lessonTitle = $quickDatabase->getLessonTitle($lessonNumber);
