@@ -1,0 +1,254 @@
+lessonid,moduleid,conceptid,title,content,contentHTML,dateCreated,dateUpdated
+1,0,0,"Korean Alphabet","Learn to read the Korean alphabet.",NULL,"2021-07-12 20:36:03","2021-07-12 20:37:40"
+1,1,0,Consonants,"Learn how to identify and say the Korean consonants.",NULL,"2021-07-12 20:37:40","2021-07-12 20:37:40"
+1,1,1,ㄱ,"/k/ Similar to the soft 'ch' sound in "anarchy”",NULL,"2021-07-12 20:39:15","2021-07-14 17:03:52"
+1,1,2,ㄴ,"/n/ Similar to the 'n' in “no”",NULL,"2021-07-12 20:45:29","2021-07-14 17:03:52"
+1,1,3,ㄷ,"/t/ Similar to the 'd' in “day”",NULL,"2021-07-12 20:45:29","2021-07-14 17:03:52"
+1,1,4,ㄹ,"/ɾ/ Similar to a Scottish soft rolling 'r' in "radio". Although when it appears at the end of a syllable, the sound is /ɭ/; similiar to 'l' in "bell"",NULL,"2021-07-12 20:45:29","2021-07-14 17:03:52"
+1,1,5,ㅁ,"/m/ Similar to the 'm' in "mouse"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,6,ㅂ,"/p/ Similar to the soft 'p' in "pack"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,7,ㅃ,"/pp/ Similar to a harshly spoken 'b' in "brave"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,8,ㅍ,"/pʰ/ Similar to the 'p' in "pie"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,9,ㄸ,"/tt/ Similar to a harshly spoken 'd' in "double"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,10,ㅌ,"/tʰ/ Similiar to the 't' in "task"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,11,ㅅ,"/ʃ/ Similar to the 'sh' "flesh"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,12,ㅆ,"/ss/ Similar to the 's' in "send"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,13,ㅈ,"/tɕ/ Similar to the 'ch' in "chew", but softer",NULL,"2021-07-14 17:03:52","2021-07-16 14:40:26"
+1,1,14,ㅉ,"/t͈ɕ/ Similar to the 'j' in "jigsaw"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,15,ㅊ,"/tɕʰ/ Simliar to the 'ch' in "children"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,16,ㅋ,"/kʰ/ Similiar to the 'k' in "kick"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,17,ㅎ,"/h/ Similiar to the 'h' in "hello"",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,1,18,ㅇ,"/ŋ/ Similiar to the 'ng' in "sing". Although when it appears at the beginning of a syllable, it is not pronounced (no sound)",NULL,"2021-07-14 17:03:52","2021-07-14 17:03:52"
+1,2,0,Vowels,"Learn how to identify and say the Korean vowels.",NULL,"2021-07-12 20:49:31","2021-07-12 20:49:31"
+1,2,1,ㅏ,"/a/ Similar to the 'ar' in “father”",NULL,"2021-07-12 20:49:31","2021-07-14 17:03:52"
+1,2,2,ㅓ,"/ʌ/ Similar to the 'u' in "sun"",NULL,"2021-07-12 20:49:31","2021-07-14 17:03:52"
+1,2,3,ㅗ,"/o/ Similar to the 'o' in "clock"",NULL,"2021-07-12 20:49:31","2021-07-14 17:03:52"
+1,2,4,ㅜ,"/u/ Similar to the 'oo' in "boot"",NULL,"2021-07-12 20:49:31","2021-07-14 17:03:52"
+1,2,5,ㅣ,"/i/ Similar to the 'i' in "pick"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,6,ㅡ,"/ɯ/ Similar to the 'le' in "treacle"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,7,ㅐ,"/ɛ/ Similar to the 'ey' in "hey"'",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,8,ㅔ,"/e/ Similar to the 'ai' in "air"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,9,ㅚ,"/ø/ Similar to the sound of "ware" in "software" ",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,10,ㅟ,"/y/ Similar to the sound of "ouie" in "Louie"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,11,ㅑ,"/ja/ Similar to the sound of "ya" in "yahoo"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,12,ㅕ,"/jʌ/ Similar to the sound of "io" in "onion"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,13,ㅛ,"/jo/ Similar to the sound of "yo" in "Yohanne"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,14,ㅠ,"/ju/ Similar to the sound of the word "you"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,15,ㅒ,"/jɛ/ Similar to the sound of "ya" as in the "yay"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,16,ㅖ,"/je/ Similar to the sound of "ye" in "yes"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,17,ㅘ,"/wa/ Similar to the "wha" in "whack"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,18,ㅙ,"/wɛ/ Similar to the sound of "whe" in "where"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,19,ㅝ,"/wʌ/ Similar to the sound of "wha" in "what"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,20,ㅞ,"/we/ Similar to the sound of "whe" in "when"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+1,2,21,ㅢ,"/ɰi/ Similar to the sound of "ue" in "Bluey"",NULL,"2021-07-14 17:55:13","2021-07-14 17:55:13"
+2,0,0,"Vietnamese Alphabet","Learn to read the Vietnamese alphabet.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,0,"Tone marks","Learn the tone marks and how to make their sound.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,1,(unmarked),"/˧/ mid level tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,2,à,"/˨˩/ low falling tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,3,"ả (Northern)","/˧˩/ mid falling tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,4,"ả (Southern)","/˨˩˥/ dipping tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,5,"ã (Northern)","/˧˥ˀ/ glottalised rising tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,6,"ã (Southern)","/˨˩˥/ slightly lengthened tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,7,á,"/˧˥/ rising high tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,8,"ạ (Northern)","/˧˨ˀ/ glottalized falling tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,1,9,"ạ (Southern)","/˩˧/ low rising tone.",NULL,"2021-07-14 18:30:29","2021-07-14 18:30:29"
+2,2,0,Vowels,"Learn to read and pronounce the Vietnamese vowels",NULL,"2021-07-16 17:19:40","2021-07-16 17:19:40"
+2,2,1,a,"/aː/ Similar to the 'a' in "hat"",NULL,"2021-07-16 17:19:40","2021-07-16 17:21:26"
+2,2,2,ă,"/ă/ Similar to the 'a' in "hat" but shorter",NULL,"2021-07-20 21:12:40","2021-07-20 21:19:03"
+2,2,3,â,"/ə̆/ Similar to the final 'a' in "camera" but shorter",NULL,"2021-07-20 21:12:40","2021-07-20 21:19:03"
+2,2,4,e,"/ɛ˧/ Similar to  the 'ai' in "air", but shorter",NULL,"2021-07-16 17:19:40","2021-07-20 21:11:29"
+2,2,5,ê,"/ə̆j/ Similar to 'i' in "hi" but shorter. Sometimes pronounced as /ə̯/ as in the 'e' in "dress"",NULL,"2021-07-16 17:19:40","2021-07-20 21:11:29"
+2,2,6,i,"/i/ Similar to the 'ea' in "seat"", or after any vowel letter /j/ as in the 'y' in ""yellow"""",NULL,"2021-07-16 17:19:41","2021-07-20 21:11:29"
+2,2,7,o,"/ɔ/ Similar to 'o' in "clock", except before 'ng' /ăw/, and /w/ when combined with some other vowels",NULL,"2021-07-16 17:19:41","2021-07-20 21:11:29"
+2,2,8,ô,"/o/ Similar to the 'aw' in "yawn", or  /ə̆w/ before ng and c, or  /ə̯/ in uô",NULL,"2021-07-16 17:19:41","2021-07-20 21:11:29"
+2,2,9,ơ,"/ə/ Similar to the last 'a' in "Camera", or /ə̯/ in ươ",NULL,"2021-07-16 17:19:41","2021-07-20 21:11:29"
+2,2,10,u,"/u/ Similar to the 'oo' in "book", or /w/ after 'q' or with some vowel combinations",NULL,"2021-07-16 17:19:41","2021-07-20 21:11:29"
+2,2,11,ư,"/ɨ/ Similar to the 'oo' in "loo"",NULL,"2021-07-16 17:19:41","2021-07-20 21:11:29"
+2,2,12,y,"/i/ Similar to the 'ea' in "seat", or after any vowel letter /j/ as in the 'y' in "yellow"",NULL,"2021-07-16 17:19:41","2021-07-20 21:11:29"
+2,3,0,Consonants,"Learn to read and pronounce the Vietnamese consonants",NULL,"2021-07-16 17:27:25","2021-07-16 17:27:25"
+2,3,1,b,"/ɓ/ Similar to the first 'b' in "bubble", but stronger",NULL,"2021-07-16 17:27:25","2021-07-16 17:32:56"
+2,3,2,c,"/k/ Similar to  the 'k' in "kick"",NULL,"2021-07-16 17:27:25","2021-07-16 17:32:56"
+2,3,3,"ch (Northern)","/tɕ/ Similar to 'ch' in "chew", but softer",NULL,"2021-07-16 17:27:25","2021-07-16 17:32:56"
+2,3,4,"ch (Southern)","/c/ Similar to  the 'kyu' if "yuck" is said quickly several times, "yuckyuckyuck"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,5,"d (Northern)","/z/ Similar to the 'z' in "zoo"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,6,"d (Southern)","/j/ Similar to the 'y' in "yellow"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,7,đ,"/ɗ/ Similar to the Jamaican pronunciation of 'd' in "dem" ("them")",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,8,g,"/ɣ/ Similar to a Greek soft gutteral pronuncation of the 'g' in "gala"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,9,gh,"/ɣ/ Similar to a Greek soft gutteral pronuncation of the 'g' in "gala"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,10,"gi (Northern)","/z/ Similar to the 'z' in "zoo"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,11,"gi (Southern)","/j/ Similar to the 'y' in "yellow"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,12,h,"/h/ Similar to the 'h' in "high"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,13,k,"/k/ Similar to the 'k' in "kick"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,14,kh,"/x/ Similar to the Scottish pronunciation of 'ch' in "loch"",NULL,"2021-07-16 17:27:26","2021-07-16 17:32:56"
+2,3,15,l,"/l/ Similar to the 'll' in "tell"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:56"
+2,3,16,m,"/m/ Similar to the 'm' in "mouse"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:56"
+2,3,17,n,"/n/ Similar to the 'n' in  "nice"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:56"
+2,3,18,ng,"/ŋ/ Similar to the 'ng' in "sing"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:56"
+2,3,19,ngh,"/ŋ/ Similar to the 'ng' in "sing"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:56"
+2,3,20,nh,"/ɲ/ Similar to the "nya" sound if "Can yabbies" is spoken as one word.",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:56"
+2,3,21,p,"/p/ Similar to the 'p' in "pack"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:56"
+2,3,22,ph,"/f/ Similar to the 'f' in "fill"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:57"
+2,3,23,qu,"/kʷ/ Similar to the 'qu' in "quack"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:57"
+2,3,24,"r (Northern)","/z/ Similar to the 'z' in "zoo"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:57"
+2,3,25,"r (Southern)","/r/ Similar to the rolling Scottish 'r' in "right"",NULL,"2021-07-16 17:27:27","2021-07-16 17:32:57"
+2,3,26,"s (Northern)","/s/ Similar to the 's' in "sand"",NULL,"2021-07-16 17:27:28","2021-07-16 17:32:57"
+2,3,27,"s (Southern)","/ʂ/ Similar to the 'sh' in "shark"",NULL,"2021-07-16 17:27:28","2021-07-16 17:32:57"
+2,3,28,t,"/t/ Similar to the 't' in "tank"",NULL,"2021-07-16 17:27:28","2021-07-16 17:32:57"
+2,3,29,th,"/tʰ/ Similar to the 'ta' in "Tah Mahal"",NULL,"2021-07-16 17:27:28","2021-07-16 17:32:57"
+2,3,30,"tr (Northern)","/tɕ/ Similar to 'ch' in "chew", but softer",NULL,"2021-07-16 17:27:28","2021-07-16 17:32:57"
+2,3,31,"tr (Southern)","/tʰ/ Similar to an Indian pronunciation of 't' in "time"",NULL,"2021-07-16 17:27:28","2021-07-16 17:32:57"
+2,3,32,v,"/v/ Similar to the 'v's in "valve"",NULL,"2021-07-16 17:27:28","2021-07-16 17:32:57"
+2,3,33,x,"/s/ Similar to the 's' in "sand"",NULL,"2021-07-16 17:27:28","2021-07-16 17:32:57"
+3,0,0,"Purpose: A Bible Overview","Learn the about the key themes of the Bible and their insight into the purpose of life",NULL,"2021-07-22 09:22:55","2021-07-22 09:22:55"
+3,1,0,"The Purpose of Life","Reflect on your perspective of life and its purposes",NULL,"2021-07-22 09:22:55","2021-07-22 09:22:55"
+3,1,1,"🥇❓ What is most important to you in life?","🔲 Happiness 
+🔲 Relationships 
+🔲 Success 
+🔲 Wealth, Prosperity, Possessions
+🔲 Health",NULL,"2021-07-22 09:22:55","2021-07-22 09:24:22"
+3,1,2,"🎯❓ How do you achieve it?","Now that you have thought about what is most important to you in life, how do you make steps in life to achieve that deeper purpose in life?",NULL,"2021-07-22 09:22:56","2021-07-22 09:25:46"
+3,1,3,"✅❓ Why haven't you reached your goal in life?","How successful are you in reaching your purpose(s) in life? To what extent have you failed to achieve your purpose in life? What is the cause of your failure?",NULL,"2021-07-22 09:22:56","2021-07-22 09:25:46"
+3,1,4,"🔎📖 The purpose of life in the Bible","We have so far thought through what you think is more important in life, but perhaps if we are honest, we fail to satisfy our hopes to achieve these purposes in life. The rest of this lesson explores how the Bible has a solution to achieving the deeper purposes in life. According to the Bible, the purpose of life can be summarised like this:
+👥 God's community, living in
+🌐 God's place, following out
+❤ God's loving moral way
+",NULL,"2021-07-22 09:22:56","2021-07-22 09:25:46"
+3,1,5,"The Bible: The Start - A Garden","The Bible story starts in a garden. God's purposes, mentioned on the previous page, can be seen in the following ways:
+👥:👫 Adam and Eve
+🌐:🏕 Garden of Eden
+❤: 🗨🍑🐤 Look after the animals & plants
+",NULL,"2021-07-22 09:22:56","2021-07-22 09:26:21"
+3,1,6,"The Bible: The End - A Renewed World","In the next part of the lesson, we will explore the Old Testament, which is the first half of the BIble. But to help you navigate where the story is heading, here is a summary picture of the end of the Bible. The end of the Bible is the goal of all of life. It can be summarise with the following ways:
+👥:👨‍👩‍👧‍👦 People from all nations
+🌐:🌏 A whole new universe
+❤:✝️  Enjoy God, with each other in God's creation.",NULL,"2021-07-22 09:22:56","2021-07-22 09:27:33"
+3,2,0,"Bible Part 1: The Old Testament",,NULL,"2021-07-22 09:22:55","2021-07-22 09:22:55"
+3,2,1,"🏕👫🐍The Garden","At the start of the Bible story:
+-🖌🌏 God made everything, everyone
+-😊🍑🐤💕 Enjoy food, animals, human relationship
+-🚫🍓🐍 but don't eat "moral knowledge fruit"",NULL,"2021-07-22 09:22:56","2021-08-05 22:15:21"
+3,2,2,"🖕 The middle finger - Sin","- 🚫❤⭕🐍 Humanity rejected God's wise moral way and trusted a deceptive snake...",NULL,"2021-07-22 09:22:56","2021-08-05 23:40:45"
+3,2,3,"🥾 Kicked out","-❌🏕 removed from God's presence 
+-❌😊🍑🐤💕 God's blessings fractured
+-⚖⚰ punished with death 
+-🐍🗡God's rescue plan: defeat sin - a human who won't sin, but crush the deceptive snake.",NULL,"2021-07-22 09:22:56","2021-08-05 22:17:42"
+3,2,4,"💪🗼Our Solution - DIY","- Our Solution, through human strength, we can overcome problems and claim victory for ourselves.
+- 📖 In the bible,  humanity demonstrates this common way of solving the problems in the world, by building a tower to heaven.
+❌ But it won't work!
+💪Sin is the problem, not the solution!
+- Sin is the attitude of self-centred rejection of God and his instructions.
+- Sin is the attitude of believing I can decide for myself what's best, even though we are just creatures and God is the all knowing creator. 
+💪➡️⚰ Sin caused suffering/death
+If sin was the CAUSE of breakdown, suffering and death in the world.
+💪➡️😊❓❌ Sin is NOT the solution
+Sin will NOT be the way to find a SOLUTION to the mess of the world.",NULL,"2021-07-22 09:22:56","2021-08-05 22:30:19"
+3,2,5,"🗓 God's Solution","🗓➡️👥🌐❤❓✅
+Instead, God was the one who created us.
+God is the one who has determined the best way to do life. 
+So God will be the one who determines the way back to the way he wants us to live
+🗓God has a rescue plan to make
+👥God's community live in
+🌐God's place, living
+❤God's loving moral way.",NULL,"2021-07-22 09:22:56","2021-08-05 22:18:37"
+3,2,6,"🗓 God's promised plan","- God promised a man (Abraham):
+🔲👨‍👩‍👧‍👦 - he will have many children 
+🔲👥 - he and his children will be in a relationship with God, they will be "God's people"
+🔲🏝 - God will give them a land to enjoy life, under God's rule.
+🔲🗺 - Through the descendants, people from all nations can be blessed and come into relationship with God.",NULL,"2021-07-22 09:22:57","2021-08-05 22:31:55"
+3,2,7,"🎯 Aim of the promised plan - Better than the Garden","The plan which these promises describe is better than a restoration of the Garden, it's for a much larger place, with more people, and more intimacy with God.
+This promised plan aims to establish the good purpose of life.
+👥:👨‍👩‍👧‍👦🗺 God's people (Abraham's family)
+🌐:🏝👥 living in God's place (promised land)
+❤:👥 living God's way (obeying God as his people)",NULL,"2021-07-22 09:22:57","2021-08-05 22:32:26"
+3,2,8,"🗓 Progress of the promised plan in the Old Testament","By the end of the Old Testament, the promises are seen partially, but ultimately fail to be completed.",NULL,"2021-07-22 09:22:57","2021-08-05 22:27:29"
+3,2,9,"Some Success:","✅👨‍👩‍👧‍👦 Nation formed: Rescued Egyptian slaves made God's people; the nation of Israel
+✅🏝 God gives them a Land: Israel migrate to Canaan and enjoy blessing there.
+✅❤ God's law given: Israel was given God's law to obey as God's people.
+✅👥 God is with them: God offers access to his people, but they must sacrifice animals to take away the offence of their sin.
+✅🗺 Israel offer blessing to some foreigners: Occasionally Israel offer God's blessing to foreigners. These foreigners became part of God's people through their trust and obedience to God; they joined the community of Israel.
+",NULL,"2021-07-22 09:22:57","2021-08-05 22:27:29"
+3,2,10,"Some Failure:","❌👨‍👩‍👧‍👦 Nation dispersed: Rescued Egyptian slaves made God's people; the nation of Israel
+❌❤ Repeated disobedience and obedience: Israel continually wavered between complete disobedience and returning to obedience.  
+❌🏝 God kicks them out, but lets some back in: Because of Israel's repeated disobedience and sin, God allows nations to plunder the land, and send Israel into slavery in Babylon. After 70 years, some return to the land, but it didn't return to its former glory days.
+❌👥 A separated marriage: Over time, the relationship with Israel and God became fractured due to Israel's continual sin. God promises a restoration, but it is not seen in the Old Testament.
+❌🗺 - Israel's failure to worship God, and continued practice of worshipping false gods means they have failed to be a source of blessing to other nations
+",NULL,"2021-07-22 09:22:57","2021-08-05 22:27:29"
+3,2,11,"The promises plan was expanded:","A Faithful King for Israel and the nations
+🔲🤴🏻A King to lead them to obey God
+🎯 - the king of Israel is established to be examples of obeying God
+but many of them are very bad.
+❌ - some abuse their power
+❌ - some marry many women with other religions and they worship many other gods... which is a terrible example for the citizens.
+🔲🗺⬅️🤴🏻 A king for all nations
+🎯 - the king was also to be the one to which the nations could turn to be blessed. The promise of God to bless the nations has narrowed in from Israel to focus on blessing through submission to Israel's King... God's Messiah
+🎯 - the king will live forever and offer blessing to people from all nations.
+🔲 🌏 A New Creation - God's place will be a renewed universe",NULL,"2021-07-22 09:22:57","2021-08-05 22:27:29"
+3,2,12,"🗓 Was the Promised Plan a failure?","- By the end of the Old Testament, the promised plan looks like a failure:
+🔲🐍🗡 - There has not been a human without sin, who defeated the deceptive snake.
+🔲❤ - Israel are not able to obey God any better than foreign nations who don't even know God's laws.
+🔲👥 - Israel are still in a broken relationship with God because of sin & disobedience.
+🔲👨‍👩‍👧‍👦 - Israel's fractured return to Israel, and their on-going disobedience raises questions of who among them are God's people.
+🔲🗺 - Israel did not bless the other nations because of their moral failure
+🔲🗺 ⬅️🤴🏻 - Israel's King failed to be a moral example to Israel, and failed to offer blessing to other nations.
+🔲🏝 - Israel live in the land God gave them, but it's not in a good state.
+",NULL,"2021-07-22 09:22:57","2021-08-05 22:27:30"
+3,2,13,"🗓 God's purposes not restored yet","God's purpose for life has not yet been restored:
+🔲👥:🤴🏻🗺 God's people 
+🔲🌐:🌏 living in God's place (promised land)
+🔲❤:👥 living God's way (obeying God as his people)",NULL,"2021-07-22 09:22:57","2021-08-05 22:27:30"
+3,3,0,"Bible Part 2: The New Testament",,NULL,"2021-07-22 09:22:55","2021-07-22 09:22:55"
+3,3,1,"🗓 The promised plan is reawakened","Despite the bleak end of the Old Testament, a new era known the New Testament begins with a little baby, born in Bethlehem.",NULL,"2021-07-22 09:22:57","2021-08-05 22:44:54"
+3,3,2,"✅ ✝️ Jesus fulfills God's promised plan","The Bible says that Jesus is the solution to all of God's promises. Through Jesus all of God's promises are fulfilled.",NULL,"2021-07-22 09:22:57","2021-08-05 22:44:54"
+3,3,3,"✅🐍🗡 Jesus defeated the deceptive snake","Jesus is human and did not sin; he obeyed God. When Jesus died on the cross, he defeated the deceptive snake.",NULL,"2021-07-22 09:22:58","2021-08-05 22:44:54"
+3,3,4,"〰️❤ God's people are reenabled to live God's way","Jesus obeyed God. Jesus gives his Spirit to people who trust him. The Spirit of Jesus enables people to make moral changes and desire to obey God.",NULL,"2021-07-22 09:22:58","2021-08-05 22:44:54"
+3,3,5,"✅👥 Jesus brings reconcilation between God and humanity","God accepts Jesus' death as a payment for our sin. Therefore Jesus brings peace between God and anyone who submits to Jesus.",NULL,"2021-07-22 09:22:58","2021-08-05 22:44:55"
+3,3,6,"✅👨‍👩‍👧‍👦 Jesus invites people from all nations to become God's people","The people of God are no longer the biological descendants of Abraham, but anyone who submits to Jesus. ",NULL,"2021-07-22 09:22:58","2021-08-05 22:44:57"
+3,3,7,"✅🗺 Jesus offers blessing to people of all nations","The nation of Israel failed to be a source of blessing to the nations, but Jesus is the one descendant of Abraham through whom God's promise to bless nations comes.",NULL,"2021-07-22 09:22:58","2021-08-05 22:44:59"
+3,3,8,"〰️🗺⬅️🤴🏻 Jesus is King for all nations","Jesus is a descendant of the original Kinds of Israel. Jesus obeyed God and taught how to live a moral life for God. Jesus offers the blessings of forgiveness, eternal life and peace with God to anyone from any nation. Jesus is now in heaven, awaiting the time to call his people home.",NULL,"2021-07-22 09:22:58","2021-08-05 22:44:59"
+3,3,9,"〰️🏝 God's place expands beyond Canaan","God's place is no longer the land of Canaan (the Land of Israel). God place is the spiritual "Kingdom of God""",NULL,"2021-07-22 09:22:58","2021-08-05 22:45:00"
+3,3,10,"🥇✝️God's purposes for life are found in Jesus","✅👥:🤴🏻🗺 Through submitting to Jesus, you can join God's people 
+〰️🌐:🌏 Through submitting to Jesus, you are spiritually in God's place through the indwelling Spirit of Jesus. When Jesus returns, you will be physically in the new universe.
+〰️❤:👥 Through submitting to Jesus, by the help of the Spirit of Jesus, you are enabled to change behaviour toward a good moral life, but that will only be partially. Perfect moral living will only occur after Jesus returns.",NULL,"2021-07-22 09:22:58","2021-08-05 22:45:00"
+3,3,11,"🥇❓ How does Jesus meet our purposes in Life?","NOW:
+〰️ Happiness - Not yet, but Joy & Positive Future Expectation 
+〰️ Relationships - the church community (but still broken)
+〰️ Success - No guarantees for immediate success in life 
+〰️ Wealth, Prosperity, Possessions - No guarantees
+〰️ Health - No guarantees",NULL,"2021-07-22 09:22:58","2021-08-05 22:45:00"
+3,3,12,"🥇❓ How does Jesus meet our purposes in Life?","FUTURE:
+✅ Happiness - The new universe will not have sadness/suffering 
+✅ Relationships - All of God's people will enjoy mutual loving relations
+✅ Success - There will be contentment in life, without any fear of failure 
+✅ Wealth, Prosperity, Possessions - All of God's people will enjoy the whole universe together, without greed, theft, etc
+✅ Health - There will be no disease, pain, suffering, or injuries.",NULL,"2021-07-22 09:22:58","2021-08-05 22:45:00"
+3,3,13,"🎯❓ How do you achieve it?","- God has achieved it for us, through Jesus.
+- Just accept Jesus.
+- Trust Jesus as the one who died to save you from death (the punishment for sin).
+- Obey Jesus as your King. ",NULL,"2021-07-22 09:22:58","2021-08-05 22:45:00"
+3,4,0,"Achieving Purpose","Evaluate your perspective of life's purpose compared to the Bible",NULL,"2021-07-22 09:22:55","2021-07-22 09:22:55"
+3,4,1,"⚖️ Let's compare any alternative means of seeking Purpose","NOW:
+〰️ Happiness - Try to find happiness, but not always find it. A Selfish desire to find pleasure, tends to lead to unhappiness 
+〰️ Relationships - Try to find purpose in relationships may lead to dispare when relationships are harmed or broken.
+〰️ Success - Chasing success never ends, because comparison or the fear of failure disrupts us reaching success.
+〰️ Wealth, Prosperity, Possessions - Some of us might achieve this, but these things may not give us the sense of purpose we really crave.
+〰️ Health - Death is a guarantee in life.",NULL,"2021-07-22 09:22:58","2021-08-05 22:45:00"
+3,4,2,"⚖️ Let's compare any alternative means of seeking Purpose","FUTURE:
+❌ Happiness - Jesus teaches that anyone who rejects him will go to hell. There is no happiness in hell, only suffering and dissatisfaction.
+❌ Relationships - Hell is a place of isolation and torment, not of enjoyable relationships.
+❌ Success - Hell is the ultimate failure. There are no rewards for ending up in hell. Hell is receiving the eternal punishment for rejecting God.
+❌ Wealth, Prosperity, Possessions - You cannot take your wealth, prosperity or possessions with you into the afterlife. The poor person and the rich person alike, have the same destination.
+❌ Health - Jesus compares hell to extreme thirst; a sense of craving sustenance and relief but never receiving it.
+",NULL,"2021-07-22 09:22:59","2021-08-05 22:45:00"
+3,4,3,"🥇 Conclusion","Jesus says this: 
+Whoever wants to save his life will lose it, but whoever loses his life because of me and the gospel will save it. For what does it benefit someone to gain the whole world and yet lose his life?
+Mark 8:35-36 CSB
+",NULL,"2021-07-22 09:22:59","2021-08-05 22:45:00"
+3,4,4,"🥇 Conclusion","Jesus is saying that if you want to keep control of your life, and continue ignoring or disobeying God, you will lose it.
+But if you give control your life over to Jesus, you will save your life.
+Jesus then asks, What is the point of gaining all of the happiness, relationships, success and possessions in life, but yet you lose it when you die?
+
+In other words, if we evaluate the advantages and disavantages, you can try to gain things now, but lose them all for eternity. Or you can surrender all to God now, and gain everything for eternity.",NULL,"2021-07-22 09:22:59","2021-08-05 22:45:01"
+3,4,5,"🥇 Conclusion","Which is better?
+The choice is very clear. Would you take up Jesus' offer?
+
+If you are willing, pray to God. Ask Jesus to forgive your sins. Offer to live for Jesus as your King. Get a Bible and start reading. Contact a Christian friend to find out more.",NULL,"2021-07-22 09:22:59","2021-08-05 22:45:01"
